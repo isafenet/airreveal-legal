@@ -1,0 +1,413 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>AirReveal Terms of Use</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --surface-2: #f2f1ea;
+    --ink: #1e2422;
+    --ink-muted: #5b655f;
+    --ink-faint: #8a938c;
+    --accent: #2f6f5e;
+    --accent-ink: #ffffff;
+    --border: #e3e4de;
+    --border-strong: #c9ccc3;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121614;
+      --surface: #191f1c;
+      --surface-2: #1f2622;
+      --ink: #edefea;
+      --ink-muted: #9aa69e;
+      --ink-faint: #6f7a73;
+      --accent: #74c2a7;
+      --accent-ink: #0e1512;
+      --border: #283029;
+      --border-strong: #38423b;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #121614;
+    --surface: #191f1c;
+    --surface-2: #1f2622;
+    --ink: #edefea;
+    --ink-muted: #9aa69e;
+    --ink-faint: #6f7a73;
+    --accent: #74c2a7;
+    --accent-ink: #0e1512;
+    --border: #283029;
+    --border-strong: #38423b;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 0 20px;
+  }
+
+  h1, h2 {
+    font-family: 'Lora', Georgia, serif;
+    text-wrap: balance;
+  }
+
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-block: 48px 96px;
+  }
+
+  header.doc-head { margin-bottom: 40px; }
+
+  .brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .doc-switch a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-strong);
+    padding-bottom: 1px;
+  }
+  .doc-switch a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  h1.title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+
+  .meta {
+    color: var(--ink-faint);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lede {
+    margin-top: 20px;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    color: var(--ink-muted);
+    font-size: 0.97rem;
+  }
+  .lede strong { color: var(--ink); }
+
+  .warn {
+    margin-top: 14px;
+    padding: 18px 20px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  .warn strong { color: var(--accent); }
+
+  nav.toc {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 32px 0 40px;
+  }
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  nav.toc ol {
+    columns: 2;
+    column-gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  nav.toc li { break-inside: avoid; margin-bottom: 6px; }
+  nav.toc a { color: var(--ink-muted); text-decoration: none; font-size: 0.9rem; }
+  nav.toc a:hover { color: var(--accent); }
+
+  section.clause { margin-top: 40px; padding-top: 4px; scroll-margin-top: 20px; }
+
+  h2.clause-title {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2.clause-title .num {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  section.clause p { margin: 0 0 14px; color: var(--ink); }
+  section.clause p:last-child { margin-bottom: 0; }
+  section.clause ul { margin: 0 0 14px; padding-left: 22px; color: var(--ink); }
+  section.clause li { margin-bottom: 6px; }
+  section.clause li:last-child { margin-bottom: 0; }
+
+  .muted { color: var(--ink-muted); }
+
+  table.datatable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4px 0 18px;
+    font-size: 0.92rem;
+  }
+  table.datatable th, table.datatable td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table.datatable th {
+    color: var(--ink-faint);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+  table.datatable td.num-col { font-variant-numeric: tabular-nums; }
+
+  a { color: var(--accent); }
+
+  footer.doc-foot {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  footer.doc-foot a { color: var(--ink-muted); }
+
+  @media (max-width: 520px) {
+    h1.title { font-size: 1.7rem; }
+    nav.toc ol { columns: 1; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="doc-head">
+    <div class="brand-row">
+      <div class="brand"><span class="brand-mark">A</span> AirReveal</div>
+      <div class="doc-switch"><a href="privacy.html">Privacy Policy</a> <a href="support.html">Support</a></div>
+    </div>
+    <p class="eyebrow">Terms of Use</p>
+    <h1 class="title">The agreement between you and AirReveal</h1>
+    <p class="meta">Effective September 18, 2026</p>
+    <div class="lede">
+      <strong>Before you rely on anything in this app:</strong> AirReveal is a personal flight-companion and landmark-discovery tool, not an official flight-tracking, air-traffic, or aviation-safety service. See Section 3.
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p>Sections</p>
+    <ol>
+      <li><a href="#acceptance">1. Acceptance of these terms</a></li>
+      <li><a href="#service">2. What AirReveal is</a></li>
+      <li><a href="#not-official">3. Not an official flight-tracking or aviation-safety tool</a></li>
+      <li><a href="#eligibility">4. Eligibility</a></li>
+      <li><a href="#subscriptions">5. Subscriptions &amp; billing</a></li>
+      <li><a href="#content">6. Your data &amp; content</a></li>
+      <li><a href="#location">7. Location &amp; offline maps</a></li>
+      <li><a href="#acceptable-use">8. Acceptable use</a></li>
+      <li><a href="#ip">9. Intellectual property</a></li>
+      <li><a href="#third-party">10. Third-party services</a></li>
+      <li><a href="#warranty">11. Disclaimer of warranties</a></li>
+      <li><a href="#liability">12. Limitation of liability</a></li>
+      <li><a href="#termination">13. Termination</a></li>
+      <li><a href="#changes">14. Changes to the app or these terms</a></li>
+      <li><a href="#apple">15. Apple as a third-party beneficiary</a></li>
+      <li><a href="#law">16. Governing law</a></li>
+      <li><a href="#contact">17. Contact</a></li>
+    </ol>
+  </nav>
+
+  <section class="clause" id="acceptance">
+    <h2 class="clause-title"><span class="num">1</span> Acceptance of these terms</h2>
+    <p>By downloading, installing, or using AirReveal, you agree to these Terms of Use. If you don't agree, please don't use the app. These terms apply alongside AirReveal's <a href="privacy.html">Privacy Policy</a>, which describes how your data is handled.</p>
+  </section>
+
+  <section class="clause" id="service">
+    <h2 class="clause-title"><span class="num">2</span> What AirReveal is</h2>
+    <p>AirReveal is a personal flight-companion app. It helps you plan a flight's route, track your own real flight live using your device's GPS, and discover landmarks, countries, and points of interest along the way — offline, wherever possible. It also keeps a personal journal of your completed trips.</p>
+    <p>Planning a flight — creating a route, previewing it on the map, browsing landmarks, downloading offline content — is always free. Live tracking a real flight with your device's GPS, including offline map support while you're tracking, requires an AirReveal Pro subscription. See Section 5.</p>
+  </section>
+
+  <section class="clause" id="not-official">
+    <h2 class="clause-title"><span class="num">3</span> Not an official flight-tracking or aviation-safety tool</h2>
+    <p>AirReveal is not connected to any airline, airport, or air-traffic-control system, and it does not receive live flight-status data from any aviation authority. Route generation, flight numbers, and schedules you enter or import are for your own planning and record-keeping only.</p>
+    <p>Never rely on AirReveal for real-time flight status, gate information, delays, cancellations, or any safety-critical decision. Always use your airline's own app, airport displays, or staff for that information. AirReveal's Live tracking reflects your device's own GPS position — it is not a substitute for official flight information.</p>
+  </section>
+
+  <section class="clause" id="eligibility">
+    <h2 class="clause-title"><span class="num">4</span> Eligibility</h2>
+    <p>You must meet the minimum age required to hold an Apple ID / App Store account in your country to use AirReveal, and to purchase a subscription.</p>
+  </section>
+
+  <section class="clause" id="subscriptions">
+    <h2 class="clause-title"><span class="num">5</span> Subscriptions &amp; billing</h2>
+    <p>AirReveal Pro is offered as an auto-renewing subscription, billed and managed entirely through your Apple ID / App Store account:</p>
+    <table class="datatable">
+      <tr><th>Plan</th><th>Length</th><th>Price</th><th>Trial</th></tr>
+      <tr><td>Pro Weekly</td><td>1 week, auto-renews</td><td class="num-col">£4.99 / week</td><td>None</td></tr>
+      <tr><td>Pro Monthly</td><td>1 month, auto-renews</td><td class="num-col">£3.99 / month</td><td>None</td></tr>
+      <tr><td>Pro Yearly</td><td>1 year, auto-renews</td><td class="num-col">£24.99 / year</td><td>None</td></tr>
+    </table>
+    <ul>
+      <li>Payment is charged to your Apple ID account at confirmation of purchase.</li>
+      <li>Subscriptions renew automatically unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
+      <li>Your account is charged for renewal within 24 hours prior to the end of the current period, at the price you agreed to.</li>
+      <li>Manage or cancel a subscription anytime in <strong>Settings → [your name] → Subscriptions</strong> on your device. Cancelling stops future renewals but does not refund the current period.</li>
+      <li>Refunds are handled by Apple under its own policies — AirReveal cannot issue refunds directly. Request one at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</li>
+      <li>A flight you're already tracking live when your subscription lapses is not interrupted mid-flight, but starting or resuming Live tracking on any other flight afterward requires an active subscription.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="content">
+    <h2 class="clause-title"><span class="num">6</span> Your data &amp; content</h2>
+    <p>You own the flight details, journal entries, and photos you create in AirReveal. We don't claim any ownership over it, and — as described in the <a href="privacy.html">Privacy Policy</a> — it stays on your device (and your own iCloud, only if you choose to sync it) rather than on an AirReveal server. You're responsible for the accuracy of what you enter and for keeping your device secure, since AirReveal has no way to back up or recover data it never receives.</p>
+  </section>
+
+  <section class="clause" id="location">
+    <h2 class="clause-title"><span class="num">7</span> Location &amp; offline maps</h2>
+    <p>Live tracking uses your device's GPS, including in the background while the app isn't open, so your route and progress keep updating over the course of a real flight. You can revoke location permission at any time in <strong>Settings → Privacy &amp; Security → Location Services → AirReveal</strong>, though doing so will stop Live tracking from working. Offline map and content downloads use publicly available map tiles and landmark data (see Section 10) and don't require any location permission beyond what Live tracking itself needs.</p>
+  </section>
+
+  <section class="clause" id="acceptable-use">
+    <h2 class="clause-title"><span class="num">8</span> Acceptable use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Reverse-engineer, decompile, or tamper with AirReveal beyond what applicable law expressly permits.</li>
+      <li>Use the app to store or transmit unlawful content, or in a way that infringes someone else's rights.</li>
+      <li>Attempt to circumvent AirReveal's subscription or licensing mechanisms.</li>
+      <li>Use the app in any way that could damage, disable, or impair it for other users.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="ip">
+    <h2 class="clause-title"><span class="num">9</span> Intellectual property</h2>
+    <p>AirReveal's name, design, and underlying software are the property of its developer and are protected by copyright and other intellectual property laws. Your subscription grants you a personal, non-transferable license to use the app — it doesn't transfer any ownership of that intellectual property to you.</p>
+  </section>
+
+  <section class="clause" id="third-party">
+    <h2 class="clause-title"><span class="num">10</span> Third-party services</h2>
+    <p>AirReveal integrates with a small number of outside services to provide its features:</p>
+    <ul>
+      <li><strong>Apple</strong> — iCloud (optional sync), the App Store (subscriptions), and WeatherKit (live weather, when available), all governed by Apple's own terms and policies.</li>
+      <li><strong>OpenFreeMap / MapLibre</strong> — free, keyless vector map tiles used to render maps and enable offline map viewing.</li>
+      <li><strong>Wikipedia</strong> — free, keyless article summaries used to enrich landmark information you choose to download.</li>
+    </ul>
+    <p>Your use of these services through AirReveal is also subject to each provider's own terms, which are outside AirReveal's control.</p>
+  </section>
+
+  <section class="clause" id="warranty">
+    <h2 class="clause-title"><span class="num">11</span> Disclaimer of warranties</h2>
+    <p>AirReveal is provided "as is" and "as available," without warranties of any kind, express or implied, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We don't warrant that the app will be uninterrupted, error-free, or that any route, landmark, weather, or location data it produces will be accurate or complete.</p>
+  </section>
+
+  <section class="clause" id="liability">
+    <h2 class="clause-title"><span class="num">12</span> Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, AirReveal's developer will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, arising out of or related to your use of the app — including any decision made in reliance on flight, route, or location information it displays. Our total liability for any claim relating to AirReveal will not exceed the amount you paid for your subscription in the twelve months before the claim arose.</p>
+  </section>
+
+  <section class="clause" id="termination">
+    <h2 class="clause-title"><span class="num">13</span> Termination</h2>
+    <p>You may stop using AirReveal at any time by deleting the app. We may suspend or discontinue AirReveal, or any of its features, at any time — for example, if the app is withdrawn from the App Store. Because your data lives on your device, deleting the app is also how you delete your data (see the Privacy Policy for details).</p>
+  </section>
+
+  <section class="clause" id="changes">
+    <h2 class="clause-title"><span class="num">14</span> Changes to the app or these terms</h2>
+    <p>We may update AirReveal's features and these Terms of Use from time to time. If we make material changes to these terms, we'll update the "Effective" date above and note the change in the app's release notes. Continuing to use AirReveal after an update means you accept the revised terms.</p>
+  </section>
+
+  <section class="clause" id="apple">
+    <h2 class="clause-title"><span class="num">15</span> Apple as a third-party beneficiary</h2>
+    <p>These terms are between you and AirReveal's developer only, not with Apple. Apple has no obligation to provide any maintenance or support for AirReveal. In the event of any failure of the app to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any) to you; to the maximum extent permitted by law, Apple has no other warranty obligation with respect to AirReveal. Apple is not responsible for addressing any claims by you relating to AirReveal, including product liability claims, claims that the app fails to conform to legal or regulatory requirements, and claims arising under consumer protection law. Apple, and Apple's subsidiaries, are third-party beneficiaries of these terms, and upon your acceptance, Apple has the right to enforce these terms against you as a third-party beneficiary.</p>
+  </section>
+
+  <section class="clause" id="law">
+    <h2 class="clause-title"><span class="num">16</span> Governing law</h2>
+    <p>These terms are governed by the laws of England and Wales, without regard to conflict-of-law principles, except where local consumer protection law in your country of residence requires otherwise. If you are a consumer, you may also benefit from any mandatory protections under the law of the country in which you live.</p>
+  </section>
+
+  <section class="clause" id="contact">
+    <h2 class="clause-title"><span class="num">17</span> Contact</h2>
+    <p>Questions about these terms can be sent to <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a>.</p>
+  </section>
+
+  <footer class="doc-foot">
+    <span>AirReveal — Terms of Use</span>
+    <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a>
+  </footer>
+</div>
+
+</body></html>

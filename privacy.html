@@ -1,0 +1,455 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>AirReveal Privacy Policy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --surface-2: #f2f1ea;
+    --ink: #1e2422;
+    --ink-muted: #5b655f;
+    --ink-faint: #8a938c;
+    --accent: #2f6f5e;
+    --accent-ink: #ffffff;
+    --border: #e3e4de;
+    --border-strong: #c9ccc3;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121614;
+      --surface: #191f1c;
+      --surface-2: #1f2622;
+      --ink: #edefea;
+      --ink-muted: #9aa69e;
+      --ink-faint: #6f7a73;
+      --accent: #74c2a7;
+      --accent-ink: #0e1512;
+      --border: #283029;
+      --border-strong: #38423b;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #121614;
+    --surface: #191f1c;
+    --surface-2: #1f2622;
+    --ink: #edefea;
+    --ink-muted: #9aa69e;
+    --ink-faint: #6f7a73;
+    --accent: #74c2a7;
+    --accent-ink: #0e1512;
+    --border: #283029;
+    --border-strong: #38423b;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 0 20px;
+  }
+
+  h1, h2 {
+    font-family: 'Lora', Georgia, serif;
+    text-wrap: balance;
+  }
+
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-block: 48px 96px;
+  }
+
+  header.doc-head {
+    margin-bottom: 40px;
+  }
+
+  .brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .doc-switch a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-strong);
+    padding-bottom: 1px;
+  }
+  .doc-switch a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  h1.title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+
+  .meta {
+    color: var(--ink-faint);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lede {
+    margin-top: 20px;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    color: var(--ink-muted);
+    font-size: 0.97rem;
+  }
+  .lede strong { color: var(--ink); }
+
+  nav.toc {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 32px 0 40px;
+  }
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  nav.toc ol {
+    columns: 2;
+    column-gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: toc;
+  }
+  nav.toc li { break-inside: avoid; margin-bottom: 6px; }
+  nav.toc a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  nav.toc a:hover { color: var(--accent); }
+
+  section.clause {
+    margin-top: 40px;
+    padding-top: 4px;
+    scroll-margin-top: 20px;
+  }
+
+  h2.clause-title {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2.clause-title .num {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  section.clause p { margin: 0 0 14px; color: var(--ink); }
+  section.clause p:last-child { margin-bottom: 0; }
+  section.clause ul, section.clause ol.sub {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    color: var(--ink);
+  }
+  section.clause li { margin-bottom: 6px; }
+  section.clause li:last-child { margin-bottom: 0; }
+
+  .muted { color: var(--ink-muted); }
+
+  table.datatable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4px 0 18px;
+    font-size: 0.92rem;
+  }
+  table.datatable th, table.datatable td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table.datatable th {
+    color: var(--ink-faint);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+
+  code {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    background: var(--surface-2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--ink);
+  }
+
+  a { color: var(--accent); }
+
+  .badge-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 4px 0 18px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--ink-muted);
+  }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+  footer.doc-foot {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  footer.doc-foot a { color: var(--ink-muted); }
+
+  @media (max-width: 520px) {
+    h1.title { font-size: 1.7rem; }
+    nav.toc ol { columns: 1; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="doc-head">
+    <div class="brand-row">
+      <div class="brand"><span class="brand-mark">A</span> AirReveal</div>
+      <div class="doc-switch"><a href="terms.html">Terms of Use</a> <a href="support.html">Support</a></div>
+    </div>
+    <p class="eyebrow">Privacy Policy</p>
+    <h1 class="title">How AirReveal handles your data</h1>
+    <p class="meta">Effective September 18, 2026</p>
+    <div class="lede">
+      <strong>In short:</strong> AirReveal keeps your flight data on your device, and only syncs it to your own iCloud when you explicitly ask it to. There are no AirReveal servers, no accounts, no analytics, and no advertising in this app — full stop.
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p>Sections</p>
+    <ol>
+      <li><a href="#overview">1. Overview</a></li>
+      <li><a href="#data-you-enter">2. Data you enter</a></li>
+      <li><a href="#location">3. Location Services</a></li>
+      <li><a href="#offline-content">4. Offline maps &amp; landmark content</a></li>
+      <li><a href="#weather">5. Weather</a></li>
+      <li><a href="#photos">6. Photos</a></li>
+      <li><a href="#storage">7. Where your data lives</a></li>
+      <li><a href="#icloud">8. iCloud sync</a></li>
+      <li><a href="#notifications">9. Live Activities &amp; widgets</a></li>
+      <li><a href="#subscriptions">10. Subscriptions &amp; payment</a></li>
+      <li><a href="#export">11. Exporting &amp; importing your data</a></li>
+      <li><a href="#no-tracking">12. No analytics, ads, or tracking</a></li>
+      <li><a href="#sharing">13. Sharing your data</a></li>
+      <li><a href="#retention">14. Retention &amp; deletion</a></li>
+      <li><a href="#children">15. Children's privacy</a></li>
+      <li><a href="#security">16. Security</a></li>
+      <li><a href="#changes">17. Changes to this policy</a></li>
+      <li><a href="#contact">18. Contact</a></li>
+    </ol>
+  </nav>
+
+  <section class="clause" id="overview">
+    <h2 class="clause-title"><span class="num">1</span> Overview</h2>
+    <p>AirReveal is a flight-planning, live-tracking, and landmark-discovery app. It is designed around a simple idea: your flight details and travel history should stay under your control, not ours.</p>
+    <p>This policy explains exactly what AirReveal records, where it lives, and what — if anything — ever leaves your device. There is no account to create and no AirReveal server to send data to, so most of this policy is a description of on-device behavior rather than a list of things we do with your information.</p>
+  </section>
+
+  <section class="clause" id="data-you-enter">
+    <h2 class="clause-title"><span class="num">2</span> Data you enter</h2>
+    <p>Using AirReveal, you may choose to record:</p>
+    <div class="badge-row">
+      <span class="badge"><span class="dot"></span>Flight details (number, airline, aircraft, route, schedule)</span>
+      <span class="badge"><span class="dot"></span>Journal entries for completed trips</span>
+      <span class="badge"><span class="dot"></span>Your display name</span>
+      <span class="badge"><span class="dot"></span>Photos captured or picked in the app</span>
+    </div>
+    <p>All of it is optional — AirReveal only stores what you choose to type, select, or photograph inside the app.</p>
+  </section>
+
+  <section class="clause" id="location">
+    <h2 class="clause-title"><span class="num">3</span> Location Services</h2>
+    <p>AirReveal uses your device's GPS only while you're Live-tracking a real flight — a paid feature (see the <a href="terms.html">Terms of Use</a>) that plots your actual position against your planned route and detects nearby landmarks. Location updates continue in the background so tracking doesn't stop when the app isn't on screen.</p>
+    <ul>
+      <li>Location is never requested or used while you're only planning a flight — Plan mode is fully offline-capable and needs no GPS access.</li>
+      <li>Your recorded route is stored locally on your device (see Section 7) and is included in an iCloud sync only if you explicitly choose to sync (Section 8).</li>
+      <li>You can revoke location permission at any time in <strong>Settings → Privacy &amp; Security → Location Services → AirReveal</strong>; Live tracking will simply stop working until it's re-granted.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="offline-content">
+    <h2 class="clause-title"><span class="num">4</span> Offline maps &amp; landmark content</h2>
+    <p>When you choose to download offline content for a flight, AirReveal contacts two free, keyless public services on your behalf:</p>
+    <table class="datatable">
+      <tr><th>Service</th><th>What's sent</th><th>What it's for</th></tr>
+      <tr><td>OpenFreeMap (via MapLibre)</td><td>The geographic area around your route — no personal identifier</td><td>Downloading map tiles for offline viewing</td></tr>
+      <tr><td>Wikipedia</td><td>A landmark's name, plus a generic app identifier in the request</td><td>Fetching an article summary for a landmark near your route</td></tr>
+    </table>
+    <p>Neither service receives your name, location history, or any other identifying information — only the specific map area or landmark title needed to fulfil that one request. These requests only happen when you tap to download offline content; nothing is fetched automatically in the background.</p>
+  </section>
+
+  <section class="clause" id="weather">
+    <h2 class="clause-title"><span class="num">5</span> Weather</h2>
+    <p>AirReveal can show live weather conditions along your route using Apple's WeatherKit service. When this feature is active, the coordinates and time you're requesting weather for are sent to Apple's own weather infrastructure — never to AirReveal or any other third party.</p>
+  </section>
+
+  <section class="clause" id="photos">
+    <h2 class="clause-title"><span class="num">6</span> Photos</h2>
+    <p>AirReveal lets you capture or pick a photo and compose it with a flight-info overlay (landmark name, country, altitude, route, timestamp — all generated locally). Photos are selected or captured through Apple's native picker and camera, and the finished composite is saved back to your own Photos library. AirReveal never uploads a photo anywhere.</p>
+  </section>
+
+  <section class="clause" id="storage">
+    <h2 class="clause-title"><span class="num">7</span> Where your data lives</h2>
+    <p>Everything you record is stored locally on your device in a private, sandboxed app database, shared only between the AirReveal app and its widgets/Live Activity so they can display consistent, up-to-date information. AirReveal does not operate any backend servers, and nothing you enter is uploaded anywhere by default.</p>
+  </section>
+
+  <section class="clause" id="icloud">
+    <h2 class="clause-title"><span class="num">8</span> iCloud sync (only when you ask)</h2>
+    <p>AirReveal offers an optional "Sync Now" action on the Profile page to sync your flight history, journal, and progress across your own devices using your personal iCloud account. This feature:</p>
+    <ul>
+      <li>Never runs automatically — it only syncs when you tap <strong>Sync Now</strong> yourself.</li>
+      <li>Stores data only in your <strong>private</strong> iCloud database — never a shared or public one, and never anywhere AirReveal's developer can access it.</li>
+      <li>Is managed end-to-end by Apple's iCloud infrastructure, subject to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's own privacy practices</a>.</li>
+      <li>Requires you to be signed into iCloud on your device; existing synced data is managed through your Apple ID's iCloud storage settings.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="notifications">
+    <h2 class="clause-title"><span class="num">9</span> Live Activities &amp; widgets</h2>
+    <p>While Live-tracking a flight, AirReveal can show a Live Activity (Lock Screen / Dynamic Island) and a Home Screen widget with your flight's progress. Both are rendered entirely on-device using Apple's ActivityKit and WidgetKit frameworks and share data with the main app only through a private, on-device app group — nothing is transmitted anywhere to make these work.</p>
+  </section>
+
+  <section class="clause" id="subscriptions">
+    <h2 class="clause-title"><span class="num">10</span> Subscriptions &amp; payment</h2>
+    <p>AirReveal Pro is sold as an auto-renewable subscription through Apple's App Store using StoreKit. All payment details — card numbers, billing address, and purchase history — are collected and processed by Apple, not by AirReveal. We only receive confirmation from Apple that an active subscription exists, so we can unlock Live tracking on your device.</p>
+  </section>
+
+  <section class="clause" id="export">
+    <h2 class="clause-title"><span class="num">11</span> Exporting &amp; importing your data</h2>
+    <p>AirReveal lets you export a single flight, or all of your trip data, as a JSON file at any time from My Flights or the Profile page, and import a previously exported file back in. Both actions happen entirely on your device and hand the file to iOS's native share sheet or file picker — no network request is made and no copy is sent to us. Where you send an exported file afterward (email, Files, AirDrop, another device) is entirely up to you.</p>
+  </section>
+
+  <section class="clause" id="no-tracking">
+    <h2 class="clause-title"><span class="num">12</span> No analytics, ads, or tracking</h2>
+    <p>AirReveal contains no analytics SDKs, no advertising networks, and no third-party trackers of any kind. We do not know how often you open the app, which screens you visit, or anything else about your usage. There is nothing to opt out of, because nothing is being collected.</p>
+  </section>
+
+  <section class="clause" id="sharing">
+    <h2 class="clause-title"><span class="num">13</span> Sharing your data</h2>
+    <p>We don't share, sell, or rent your data to anyone — there is no data on our servers to share in the first place. The only parties who ever touch your information are:</p>
+    <table class="datatable">
+      <tr><th>Party</th><th>What they see</th><th>Why</th></tr>
+      <tr><td>OpenFreeMap</td><td>The map area around your route</td><td>To download offline map tiles</td></tr>
+      <tr><td>Wikipedia</td><td>A landmark's name</td><td>To fetch an article summary for offline reading</td></tr>
+      <tr><td>Apple (WeatherKit)</td><td>Coordinates &amp; time you request weather for</td><td>To show live weather along your route</td></tr>
+      <tr><td>Apple (iCloud)</td><td>Your flight history &amp; journal, only if you tap Sync Now</td><td>To sync between your own devices</td></tr>
+      <tr><td>Apple (App Store)</td><td>Payment &amp; subscription status</td><td>To process your purchase</td></tr>
+    </table>
+  </section>
+
+  <section class="clause" id="retention">
+    <h2 class="clause-title"><span class="num">14</span> Retention &amp; deletion</h2>
+    <p>You control retention directly: delete any flight, journal entry, or photo inside the app at any time, or use Profile's "Remove All Trip Data" to erase everything at once. Deleting the AirReveal app removes its entire local database from your device. If you've used iCloud sync, you can also remove that data via <strong>Settings → [your name] → iCloud → Manage Storage</strong> on your device.</p>
+  </section>
+
+  <section class="clause" id="children">
+    <h2 class="clause-title"><span class="num">15</span> Children's privacy</h2>
+    <p>AirReveal is not directed at children. We do not knowingly collect information from children under 13 (or the relevant minimum age in your region). Since AirReveal keeps data on-device with no account system, we have no practical way to identify a user's age — if you believe a child has used AirReveal to store personal information, the data can be removed by deleting the app.</p>
+  </section>
+
+  <section class="clause" id="security">
+    <h2 class="clause-title"><span class="num">16</span> Security</h2>
+    <p>Your data benefits from iOS's standard app sandboxing and device-level encryption. If you use iCloud sync, data in transit and at rest is protected by Apple's iCloud security model. Because there is no AirReveal server or account, there is no central database of users' data that could be breached on our end.</p>
+  </section>
+
+  <section class="clause" id="changes">
+    <h2 class="clause-title"><span class="num">17</span> Changes to this policy</h2>
+    <p>If AirReveal's data practices change — for example, if a future version introduces an optional server-backed feature — this policy will be updated and the "Effective" date above will change accordingly. Material changes will be noted in the app's release notes.</p>
+  </section>
+
+  <section class="clause" id="contact">
+    <h2 class="clause-title"><span class="num">18</span> Contact</h2>
+    <p>Questions about this policy or your data can be sent to <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a>.</p>
+  </section>
+
+  <footer class="doc-foot">
+    <span>AirReveal — Privacy Policy</span>
+    <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a>
+  </footer>
+</div>
+
+</body></html>

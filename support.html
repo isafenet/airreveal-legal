@@ -1,0 +1,337 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>AirReveal Support</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --surface-2: #f2f1ea;
+    --ink: #1e2422;
+    --ink-muted: #5b655f;
+    --ink-faint: #8a938c;
+    --accent: #2f6f5e;
+    --accent-ink: #ffffff;
+    --border: #e3e4de;
+    --border-strong: #c9ccc3;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121614;
+      --surface: #191f1c;
+      --surface-2: #1f2622;
+      --ink: #edefea;
+      --ink-muted: #9aa69e;
+      --ink-faint: #6f7a73;
+      --accent: #74c2a7;
+      --accent-ink: #0e1512;
+      --border: #283029;
+      --border-strong: #38423b;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #121614;
+    --surface: #191f1c;
+    --surface-2: #1f2622;
+    --ink: #edefea;
+    --ink-muted: #9aa69e;
+    --ink-faint: #6f7a73;
+    --accent: #74c2a7;
+    --accent-ink: #0e1512;
+    --border: #283029;
+    --border-strong: #38423b;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 0 20px;
+  }
+
+  h1, h2 {
+    font-family: 'Lora', Georgia, serif;
+    text-wrap: balance;
+  }
+
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-block: 48px 96px;
+  }
+
+  header.doc-head { margin-bottom: 40px; }
+
+  .brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .doc-switch { display: flex; gap: 14px; }
+  .doc-switch a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-strong);
+    padding-bottom: 1px;
+  }
+  .doc-switch a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  h1.title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+
+  .meta {
+    color: var(--ink-faint);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lede {
+    margin-top: 20px;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    color: var(--ink-muted);
+    font-size: 0.97rem;
+  }
+  .lede strong { color: var(--ink); }
+  .lede a { color: var(--accent); font-weight: 600; }
+
+  section.clause { margin-top: 40px; padding-top: 4px; scroll-margin-top: 20px; }
+
+  h2.clause-title {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section.clause p { margin: 0 0 14px; color: var(--ink); }
+  section.clause p:last-child { margin-bottom: 0; }
+  section.clause ul { margin: 0 0 14px; padding-left: 22px; color: var(--ink); }
+  section.clause li { margin-bottom: 6px; }
+
+  .muted { color: var(--ink-muted); }
+  a { color: var(--accent); }
+
+  details.faq {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+  }
+  details.faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ink);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary::after {
+    content: '+';
+    color: var(--accent);
+    font-size: 1.2rem;
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+  details.faq[open] summary::after { content: '–'; }
+  details.faq p {
+    margin: 12px 0 0;
+    color: var(--ink-muted);
+    font-size: 0.96rem;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-top: 10px;
+  }
+  .contact-card .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .contact-card a.button {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  footer.doc-foot {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  footer.doc-foot a { color: var(--ink-muted); }
+
+  @media (max-width: 520px) {
+    h1.title { font-size: 1.7rem; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="doc-head">
+    <div class="brand-row">
+      <div class="brand"><span class="brand-mark">A</span> AirReveal</div>
+      <div class="doc-switch">
+        <a href="terms.html">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <p class="eyebrow">Support</p>
+    <h1 class="title">Help with AirReveal</h1>
+    <p class="meta">Updated September 18, 2026</p>
+    <div class="lede">
+      <strong>Fastest way to reach us:</strong> email <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a> — we read every message and typically reply within a couple of days.
+    </div>
+  </header>
+
+  <section class="clause">
+    <h2 class="clause-title">Frequently asked questions</h2>
+
+    <details class="faq">
+      <summary>What's free, and what needs AirReveal Pro?</summary>
+      <p>Planning a flight — creating a route, browsing it on the map, discovering landmarks, downloading offline content — is completely free with no limits. Live-tracking a real flight with your device's GPS, including offline map support while you're tracking, requires an AirReveal Pro subscription.</p>
+    </details>
+
+    <details class="faq">
+      <summary>How do I subscribe or cancel AirReveal Pro?</summary>
+      <p>You'll be offered AirReveal Pro the moment you try to start or resume Live tracking, or any time from the Profile page. To cancel, go to your device's <strong>Settings → [your name] → Subscriptions → AirReveal</strong> and cancel there. Cancelling stops future renewals but doesn't refund the current period; you keep Pro access until it ends.</p>
+    </details>
+
+    <details class="faq">
+      <summary>I reinstalled the app or got a new device — how do I get my subscription back?</summary>
+      <p>Open AirReveal, go to <strong>Profile</strong>, and tap <strong>Restore Purchases</strong>. This restores an active subscription tied to your Apple ID without charging you again.</p>
+    </details>
+
+    <details class="faq">
+      <summary>A flight I was tracking live disappeared, or Pro stopped working mid-flight.</summary>
+      <p>This shouldn't happen — a flight you're already Live-tracking when a subscription lapses keeps tracking uninterrupted. The subscription check only applies when you start or resume tracking a new flight. If you're seeing something different, please email us with details.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Where is my data stored? Is it backed up?</summary>
+      <p>Everything you enter stays on your device by default — AirReveal has no servers of its own. If you tap <strong>Sync Now</strong> on the Profile page, your data also syncs to your own private iCloud account, which both backs it up and keeps it current across your devices. Deleting the app removes its local data; if you'd synced to iCloud, that copy remains in your iCloud account.</p>
+    </details>
+
+    <details class="faq">
+      <summary>How do I export or back up my flights and journal?</summary>
+      <p>Go to <strong>Profile → Export All Trip Data</strong> for a full JSON export of every flight and journal entry, or use a single flight's own <strong>Export</strong> action in My Flights. Use <strong>Import Trip Data</strong> to bring a previous export back in. All of this happens entirely on your device.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Why does AirReveal need my location?</summary>
+      <p>Only for Live tracking — plotting your real GPS position against your planned route and detecting landmarks nearby. Location is never requested while you're just planning a flight. You can review or revoke it anytime in <strong>Settings → Privacy &amp; Security → Location Services → AirReveal</strong>.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Can I trust AirReveal for real flight status, gate changes, or delays?</summary>
+      <p>No — AirReveal isn't connected to any airline or air-traffic-control system. It's a personal planning and GPS-tracking companion, not an official source of flight status. Always check your airline's own app or airport displays for that. See our <a href="terms.html#not-official">Terms of Use</a> for details.</p>
+    </details>
+
+    <details class="faq">
+      <summary>I found a bug or have a feature request.</summary>
+      <p>Email <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a> with as much detail as you can — what you were doing, what you expected, and what happened instead. Screenshots help a lot.</p>
+    </details>
+  </section>
+
+  <section class="clause">
+    <h2 class="clause-title">Still stuck?</h2>
+    <div class="contact-card">
+      <div>
+        <p class="label">Email support</p>
+        <p class="muted" style="margin:0;">We reply to every message, usually within a couple of days.</p>
+      </div>
+      <a class="button" href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a>
+    </div>
+  </section>
+
+  <footer class="doc-foot">
+    <span>AirReveal — Support</span>
+    <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a>
+  </footer>
+</div>
+
+</body></html>
