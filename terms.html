@@ -1,268 +1,32 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>AirReveal Terms of Use</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AirReveal — Terms of Use</title>
+<link rel="icon" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/app-icon-180.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-  :root {
-    --bg: #faf9f6;
-    --surface: #ffffff;
-    --surface-2: #f2f1ea;
-    --ink: #1e2422;
-    --ink-muted: #5b655f;
-    --ink-faint: #8a938c;
-    --accent: #2f6f5e;
-    --accent-ink: #ffffff;
-    --border: #e3e4de;
-    --border-strong: #c9ccc3;
-  }
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="images/favicon.png" alt=""> AirReveal</a>
+    <nav class="site-nav">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #121614;
-      --surface: #191f1c;
-      --surface-2: #1f2622;
-      --ink: #edefea;
-      --ink-muted: #9aa69e;
-      --ink-faint: #6f7a73;
-      --accent: #74c2a7;
-      --accent-ink: #0e1512;
-      --border: #283029;
-      --border-strong: #38423b;
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --bg: #121614;
-    --surface: #191f1c;
-    --surface-2: #1f2622;
-    --ink: #edefea;
-    --ink-muted: #9aa69e;
-    --ink-faint: #6f7a73;
-    --accent: #74c2a7;
-    --accent-ink: #0e1512;
-    --border: #283029;
-    --border-strong: #38423b;
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    padding: 0 20px;
-  }
-
-  h1, h2 {
-    font-family: 'Lora', Georgia, serif;
-    text-wrap: balance;
-  }
-
-  .wrap {
-    max-width: 700px;
-    margin: 0 auto;
-    padding-block: 48px 96px;
-  }
-
-  header.doc-head { margin-bottom: 40px; }
-
-  .brand-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 28px;
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Lora', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: var(--ink);
-  }
-
-  .brand-mark {
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    background: var(--accent);
-    color: var(--accent-ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    flex-shrink: 0;
-  }
-
-  .doc-switch a {
-    color: var(--ink-muted);
-    text-decoration: none;
-    font-size: 0.9rem;
-    border-bottom: 1px solid var(--border-strong);
-    padding-bottom: 1px;
-  }
-  .doc-switch a:hover { color: var(--accent); border-color: var(--accent); }
-
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin: 0 0 10px;
-  }
-
-  h1.title {
-    font-size: 2.1rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin: 0 0 12px;
-    color: var(--ink);
-  }
-
-  .meta {
-    color: var(--ink-faint);
-    font-size: 0.9rem;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .lede {
-    margin-top: 20px;
-    padding: 18px 20px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 6px;
-    color: var(--ink-muted);
-    font-size: 0.97rem;
-  }
-  .lede strong { color: var(--ink); }
-
-  .warn {
-    margin-top: 14px;
-    padding: 18px 20px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--ink);
-    font-size: 0.95rem;
-  }
-  .warn strong { color: var(--accent); }
-
-  nav.toc {
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 18px 22px;
-    margin: 32px 0 40px;
-  }
-  nav.toc p {
-    margin: 0 0 10px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-faint);
-    font-weight: 600;
-  }
-  nav.toc ol {
-    columns: 2;
-    column-gap: 24px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  nav.toc li { break-inside: avoid; margin-bottom: 6px; }
-  nav.toc a { color: var(--ink-muted); text-decoration: none; font-size: 0.9rem; }
-  nav.toc a:hover { color: var(--accent); }
-
-  section.clause { margin-top: 40px; padding-top: 4px; scroll-margin-top: 20px; }
-
-  h2.clause-title {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0 0 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-  }
-  h2.clause-title .num {
-    font-family: 'Source Sans 3', sans-serif;
-    color: var(--accent);
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-    font-size: 0.95rem;
-    flex-shrink: 0;
-  }
-
-  section.clause p { margin: 0 0 14px; color: var(--ink); }
-  section.clause p:last-child { margin-bottom: 0; }
-  section.clause ul { margin: 0 0 14px; padding-left: 22px; color: var(--ink); }
-  section.clause li { margin-bottom: 6px; }
-  section.clause li:last-child { margin-bottom: 0; }
-
-  .muted { color: var(--ink-muted); }
-
-  table.datatable {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 4px 0 18px;
-    font-size: 0.92rem;
-  }
-  table.datatable th, table.datatable td {
-    text-align: left;
-    padding: 9px 10px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-  table.datatable th {
-    color: var(--ink-faint);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
-  }
-  table.datatable td.num-col { font-variant-numeric: tabular-nums; }
-
-  a { color: var(--accent); }
-
-  footer.doc-foot {
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--ink-faint);
-    font-size: 0.85rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  footer.doc-foot a { color: var(--ink-muted); }
-
-  @media (max-width: 520px) {
-    h1.title { font-size: 1.7rem; }
-    nav.toc ol { columns: 1; }
-  }
-</style>
-
-<div class="wrap">
+<div class="doc-wrap">
   <header class="doc-head">
-    <div class="brand-row">
-      <div class="brand"><span class="brand-mark">A</span> AirReveal</div>
-      <div class="doc-switch"><a href="privacy.html">Privacy Policy</a> <a href="support.html">Support</a></div>
-    </div>
     <p class="eyebrow">Terms of Use</p>
-    <h1 class="title">The agreement between you and AirReveal</h1>
-    <p class="meta">Effective September 18, 2026</p>
+    <h1 class="doc-title">The agreement between you and AirReveal</h1>
+    <p class="doc-meta">Effective September 18, 2026</p>
     <div class="lede">
       <strong>Before you rely on anything in this app:</strong> AirReveal is a personal flight-companion and landmark-discovery tool, not an official flight-tracking, air-traffic, or aviation-safety service. See Section 3.
     </div>
@@ -299,7 +63,7 @@
   <section class="clause" id="service">
     <h2 class="clause-title"><span class="num">2</span> What AirReveal is</h2>
     <p>AirReveal is a personal flight-companion app. It helps you plan a flight's route, track your own real flight live using your device's GPS, and discover landmarks, countries, and points of interest along the way — offline, wherever possible. It also keeps a personal journal of your completed trips.</p>
-    <p>Planning a flight — creating a route, previewing it on the map, browsing landmarks, downloading offline content — is always free. Live tracking a real flight with your device's GPS, including offline map support while you're tracking, requires an AirReveal Pro subscription. See Section 5.</p>
+    <p>Planning a flight — creating a route, previewing it on the map, browsing landmarks, downloading offline content — is always free. Live tracking a real flight with your device's GPS, including offline map support while you're tracking, requires an AirReveal Pro subscription (your first Live-tracked flight is free — see Section 5).</p>
   </section>
 
   <section class="clause" id="not-official">
@@ -315,18 +79,19 @@
 
   <section class="clause" id="subscriptions">
     <h2 class="clause-title"><span class="num">5</span> Subscriptions &amp; billing</h2>
-    <p>AirReveal Pro is offered as an auto-renewing subscription, billed and managed entirely through your Apple ID / App Store account:</p>
+    <p>Your very first Live-tracked flight is free, with no subscription or payment required. After that, AirReveal Pro is offered as an auto-renewing subscription, or a one-time Lifetime purchase, billed and managed entirely through your Apple ID / App Store account:</p>
     <table class="datatable">
       <tr><th>Plan</th><th>Length</th><th>Price</th><th>Trial</th></tr>
       <tr><td>Pro Weekly</td><td>1 week, auto-renews</td><td class="num-col">£4.99 / week</td><td>None</td></tr>
       <tr><td>Pro Monthly</td><td>1 month, auto-renews</td><td class="num-col">£3.99 / month</td><td>None</td></tr>
       <tr><td>Pro Yearly</td><td>1 year, auto-renews</td><td class="num-col">£24.99 / year</td><td>None</td></tr>
+      <tr><td>Pro Lifetime</td><td>One-time purchase, never renews</td><td class="num-col">£44.99 once</td><td>N/A</td></tr>
     </table>
     <ul>
       <li>Payment is charged to your Apple ID account at confirmation of purchase.</li>
       <li>Subscriptions renew automatically unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
       <li>Your account is charged for renewal within 24 hours prior to the end of the current period, at the price you agreed to.</li>
-      <li>Manage or cancel a subscription anytime in <strong>Settings → [your name] → Subscriptions</strong> on your device. Cancelling stops future renewals but does not refund the current period.</li>
+      <li>Manage or cancel a subscription anytime in <strong>Settings → [your name] → Subscriptions</strong> on your device, or via the app's own Profile page.</li>
       <li>Refunds are handled by Apple under its own policies — AirReveal cannot issue refunds directly. Request one at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</li>
       <li>A flight you're already tracking live when your subscription lapses is not interrupted mid-flight, but starting or resuming Live tracking on any other flight afterward requires an active subscription.</li>
     </ul>
@@ -403,11 +168,19 @@
     <h2 class="clause-title"><span class="num">17</span> Contact</h2>
     <p>Questions about these terms can be sent to <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a>.</p>
   </section>
-
-  <footer class="doc-foot">
-    <span>AirReveal — Terms of Use</span>
-    <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a>
-  </footer>
 </div>
 
-</body></html>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 JayWales</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:jaywales.glpmgr@gmail.com">jaywales.glpmgr@gmail.com</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
