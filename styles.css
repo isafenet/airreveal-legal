@@ -210,10 +210,7 @@ nav.site-nav a.button-link {
   max-width: 780px;
 }
 
-.hero p.lede {
-  background: none;
-  border: 0;
-  padding: 0;
+.hero p.hero-lede {
   font-size: 1.2rem;
   color: rgba(255,255,255,0.92);
   max-width: 620px;
