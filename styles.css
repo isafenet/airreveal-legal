@@ -211,6 +211,9 @@ nav.site-nav a.button-link {
 }
 
 .hero p.lede {
+  background: none;
+  border: 0;
+  padding: 0;
   font-size: 1.2rem;
   color: rgba(255,255,255,0.92);
   max-width: 620px;
@@ -452,7 +455,7 @@ h1.doc-title {
   font-variant-numeric: tabular-nums;
 }
 
-.lede {
+.doc-head .lede {
   margin-top: 20px;
   padding: 18px 20px;
   background: var(--surface);
@@ -462,8 +465,8 @@ h1.doc-title {
   color: var(--ink-muted);
   font-size: 0.97rem;
 }
-.lede strong { color: var(--ink); }
-.lede a { color: var(--accent); font-weight: 600; }
+.doc-head .lede strong { color: var(--ink); }
+.doc-head .lede a { color: var(--accent); font-weight: 600; }
 
 nav.toc {
   background: var(--surface-2);
