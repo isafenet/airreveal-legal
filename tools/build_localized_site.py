@@ -72,7 +72,7 @@ def switcher(current: str | None, page: str, label: str, prefix: str) -> str:
 
 
 # --------------------------------------------------------------------- shared
-def head(lang_code: str, title: str, desc: str, canonical: str, page: str, og_title: str, og_desc: str, og_locale: str, og_type: str = "website") -> str:
+def head(lang_code: str, title: str, desc: str, canonical: str, page: str, og_title: str, og_desc: str, og_locale: str, og_type: str = "website", image: str = "images/marketing-wide.webp") -> str:
     return (
         '<!doctype html><html lang="%s"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -81,14 +81,14 @@ def head(lang_code: str, title: str, desc: str, canonical: str, page: str, og_ti
         '<meta property="og:type" content="%s"><meta property="og:site_name" content="AirReveal">'
         '<meta property="og:title" content="%s"><meta property="og:description" content="%s">'
         '<meta property="og:url" content="%s"><meta property="og:locale" content="%s">'
-        '<meta property="og:image" content="%simages/marketing-wide.webp">'
+        '<meta property="og:image" content="%s%s">'
         '<meta name="twitter:card" content="summary_large_image">'
         '<meta name="twitter:title" content="%s"><meta name="twitter:description" content="%s">'
-        '<meta name="twitter:image" content="%simages/marketing-wide.webp">'
+        '<meta name="twitter:image" content="%s%s">'
         '<link rel="icon" href="../images/app-icon.png"><link rel="apple-touch-icon" href="../images/app-icon.png">'
         '<link rel="stylesheet" href="../styles.css">'
     ) % (lang_code, esc(title), attr(desc), canonical, hreflang_block(page), og_type,
-         attr(og_title), attr(og_desc), canonical, og_locale, BASE, attr(og_title), attr(og_desc), BASE)
+         attr(og_title), attr(og_desc), canonical, og_locale, BASE, image, attr(og_title), attr(og_desc), BASE, image)
 
 
 def jsonld(obj) -> str:
@@ -145,10 +145,10 @@ def render_home(folder: str) -> str:
         + f'<main><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">{esc(h["eyebrow"])}</div><h1>{esc(h["h1"])}</h1><p>{esc(h["p"])}</p>'
           f'<div class="cta-row"><a class="btn btn-primary" href="#features">{esc(h["cta1"])}</a><a class="btn btn-secondary" href="#app-store">{esc(h["cta2"])}</a></div>'
           f'<div class="trust">{"".join(f"<span>{esc(x)}</span>" for x in h["trust"])}</div></div>'
-          f'<div class="hero-art"><img src="../images/marketing-poster.webp" alt="{attr(h["alt"])}"></div></div></section>'
+          f'<div class="hero-art"><img src="../images/{folder}/marketing-wide.webp" alt="{attr(ga["wide_alt"])}" width="1536" height="1024"></div></div></section>'
         f'<section class="section" id="features"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(fe["eyebrow"])}</div><h2>{esc(fe["h2"])}</h2><p>{esc(fe["p"])}</p></div><div class="features">{cards}</div></div></section>'
         f'<section class="section band" id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(ga["eyebrow"])}</div><h2>{esc(ga["h2"])}</h2><p>{esc(ga["p"])}</p></div>'
-          f'<img class="wide-art" src="../images/marketing-wide.webp" alt="{attr(ga["wide_alt"])}"><div class="gallery" style="margin-top:24px">'
+          f'<div class="gallery">'
           + "".join(f'<img src="../images/{folder}/ipad-{im}.webp" alt="{attr(a)}">' for im, a in zip(["flight", "discover", "collection"], ga["ipad_alts"]))
           + '</div></div></section>'
         f'<section class="section" id="flying-over"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(fl["eyebrow"])}</div><h2>{esc(fl["h2"])}</h2><p>{esc(fl["p"])}</p></div>'
@@ -160,7 +160,7 @@ def render_home(folder: str) -> str:
         f'<section class="section" id="app-store"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(st["eyebrow"])}</div><h2>{esc(st["h2"])}</h2><p>{esc(st["p"])}</p></div><div class="legal-links">{legal}</div></div></section></main>'
         + footer(t)
     )
-    return (head(lang_code, t["home_title"], t["home_desc"], url(folder, "index.html"), "index.html", t["og_title"], t["home_desc"], og_locale)
+    return (head(lang_code, t["home_title"], t["home_desc"], url(folder, "index.html"), "index.html", t["og_title"], t["home_desc"], og_locale, image=f"images/{folder}/marketing-wide.webp")
             + jsonld(software_ld(t, folder)) + jsonld(faq_ld(fq["items"])) + "</head><body>\n" + body + "</body></html>\n")
 
 
