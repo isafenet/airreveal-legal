@@ -128,9 +128,11 @@ def footer(t: dict, extra_links: str = "") -> str:
 def render_home(folder: str) -> str:
     t = T[folder]; lang_code, og_locale, _ = LANGS[folder]
     n, h, fe, ga, fl, fq, pr, st = t["nav"], t["hero"], t["features"], t["gallery"], t["flying"], t["faq"], t["pricing"], t["store"]
-    imgs = ["panel-flight", "panel-discover", "panel-journal", "panel-collection", "panel-profile"]
+    # Screenshots are localized per language: images/<folder>/panel-*.webp and ipad-*.webp
+    # (tools/localize_screenshots.py). The poster and wide banner are designed art and stay shared.
+    imgs = ["flight", "discover", "journal", "collection", "profile"]
     cards = "".join(
-        f'<article class="feature"><h3>{esc(a)}</h3><p>{esc(b)}</p><img src="../images/{im}.webp" alt="{attr(alt)}" loading="lazy" width="592" height="1260"></article>'
+        f'<article class="feature"><h3>{esc(a)}</h3><p>{esc(b)}</p><img src="../images/{folder}/panel-{im}.webp" alt="{attr(alt)}" loading="lazy" width="592" height="1260"></article>'
         for (a, b, alt), im in zip(fe["cards"], imgs))
     fly = "".join(f'<article class="feature"><h3>{esc(a)}</h3><p>{esc(b)}</p></article>' for a, b in fl["cards"])
     faq = "".join(f'<section class="support-card"><h2>{esc(q)}</h2><p>{esc(a)}</p></section>' for q, a in fq["items"])
@@ -147,7 +149,7 @@ def render_home(folder: str) -> str:
         f'<section class="section" id="features"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(fe["eyebrow"])}</div><h2>{esc(fe["h2"])}</h2><p>{esc(fe["p"])}</p></div><div class="features">{cards}</div></div></section>'
         f'<section class="section band" id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(ga["eyebrow"])}</div><h2>{esc(ga["h2"])}</h2><p>{esc(ga["p"])}</p></div>'
           f'<img class="wide-art" src="../images/marketing-wide.webp" alt="{attr(ga["wide_alt"])}"><div class="gallery" style="margin-top:24px">'
-          + "".join(f'<img src="../images/{im}.webp" alt="{attr(a)}">' for im, a in zip(["ipad-flight", "ipad-discover", "ipad-collection"], ga["ipad_alts"]))
+          + "".join(f'<img src="../images/{folder}/ipad-{im}.webp" alt="{attr(a)}">' for im, a in zip(["flight", "discover", "collection"], ga["ipad_alts"]))
           + '</div></div></section>'
         f'<section class="section" id="flying-over"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(fl["eyebrow"])}</div><h2>{esc(fl["h2"])}</h2><p>{esc(fl["p"])}</p></div>'
           f'<div class="features features-4">{fly}</div><p style="text-align:center;margin-top:28px"><a class="btn btn-primary" href="{GUIDE}">{esc(fl["button"])}</a></p></div></section>'
