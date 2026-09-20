@@ -3,3 +3,14 @@
 .features-4{grid-template-columns:repeat(4,1fr)}
 @media(max-width:900px){.features-4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.features-4{grid-template-columns:1fr}.feature p{min-height:0}}
+
+/* i18n:language-switcher */
+.lang{position:relative;margin-left:12px}
+.lang summary{list-style:none;cursor:pointer;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font-weight:700;font-size:14px;color:var(--ink);background:#fff;white-space:nowrap}
+.lang summary::-webkit-details-marker{display:none}
+.lang-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:50;min-width:200px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px #1232}
+.lang-menu a{display:block;padding:9px 12px;border-radius:10px;color:var(--ink);text-decoration:none;font-weight:600}
+.lang-menu a:hover,.lang-menu a[aria-current]{background:var(--ice)}
+@media(max-width:900px){.site-nav{display:flex}.site-nav>a{display:none}.lang{margin-left:0}}
+.legal-note{margin-top:10px;font-size:13px;opacity:.75}
+.price-note{margin-top:18px;color:var(--muted);font-size:14px}
