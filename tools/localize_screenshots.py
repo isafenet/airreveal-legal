@@ -2,7 +2,13 @@
 """
 Builds the localized screenshot images used by the translated site pages.
 
-    python3 tools/localize_screenshots.py <raw-dir>
+    python3 tools/localize_screenshots.py <raw-dir> [panel,panel,...] [--english]
+
+With a comma-separated panel list (flight,discover,journal,collection,profile)
+only those panels' images are rebuilt, so one changed screen doesn't churn the
+rest. `--english` also rebuilds the English images (`images/panel-*.webp`,
+`images/ipad-*.webp`) from the raw `en` captures, using the ORIGINAL photo
+panel from git (`git show HEAD:images/panel-<name>.webp`) as the template.
 
 `<raw-dir>` holds captures made by the app's `LocalizedScreenshotUITests`
 (see that file for the capture command), laid out as
@@ -21,6 +27,8 @@ with `<lang>` one of es, fr, de, it, pt-BR. Output goes to
 `marketing-poster.webp` and `marketing-wide.webp` are designed graphics with
 the tagline baked into the artwork, so they are not regenerated.
 """
+from __future__ import annotations
+
 from PIL import Image, ImageFilter, ImageDraw
 import sys
 
@@ -127,21 +135,35 @@ def composite(panel_path, shot_path, out_path, quality=88):
     return out
 
 
-def main(raw: Path) -> None:
+def main(raw: Path, only: list[str] | None = None, english: bool = False) -> None:
+    import subprocess
     images = ROOT / "images"
+    wanted = only or list(PANELS)
     for lang in LANGS:
         out = images / lang.lower()
         out.mkdir(exist_ok=True)
-        for panel, name in PANELS.items():
-            composite(images / f"panel-{panel}.webp", raw / "iphone" / lang / f"{name}.png", out / f"panel-{panel}.webp")
-        for shot, name in IPAD.items():
-            im = Image.open(raw / "ipad" / lang / f"{name}.png").convert("RGB").resize((900, 1200), Image.LANCZOS)
-            im.save(out / f"ipad-{shot}.webp", "WEBP", quality=88, method=6)
-        print(f"{lang}: {len(PANELS)} panels + {len(IPAD)} iPad images -> {out.relative_to(ROOT)}")
+        for panel in wanted:
+            composite(images / f"panel-{panel}.webp", raw / "iphone" / lang / f"{PANELS[panel]}.png", out / f"panel-{panel}.webp")
+            ipad = Image.open(raw / "ipad" / lang / f"{IPAD[panel]}.png").convert("RGB").resize((900, 1200), Image.LANCZOS)
+            ipad.save(out / f"ipad-{panel}.webp", "WEBP", quality=88, method=6)
+        print(f"{lang}: {', '.join(wanted)} -> {out.relative_to(ROOT)}")
+    if english:
+        for panel in wanted:
+            # Template = the original photo panel, not a previously composited one.
+            template = images / f".template-panel-{panel}.webp"
+            template.write_bytes(subprocess.check_output(["git", "show", f"HEAD:images/panel-{panel}.webp"], cwd=ROOT))
+            try:
+                composite(template, raw / "iphone" / "en" / f"{PANELS[panel]}.png", images / f"panel-{panel}.webp")
+            finally:
+                template.unlink()
+            ipad = Image.open(raw / "ipad" / "en" / f"{IPAD[panel]}.png").convert("RGB").resize((900, 1200), Image.LANCZOS)
+            ipad.save(images / f"ipad-{panel}.webp", "WEBP", quality=88, method=6)
+        print(f"en: {', '.join(wanted)} -> images/")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if not args or len(args) > 2:
         print(__doc__)
         sys.exit(2)
-    main(Path(sys.argv[1]))
+    main(Path(args[0]), args[1].split(",") if len(args) > 1 else None, "--english" in sys.argv)

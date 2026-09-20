@@ -4,6 +4,11 @@ Localizes the five-panel marketing artwork (`marketing-wide`) for the
 translated site pages.
 
     python3 tools/localize_wide_art.py <source.png> <raw-dir> [<out-dir>]
+    python3 tools/localize_wide_art.py <source.png> <raw-dir> --english [panel,...]
+
+With `--english`, the English artwork is rebuilt in place: no text is touched, only
+the named phones' screens (default: profile) are replaced with the `en` captures,
+written to `images/marketing-wide.webp`.
 
   <source.png>  the flat 1536x1024 artwork (English text baked in)
   <raw-dir>     localized app captures, as for `localize_screenshots.py`
@@ -250,6 +255,20 @@ def localize(src: Image.Image, raw: Path, lang: str) -> Image.Image:
     return Image.alpha_composite(img.convert("RGBA"), foot).convert("RGB")
 
 
+def english_screens(src: Image.Image, raw: Path, which: list[str]) -> Image.Image:
+    """The English artwork with only some phones' screens replaced (text untouched)."""
+    names = {"flight": 0, "discover": 1, "journal": 2, "collection": 3, "profile": 4}
+    img = src.convert("RGB")
+    for key in which:
+        p = PANELS[names[key]]
+        x0, x1, y0, y1 = p["screen"]
+        shot = Image.open(raw / "iphone" / "en" / f"{p['raw']}.png").convert("RGB").resize((x1 - x0, y1 - y0), Image.LANCZOS)
+        layer = Image.new("RGB", img.size)
+        layer.paste(shot, (x0, y0))
+        img = Image.composite(layer, img, rounded_mask(img.size, p["screen"], 31))
+    return img
+
+
 def main(src: Path, raw: Path, out: Path) -> None:
     source = Image.open(src)
     assert source.size == (1536, 1024), f"unexpected artwork size {source.size}"
@@ -261,6 +280,13 @@ def main(src: Path, raw: Path, out: Path) -> None:
 
 
 if __name__ == "__main__":
+    if "--english" in sys.argv:
+        rest = [a for a in sys.argv[1:] if a != "--english"]
+        which = rest[2].split(",") if len(rest) > 2 else ["profile"]
+        art = english_screens(Image.open(rest[0]), Path(rest[1]), which)
+        art.save(ROOT / "images" / "marketing-wide.webp", "WEBP", quality=90, method=6)
+        print(f"en: replaced {', '.join(which)} in images/marketing-wide.webp")
+        sys.exit(0)
     if len(sys.argv) not in (3, 4):
         print(__doc__)
         sys.exit(2)
