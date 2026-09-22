@@ -130,9 +130,9 @@ def render_home(folder: str) -> str:
     n, h, fe, ga, fl, fq, pr, st = t["nav"], t["hero"], t["features"], t["gallery"], t["flying"], t["faq"], t["pricing"], t["store"]
     # Screenshots are localized per language: images/<folder>/panel-*.webp and ipad-*.webp
     # (tools/localize_screenshots.py). The poster and wide banner are designed art and stay shared.
-    imgs = ["flight", "discover", "journal", "collection", "profile"]
+    imgs = ["plan", "flight", "discover", "journal", "collection", "profile"]
     cards = "".join(
-        f'<article class="feature"><h3>{esc(a)}</h3><p>{esc(b)}</p><img src="../images/{folder}/panel-{im}.webp" alt="{attr(alt)}" loading="lazy" width="592" height="1260"></article>'
+        f'<article class="feature"><h3>{esc(a)}</h3><p>{esc(b)}</p><img src="../images/{folder}/panel-{im}.webp" alt="{attr(alt)}" loading="lazy" width="596" height="1260"></article>'
         for (a, b, alt), im in zip(fe["cards"], imgs))
     fly = "".join(f'<article class="feature"><h3>{esc(a)}</h3><p>{esc(b)}</p></article>' for a, b in fl["cards"])
     faq = "".join(f'<section class="support-card"><h2>{esc(q)}</h2><p>{esc(a)}</p></section>' for q, a in fq["items"])

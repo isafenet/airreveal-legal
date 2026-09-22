@@ -37,6 +37,7 @@ T["es"] = dict(
     features=dict(eyebrow="Creada para el viaje", h2="El mundo de abajo pasa a formar parte de tu vuelo.",
         p="AirReveal reúne el contexto del vuelo, el descubrimiento geográfico, el diario y la colección en una experiencia tranquila pensada para viajar.",
         cards=[
+            ("Planifica cada vuelo", "Previsualiza tu ruta antes incluso de llegar al aeropuerto y avanza por todo el trayecto para ver lo que viene.", "Pantalla Planificar de AirReveal previsualizando una ruta sobre una pista de aterrizaje al atardecer"),
             ("Mira dónde estás", "Seguimiento de vuelos en vivo, mapas preciosos y vistas impresionantes, incluso sin conexión.", "Seguimiento de vuelo en vivo de AirReveal sobre montañas nevadas"),
             ("Descubre lo que hay debajo", "Lugares fascinantes, ciudades y maravillas naturales en tiempo real.", "Pantalla Descubrir de AirReveal sobre una bahía de islas verdes"),
             ("Tu diario de vuelo", "Revive tus viajes y colecciona los lugares que los hicieron especiales.", "Pantalla Diario de AirReveal sobre las nubes al atardecer con el ala de un avión"),
@@ -120,6 +121,7 @@ T["fr"] = dict(
     features=dict(eyebrow="Conçue pour le voyage", h2="Le monde en dessous fait désormais partie de votre vol.",
         p="AirReveal réunit le contexte du vol, la découverte géographique, le journal et la collection dans une expérience sereine pensée pour le voyage.",
         cards=[
+            ("Préparez chaque vol", "Prévisualisez votre itinéraire avant même d'arriver à l'aéroport, puis parcourez tout le trajet pour voir ce qui vous attend.", "Écran Préparer d'AirReveal prévisualisant un itinéraire au-dessus d'une piste d'aéroport au coucher du soleil"),
             ("Voyez où vous êtes", "Suivi de vol en direct, belles cartes et vues à couper le souffle, même hors connexion.", "Suivi de vol en direct AirReveal au-dessus de montagnes enneigées"),
             ("Découvrez ce qui se trouve en dessous", "Sites fascinants, villes et merveilles naturelles en temps réel.", "Écran Découvrir d'AirReveal au-dessus d'une baie d'îles verdoyantes"),
             ("Votre journal de vol", "Revivez vos voyages et collectionnez les lieux qui les ont rendus spéciaux.", "Écran Journal d'AirReveal au-dessus des nuages au coucher du soleil, avec une aile d'avion"),
@@ -203,6 +205,7 @@ T["de"] = dict(
     features=dict(eyebrow="Gemacht für die Reise", h2="Die Welt unter dir wird Teil deines Flugs.",
         p="AirReveal verbindet Flugkontext, geografische Entdeckungen, Journal und Sammlung zu einem ruhigen, reisezentrierten Erlebnis.",
         cards=[
+            ("Plane jeden Flug", "Sieh dir deine Route an, noch bevor du am Flughafen ankommst, und spule durch die ganze Strecke, um zu sehen, was vor dir liegt.", "AirReveal-Bildschirm „Plan“ mit einer Routenvorschau über einer Landebahn bei Sonnenuntergang"),
             ("Sieh, wo du bist", "Live-Flugverfolgung, schöne Karten und atemberaubende Aussichten – auch offline.", "AirReveal-Live-Flugverfolgung über schneebedeckten Bergen"),
             ("Entdecke, was unter dir liegt", "Faszinierende Sehenswürdigkeiten, Städte und Naturwunder in Echtzeit.", "AirReveal-Bildschirm „Entdecken“ über einer Bucht mit grünen Inseln"),
             ("Dein Flugjournal", "Erlebe deine Reisen noch einmal und sammle die Orte, die sie besonders gemacht haben.", "AirReveal-Bildschirm „Journal“ über Wolken bei Sonnenuntergang mit einem Flugzeugflügel"),
@@ -286,6 +289,7 @@ T["it"] = dict(
     features=dict(eyebrow="Pensata per il viaggio", h2="Il mondo sotto di te entra a far parte del tuo volo.",
         p="AirReveal unisce contesto di volo, scoperta geografica, diario e collezione in un'unica esperienza serena pensata per chi viaggia.",
         cards=[
+            ("Pianifica ogni volo", "Vedi in anteprima la tua rotta prima ancora di arrivare in aeroporto, poi scorri lungo tutto il percorso per vedere cosa ti aspetta.", "Schermata Piano di AirReveal con l'anteprima di una rotta sopra una pista d'atterraggio al tramonto"),
             ("Vedi dove ti trovi", "Tracciamento del volo in tempo reale, mappe bellissime e viste mozzafiato, anche offline.", "Tracciamento del volo in tempo reale di AirReveal sopra montagne innevate"),
             ("Scopri cosa c'è sotto di te", "Luoghi affascinanti, città e meraviglie naturali in tempo reale.", "Schermata Scopri di AirReveal sopra una baia di isole verdi"),
             ("Il tuo diario di volo", "Rivivi i tuoi viaggi e colleziona i luoghi che li hanno resi speciali.", "Schermata Diario di AirReveal sopra le nuvole al tramonto con l'ala di un aereo"),
@@ -369,6 +373,7 @@ T["pt-br"] = dict(
     features=dict(eyebrow="Feito para a viagem", h2="O mundo lá embaixo passa a fazer parte do seu voo.",
         p="O AirReveal reúne contexto de voo, descoberta geográfica, diário e coleção em uma experiência tranquila, pensada para quem viaja.",
         cards=[
+            ("Planeje cada voo", "Visualize sua rota antes mesmo de chegar ao aeroporto e avance por todo o trajeto para ver o que vem a seguir.", "Tela Plano do AirReveal com a prévia de uma rota sobre uma pista de pouso ao pôr do sol"),
             ("Veja onde você está", "Acompanhamento de voo ao vivo, mapas lindos e vistas de tirar o fôlego — até offline.", "Acompanhamento de voo ao vivo do AirReveal sobre montanhas nevadas"),
             ("Descubra o que há lá embaixo", "Pontos turísticos fascinantes, cidades e maravilhas naturais em tempo real.", "Tela Descobrir do AirReveal sobre uma baía de ilhas verdes"),
             ("Seu diário de voo", "Reviva suas viagens e colecione os lugares que as tornaram especiais.", "Tela Diário do AirReveal sobre as nuvens ao pôr do sol com a asa de um avião"),

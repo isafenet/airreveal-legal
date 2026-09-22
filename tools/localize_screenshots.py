@@ -36,10 +36,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 LANGS = ["es", "fr", "de", "it", "pt-BR"]
-IPAD = {"flight": "01-Flight-LiveTracking", "discover": "02-Discover-WhichSideToLook", "journal": "03-Journal",
+IPAD = {"plan": "00-Flight-Plan", "flight": "01-Flight-LiveTracking", "discover": "02-Discover-WhichSideToLook", "journal": "03-Journal",
         "collection": "03b-Collection", "profile": "04-Profile-Top"}
 
 PANELS = {  # panel -> raw screenshot name
+    "plan": "00-Flight-Plan",
     "flight": "01-Flight-LiveTracking",
     "discover": "02-Discover-WhichSideToLook",
     "journal": "03-Journal",
@@ -102,21 +103,45 @@ def measure(panel: Image.Image):
             if n and (best is None or err / n < best[0]):
                 best = (err / n, y0, r)
     _, y0, r = best
+    top = y0
+    measure.fit = (y0, r)
+    return (li, ri, top, *outline_from_fit(li, ri, y0, r, H))
+
+
+def outline_from_fit(li, ri, y0, r, H):
+    """Per-row (xl, xr) for a rounded-rect screen outline, given its left/
+    right edges, top y and corner radius — the tail end of `measure()`,
+    split out so `MANUAL_GEOMETRY` can reuse it without needing an image
+    to detect a fit from."""
     xl, xr = {}, {}
     for y in range(y0, H):
         dy = y0 + r - y
         off = r - (r * r - dy * dy) ** 0.5 if dy > 0 else 0
         xl[y] = li + off
         xr[y] = ri - off
-    top = y0
-    measure.fit = (y0, r)
-    return li, ri, top, xl, xr
+    return xl, xr
 
 
-def composite(panel_path, shot_path, out_path, quality=88):
+# Screen outlines that don't come from a photographed phone (so
+# `measure()`'s dark-bezel heuristic has nothing reliable to lock onto) —
+# keyed by panel name, as (li, ri, top, corner radius), matching exactly
+# how that template was generated. `panel-plan.webp`'s runway photo has a
+# converging dark road right where the heuristic's center-column scan
+# looks for the bezel's top edge, so it needs its known geometry given
+# directly instead.
+MANUAL_GEOMETRY = {
+    "plan": (40, 556, 242, 60),
+}
+
+
+def composite(panel_path, shot_path, out_path, quality=88, panel_name=None):
     panel = Image.open(panel_path).convert("RGB")
     W, H = panel.size
-    li, ri, top, xl, xr = measure(panel)
+    if panel_name in MANUAL_GEOMETRY:
+        li, ri, top, r = MANUAL_GEOMETRY[panel_name]
+        xl, xr = outline_from_fit(li, ri, top, r, H)
+    else:
+        li, ri, top, xl, xr = measure(panel)
     shot = Image.open(shot_path).convert("RGB")
     sw = ri - li
     sh = round(shot.height * sw / shot.width)
@@ -143,7 +168,7 @@ def main(raw: Path, only: list[str] | None = None, english: bool = False) -> Non
         out = images / lang.lower()
         out.mkdir(exist_ok=True)
         for panel in wanted:
-            composite(images / f"panel-{panel}.webp", raw / "iphone" / lang / f"{PANELS[panel]}.png", out / f"panel-{panel}.webp")
+            composite(images / f"panel-{panel}.webp", raw / "iphone" / lang / f"{PANELS[panel]}.png", out / f"panel-{panel}.webp", panel_name=panel)
             ipad = Image.open(raw / "ipad" / lang / f"{IPAD[panel]}.png").convert("RGB").resize((900, 1200), Image.LANCZOS)
             ipad.save(out / f"ipad-{panel}.webp", "WEBP", quality=88, method=6)
         print(f"{lang}: {', '.join(wanted)} -> {out.relative_to(ROOT)}")
@@ -153,7 +178,7 @@ def main(raw: Path, only: list[str] | None = None, english: bool = False) -> Non
             template = images / f".template-panel-{panel}.webp"
             template.write_bytes(subprocess.check_output(["git", "show", f"HEAD:images/panel-{panel}.webp"], cwd=ROOT))
             try:
-                composite(template, raw / "iphone" / "en" / f"{PANELS[panel]}.png", images / f"panel-{panel}.webp")
+                composite(template, raw / "iphone" / "en" / f"{PANELS[panel]}.png", images / f"panel-{panel}.webp", panel_name=panel)
             finally:
                 template.unlink()
             ipad = Image.open(raw / "ipad" / "en" / f"{IPAD[panel]}.png").convert("RGB").resize((900, 1200), Image.LANCZOS)
