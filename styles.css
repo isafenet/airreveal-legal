@@ -14,3 +14,4 @@
 @media(max-width:900px){.site-nav{display:flex}.site-nav>a{display:none}.lang{margin-left:0}}
 .legal-note{margin-top:10px;font-size:13px;opacity:.75}
 .price-note{margin-top:18px;color:var(--muted);font-size:14px}
+@media(min-width:901px){.legal-links{grid-template-columns:repeat(4,1fr)}}

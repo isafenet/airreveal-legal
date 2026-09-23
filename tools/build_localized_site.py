@@ -11,7 +11,7 @@ Run from the repository root. Output (all committed):
     hreflang + switcher blocks inside the English pages (between the
     `<!--i18n-->` markers; safe to re-run)
     sitemap.xml
-Privacy and Terms stay English-only by design.
+Privacy, Terms and the user guide stay English-only by design.
 """
 
 from __future__ import annotations
@@ -27,7 +27,8 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://airreveal.isafenet.app/"
 GUIDE = "what-am-i-flying-over.html"
 LOCALIZED_PAGES = ["index.html", GUIDE, "support.html"]
-ENGLISH_ONLY = ["privacy.html", "terms.html"]
+USER_GUIDE = "user-guide.html"
+ENGLISH_ONLY = ["privacy.html", "terms.html", USER_GUIDE]
 LASTMOD = "2026-09-20"
 MARK_OPEN, MARK_CLOSE = "<!--i18n-->", "<!--/i18n-->"
 
@@ -120,6 +121,7 @@ def footer(t: dict, extra_links: str = "") -> str:
     return ('<footer class="site-footer"><div class="wrap"><span>© 2026 iSafeNet · AirReveal</span><nav>'
             f'<a href="{GUIDE}">{esc(f["guide"])}</a><a href="../privacy.html">{esc(f["privacy"])}</a>'
             f'<a href="../terms.html">{esc(f["terms"])}</a><a href="support.html">{esc(f["support"])}</a>'
+            f'<a href="../{USER_GUIDE}">{esc(f["user_guide"])}</a>'
             '<a href="mailto:info@isafenet.app">info@isafenet.app</a></nav></div>'
             f'<div class="wrap legal-note">{esc(t["legal_note"])}</div></footer>')
 
@@ -127,7 +129,7 @@ def footer(t: dict, extra_links: str = "") -> str:
 # ---------------------------------------------------------------------- home
 def render_home(folder: str) -> str:
     t = T[folder]; lang_code, og_locale, _ = LANGS[folder]
-    n, h, fe, ga, fl, fq, pr, st = t["nav"], t["hero"], t["features"], t["gallery"], t["flying"], t["faq"], t["pricing"], t["store"]
+    n, h, fe, ga, fl, fq, pr, st, au = t["nav"], t["hero"], t["features"], t["gallery"], t["flying"], t["faq"], t["pricing"], t["store"], t["audience"]
     # Screenshots are localized per language: images/<folder>/panel-*.webp and ipad-*.webp
     # (tools/localize_screenshots.py). The poster and wide banner are designed art and stay shared.
     imgs = ["plan", "flight", "discover", "journal", "collection", "profile"]
@@ -139,7 +141,8 @@ def render_home(folder: str) -> str:
     free_h, free_p, free_li = pr["free"]; pro_h, pro_p, pro_li = pr["pro"]
     li = lambda xs: "".join(f"<li>{esc(x)}</li>" for x in xs)
     legal = "".join(f'<a class="legal-card" href="{href}"><strong>{esc(a)}</strong><span>{esc(b)}</span></a>'
-                    for (a, b), href in zip(st["cards"], ["../privacy.html", "../terms.html", "support.html"]))
+                    for (a, b), href in zip([*st["cards"], t["user_guide_card"]], ["../privacy.html", "../terms.html", "support.html", f"../{USER_GUIDE}"]))
+    audience = "".join(f'<section class="support-card"><h2>{esc(a)}</h2><p>{esc(b)}</p></section>' for a, b in au["cards"])
     body = (
         header(folder, t, [("#features", n["features"]), ("#gallery", n["gallery"]), ("#pricing", n["pro"]), ("#faq", n["faq"]), ("support.html", n["support"]), ("../privacy.html", n["privacy"])])
         + f'<main><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">{esc(h["eyebrow"])}</div><h1>{esc(h["h1"])}</h1><p>{esc(h["p"])}</p>'
@@ -147,7 +150,9 @@ def render_home(folder: str) -> str:
           f'<div class="trust">{"".join(f"<span>{esc(x)}</span>" for x in h["trust"])}</div></div>'
           f'<div class="hero-art"><img src="../images/{folder}/marketing-wide.webp" alt="{attr(ga["wide_alt"])}" width="1536" height="1024"></div></div></section>'
         f'<section class="section" id="features"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(fe["eyebrow"])}</div><h2>{esc(fe["h2"])}</h2><p>{esc(fe["p"])}</p></div><div class="features">{cards}</div></div></section>'
-        f'<section class="section band" id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(ga["eyebrow"])}</div><h2>{esc(ga["h2"])}</h2><p>{esc(ga["p"])}</p></div>'
+        f'<section class="section band" id="for-everyone"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(au["eyebrow"])}</div><h2>{esc(au["h2"])}</h2><p>{esc(au["p"])}</p></div>'
+          f'<div class="support-grid">{audience}</div><p style="text-align:center;margin-top:28px"><a class="btn btn-primary" href="../{USER_GUIDE}">{esc(au["button"])}</a></p></div></section>'
+        f'<section class="section" id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(ga["eyebrow"])}</div><h2>{esc(ga["h2"])}</h2><p>{esc(ga["p"])}</p></div>'
           f'<div class="gallery">'
           + "".join(f'<img src="../images/{folder}/ipad-{im}.webp" alt="{attr(a)}">' for im, a in zip(["flight", "discover", "collection"], ga["ipad_alts"]))
           + '</div></div></section>'
@@ -231,6 +236,7 @@ CSS = f"""
 @media(max-width:900px){{.site-nav{{display:flex}}.site-nav>a{{display:none}}.lang{{margin-left:0}}}}
 .legal-note{{margin-top:10px;font-size:13px;opacity:.75}}
 .price-note{{margin-top:18px;color:var(--muted);font-size:14px}}
+@media(min-width:901px){{.legal-links{{grid-template-columns:repeat(4,1fr)}}}}
 """
 
 
