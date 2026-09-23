@@ -101,7 +101,7 @@ def software_ld(t: dict, folder: str) -> dict:
             "description": t["home_desc"], "applicationCategory": "TravelApplication",
             "operatingSystem": "iOS, iPadOS", "url": url(folder, "index.html"), "inLanguage": LANGS[folder][0],
             "image": BASE + "images/app-icon.png",
-            "publisher": {"@type": "Organization", "name": "iSafeNet", "url": "https://isafenet.app/"},
+            "publisher": {"@type": "Organization", "@id": "https://isafenet.app/#organization", "name": "iSafeNet", "url": "https://isafenet.app/"},
             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}}
 
 
@@ -118,11 +118,11 @@ def header(folder: str, t: dict, nav: list[tuple[str, str]], page: str = "index.
 
 def footer(t: dict, extra_links: str = "") -> str:
     f = t["footer"]
-    return ('<footer class="site-footer"><div class="wrap"><span>© 2026 iSafeNet · AirReveal</span><nav>'
+    return ('<footer class="site-footer"><div class="wrap"><span>© 2026 <a href="https://isafenet.app/">iSafeNet</a> · AirReveal</span><nav>'
             f'<a href="{GUIDE}">{esc(f["guide"])}</a><a href="../privacy.html">{esc(f["privacy"])}</a>'
             f'<a href="../terms.html">{esc(f["terms"])}</a><a href="support.html">{esc(f["support"])}</a>'
             f'<a href="../{USER_GUIDE}">{esc(f["user_guide"])}</a>'
-            '<a href="mailto:info@isafenet.app">info@isafenet.app</a></nav></div>'
+            '<a href="https://glpmgr.isafenet.app/">GLPMGR</a><a href="mailto:info@isafenet.app">info@isafenet.app</a></nav></div>'
             f'<div class="wrap legal-note">{esc(t["legal_note"])}</div></footer>')
 
 
