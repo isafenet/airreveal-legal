@@ -26,7 +26,7 @@ T = {}
 # ---------------------------------------------------------------- Español
 T["es"] = dict(
     home_title="AirReveal: ¿Qué estoy sobrevolando? Mapa de vuelo y diario",
-    home_desc="Descubre qué estás sobrevolando. Un mapa de vuelo sin conexión para iPhone y iPad que nombra los lugares bajo tu avión, te dice desde qué lado mirar y guarda tu diario de vuelo.",
+    home_desc="Descubre qué estás sobrevolando: un mapa de vuelo sin conexión para iPhone y iPad que nombra los lugares bajo tu avión y te dice desde qué lado mirar.",
     og_title="AirReveal: ¿Qué estoy sobrevolando?",
     nav=dict(features="Funciones", gallery="Galería", pro="Pro", faq="Preguntas", support="Soporte", privacy="Privacidad"),
     hero=dict(eyebrow="Tu asiento de ventanilla, mejorado", h1="Descubre cada kilómetro bajo tus alas.",
@@ -86,8 +86,8 @@ T["es"] = dict(
         button="Leer la guía de uso (en inglés)"),
     user_guide_card=("Guía de uso", "Primeros pasos, consejos y glosario (en inglés)."),
     guide=dict(
-        title="¿Qué estoy sobrevolando? Cómo ver lo que hay bajo tu avión | AirReveal",
-        desc="Cómo saber qué estás sobrevolando: mapas del respaldo, planificar la ruta y GPS con un mapa de vuelo sin conexión que nombra los lugares bajo tu avión, incluso en modo avión.",
+        title="¿Qué estoy sobrevolando? Mira lo que hay bajo tu avión | AirReveal",
+        desc="Cómo saber qué estás sobrevolando: mapas del respaldo, la ruta y GPS con un mapa sin conexión que nombra los lugares bajo tu avión, incluso en modo avión.",
         og_title="¿Qué estoy sobrevolando? Cómo ver lo que hay bajo tu avión",
         og_desc="Tres formas de saber qué hay bajo tu avión, incluido el GPS y los mapas sin conexión en modo avión.",
         eyebrow="Guía de ventanilla", h1="¿Qué estoy sobrevolando? Cómo ver lo que hay bajo tu avión", meta="Actualizado en septiembre de 2026",
@@ -122,7 +122,7 @@ T["es"] = dict(
 # ---------------------------------------------------------------- Français
 T["fr"] = dict(
     home_title="AirReveal : que survole-t-on ? Carte de vol et journal",
-    home_desc="Découvrez ce que vous survolez. Une carte de vol hors connexion pour iPhone et iPad qui nomme les sites sous votre avion, indique de quel côté regarder et tient votre journal de vol.",
+    home_desc="Découvrez ce que vous survolez : une carte de vol hors connexion pour iPhone et iPad qui nomme les sites sous votre avion et indique de quel côté regarder.",
     og_title="AirReveal : que survolez-vous ?",
     nav=dict(features="Fonctions", gallery="Galerie", pro="Pro", faq="Questions", support="Assistance", privacy="Confidentialité"),
     hero=dict(eyebrow="Votre siège hublot, en mieux", h1="Découvrez chaque kilomètre sous vos ailes.",
@@ -182,8 +182,8 @@ T["fr"] = dict(
         button="Lire le guide d'utilisation (en anglais)"),
     user_guide_card=("Guide d'utilisation", "Prise en main, astuces et glossaire (en anglais)."),
     guide=dict(
-        title="Que survole-t-on ? Comment voir ce qui se trouve sous votre avion | AirReveal",
-        desc="Comment savoir ce que vous survolez : cartes du dossier de siège, préparation de l'itinéraire et GPS avec une carte de vol hors connexion qui nomme les sites sous votre avion, même en mode avion.",
+        title="Que survole-t-on ? Voir ce qui est sous votre avion | AirReveal",
+        desc="Comment savoir ce que vous survolez : écran du siège, itinéraire et GPS avec une carte hors connexion qui nomme les sites sous votre avion, même en mode avion.",
         og_title="Que survole-t-on ? Comment voir ce qui se trouve sous votre avion",
         og_desc="Trois façons de savoir ce qu'il y a sous votre avion, dont le GPS et les cartes hors connexion en mode avion.",
         eyebrow="Guide du hublot", h1="Que survole-t-on ? Comment voir ce qui se trouve sous votre avion", meta="Mis à jour en septembre 2026",
@@ -218,7 +218,7 @@ T["fr"] = dict(
 # ---------------------------------------------------------------- Deutsch
 T["de"] = dict(
     home_title="AirReveal: Was überfliege ich? Flugkarte & Journal",
-    home_desc="Entdecke, was du überfliegst. Eine Offline-Flugkarte für iPhone und iPad, die Sehenswürdigkeiten unter deinem Flugzeug benennt, zeigt, auf welche Seite du schauen solltest, und dein Flugjournal führt.",
+    home_desc="Entdecke, was du überfliegst: eine Offline-Flugkarte für iPhone und iPad, die Orte unter dir benennt und zeigt, auf welche Seite du schauen solltest.",
     og_title="AirReveal: Was überfliege ich?",
     nav=dict(features="Funktionen", gallery="Galerie", pro="Pro", faq="Fragen", support="Support", privacy="Datenschutz"),
     hero=dict(eyebrow="Dein Fensterplatz, aufgewertet", h1="Entdecke jede Meile unter deinen Flügeln.",
@@ -278,8 +278,8 @@ T["de"] = dict(
         button="Zur Anleitung (auf Englisch)"),
     user_guide_card=("Anleitung", "Erste Schritte, Tipps und Glossar (auf Englisch)."),
     guide=dict(
-        title="Was überfliege ich? So siehst du, was unter deinem Flugzeug liegt | AirReveal",
-        desc="So findest du heraus, was du überfliegst: Bordkarte, Routenplanung und GPS mit einer Offline-Flugkarte, die die Sehenswürdigkeiten unter deinem Flugzeug benennt – auch im Flugmodus.",
+        title="Was überfliege ich? Das liegt unter deinem Flugzeug | AirReveal",
+        desc="So findest du heraus, was du überfliegst: Bordkarte, Routenplanung und GPS mit einer Offline-Karte, die Orte unter dir benennt – auch im Flugmodus.",
         og_title="Was überfliege ich? So siehst du, was unter deinem Flugzeug liegt",
         og_desc="Drei Wege, herauszufinden, was unter deinem Flugzeug liegt – auch mit GPS und Offline-Karten im Flugmodus.",
         eyebrow="Fensterplatz-Ratgeber", h1="Was überfliege ich? So siehst du, was unter deinem Flugzeug liegt", meta="Aktualisiert im September 2026",
@@ -314,7 +314,7 @@ T["de"] = dict(
 # ---------------------------------------------------------------- Italiano
 T["it"] = dict(
     home_title="AirReveal: cosa sto sorvolando? Mappa di volo e diario",
-    home_desc="Scopri cosa stai sorvolando. Una mappa di volo offline per iPhone e iPad che nomina i luoghi sotto il tuo aereo, ti dice da che lato guardare e tiene il tuo diario di volo.",
+    home_desc="Scopri cosa stai sorvolando: una mappa di volo offline per iPhone e iPad che nomina i luoghi sotto il tuo aereo e ti dice da che lato guardare.",
     og_title="AirReveal: cosa sto sorvolando?",
     nav=dict(features="Funzioni", gallery="Galleria", pro="Pro", faq="Domande", support="Supporto", privacy="Privacy"),
     hero=dict(eyebrow="Il tuo posto al finestrino, migliorato", h1="Scopri ogni miglio sotto le tue ali.",
@@ -374,8 +374,8 @@ T["it"] = dict(
         button="Leggi la guida all'uso (in inglese)"),
     user_guide_card=("Guida all'uso", "Primi passi, consigli e glossario (in inglese)."),
     guide=dict(
-        title="Cosa sto sorvolando? Come vedere cosa c'è sotto il tuo aereo | AirReveal",
-        desc="Come scoprire cosa stai sorvolando: mappe sul sedile, pianificazione della rotta e GPS con una mappa di volo offline che nomina i luoghi sotto il tuo aereo, anche in modalità aereo.",
+        title="Cosa sto sorvolando? Scopri cosa c'è sotto l'aereo | AirReveal",
+        desc="Come scoprire cosa stai sorvolando: mappe sul sedile, rotta e GPS con una mappa offline che nomina i luoghi sotto il tuo aereo, anche in modalità aereo.",
         og_title="Cosa sto sorvolando? Come vedere cosa c'è sotto il tuo aereo",
         og_desc="Tre modi per sapere cosa c'è sotto il tuo aereo, inclusi GPS e mappe offline in modalità aereo.",
         eyebrow="Guida al finestrino", h1="Cosa sto sorvolando? Come vedere cosa c'è sotto il tuo aereo", meta="Aggiornato a settembre 2026",
@@ -410,7 +410,7 @@ T["it"] = dict(
 # ------------------------------------------------------- Português (Brasil)
 T["pt-br"] = dict(
     home_title="AirReveal: o que estou sobrevoando? Mapa de voo e diário",
-    home_desc="Descubra o que você está sobrevoando. Um mapa de voo offline para iPhone e iPad que nomeia os pontos turísticos sob o seu avião, mostra de que lado olhar e guarda o seu diário de voo.",
+    home_desc="Descubra o que você está sobrevoando: um mapa de voo offline para iPhone e iPad que nomeia os pontos sob o seu avião e mostra de que lado olhar.",
     og_title="AirReveal: o que estou sobrevoando?",
     nav=dict(features="Recursos", gallery="Galeria", pro="Pro", faq="Perguntas", support="Suporte", privacy="Privacidade"),
     hero=dict(eyebrow="Seu assento na janela, turbinado", h1="Descubra cada milha sob as suas asas.",
@@ -470,8 +470,8 @@ T["pt-br"] = dict(
         button="Ler o guia de uso (em inglês)"),
     user_guide_card=("Guia de uso", "Primeiros passos, dicas e glossário (em inglês)."),
     guide=dict(
-        title="O que estou sobrevoando? Como ver o que há sob o seu avião | AirReveal",
-        desc="Como descobrir o que você está sobrevoando: mapas no encosto, planejamento da rota e GPS com um mapa de voo offline que nomeia os pontos turísticos sob o seu avião, até em modo avião.",
+        title="O que estou sobrevoando? Veja o que há sob o seu avião | AirReveal",
+        desc="Como descobrir o que você está sobrevoando: mapas no encosto, rota e GPS com um mapa offline que nomeia os pontos sob o seu avião, até em modo avião.",
         og_title="O que estou sobrevoando? Como ver o que há sob o seu avião",
         og_desc="Três maneiras de saber o que há sob o seu avião, incluindo GPS e mapas offline em modo avião.",
         eyebrow="Guia da janela", h1="O que estou sobrevoando? Como ver o que há sob o seu avião", meta="Atualizado em setembro de 2026",
