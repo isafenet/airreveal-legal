@@ -122,7 +122,7 @@ def footer(t: dict, extra_links: str = "") -> str:
             f'<a href="{GUIDE}">{esc(f["guide"])}</a><a href="../privacy.html">{esc(f["privacy"])}</a>'
             f'<a href="../terms.html">{esc(f["terms"])}</a><a href="support.html">{esc(f["support"])}</a>'
             f'<a href="../{USER_GUIDE}">{esc(f["user_guide"])}</a>'
-            '<a href="https://glpmgr.isafenet.app/">GLPMGR</a><a href="mailto:info@isafenet.app">info@isafenet.app</a></nav></div>'
+            '<a href="https://glpmgr.isafenet.app/">GLPMGR</a><a href="https://udapt.isafenet.app/">Udapt</a><a href="mailto:info@isafenet.app">info@isafenet.app</a></nav></div>'
             f'<div class="wrap legal-note">{esc(t["legal_note"])}</div></footer>')
 
 

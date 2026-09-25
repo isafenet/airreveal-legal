@@ -115,6 +115,7 @@ T["es"] = dict(
             ("Reembolsos y De por vida", "Apple gestiona los reembolsos, no AirReveal: solicítalos en <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. La compra de por vida es un pago único, sin suscripción que cancelar, y nunca se renueva."),
             ("Tus datos de viajes", "La pantalla Perfil incluye controles para exportar, importar y eliminar los datos de viajes. Exporta una copia antes de eliminar los datos que quieras conservar."),
             ("Seguridad", "AirReveal es un compañero de vuelo personal, no un servicio oficial de estado de vuelos, tráfico aéreo ni seguridad aérea. Sigue siempre la información de la aerolínea, el aeropuerto y la tripulación."),
+            ('Ideas y sugerencias', 'Comparte ideas para AirReveal y vota por las que más te gusten en nuestro <a href="https://isafenet.app/feedback.html?app=airreveal">tablero de ideas</a> (en inglés). Leemos todas las ideas.'),
         ]),
 )
 
@@ -210,6 +211,7 @@ T["fr"] = dict(
             ("Remboursements et formule à vie", "Les remboursements sont gérés par Apple, pas par AirReveal : faites-en la demande sur <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. La formule à vie est un paiement unique, sans abonnement à résilier, et ne se renouvelle jamais."),
             ("Vos données de voyage", "L'écran Profil propose l'exportation, l'importation et la suppression des données de voyage. Exportez une copie avant de supprimer des données que vous souhaitez conserver."),
             ("Sécurité", "AirReveal est un compagnon de vol personnel, pas un service officiel de statut de vol, de contrôle aérien ou de sécurité aérienne. Suivez toujours les informations de la compagnie, de l'aéroport et de l'équipage."),
+            ('Idées et suggestions', 'Proposez des idées pour AirReveal et votez pour celles que vous préférez sur notre <a href="https://isafenet.app/feedback.html?app=airreveal">tableau d\'idées</a> (en anglais). Nous lisons toutes les idées.'),
         ]),
 )
 
@@ -305,6 +307,7 @@ T["de"] = dict(
             ("Rückerstattungen & Lifetime", "Rückerstattungen übernimmt Apple, nicht AirReveal – beantrage sie unter <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. Der Lifetime-Kauf ist eine Einmalzahlung ohne Abo zum Kündigen und verlängert sich nie."),
             ("Deine Reisedaten", "Das Profil enthält Funktionen zum Exportieren, Importieren und Entfernen von Reisedaten. Exportiere eine Kopie, bevor du Daten entfernst, die du behalten möchtest."),
             ("Sicherheit", "AirReveal ist ein persönlicher Flugbegleiter, kein offizieller Flugstatus-, Flugverkehrs- oder Flugsicherheitsdienst. Richte dich immer nach den Informationen von Airline, Flughafen und Crew."),
+            ('Ideen und Vorschläge', 'Teile deine Ideen für AirReveal und stimme für die ab, die dir am wichtigsten sind, auf unserem <a href="https://isafenet.app/feedback.html?app=airreveal">Ideen-Board</a> (auf Englisch). Wir lesen jede Idee.'),
         ]),
 )
 
@@ -400,6 +403,7 @@ T["it"] = dict(
             ("Rimborsi e piano a vita", "I rimborsi sono gestiti da Apple, non da AirReveal: richiedili su <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. L'acquisto a vita è un pagamento unico senza abbonamento da annullare e non si rinnova mai."),
             ("I tuoi dati dei viaggi", "La schermata Profilo include i controlli per esportare, importare e rimuovere i dati dei viaggi. Esporta una copia prima di rimuovere dati che vuoi conservare."),
             ("Sicurezza", "AirReveal è un compagno di volo personale, non un servizio ufficiale di stato dei voli, traffico aereo o sicurezza aerea. Segui sempre le informazioni di compagnia aerea, aeroporto ed equipaggio."),
+            ('Idee e suggerimenti', 'Condividi le tue idee per AirReveal e vota quelle che preferisci sulla nostra <a href="https://isafenet.app/feedback.html?app=airreveal">bacheca delle idee</a> (in inglese). Leggiamo ogni idea.'),
         ]),
 )
 
@@ -495,5 +499,6 @@ T["pt-br"] = dict(
             ("Reembolsos e plano vitalício", "Os reembolsos são tratados pela Apple, não pelo AirReveal: solicite em <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. A compra vitalícia é um pagamento único, sem assinatura para cancelar, e nunca é renovada."),
             ("Seus dados de viagens", "A tela Perfil inclui controles para exportar, importar e remover os dados de viagens. Exporte uma cópia antes de remover dados que você quer manter."),
             ("Segurança", "O AirReveal é um companheiro de voo pessoal, não um serviço oficial de status de voo, tráfego aéreo ou segurança da aviação. Siga sempre as informações da companhia aérea, do aeroporto e da tripulação."),
+            ('Ideias e sugestões', 'Compartilhe ideias para o AirReveal e vote nas que você mais quer no nosso <a href="https://isafenet.app/feedback.html?app=airreveal">quadro de ideias</a> (em inglês). Lemos todas as ideias.'),
         ]),
 )
