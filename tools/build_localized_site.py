@@ -148,8 +148,11 @@ def render_home(folder: str) -> str:
         + f'<main><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">{esc(h["eyebrow"])}</div><h1>{esc(h["h1"])}</h1><p>{esc(h["p"])}</p>'
           f'<div class="cta-row"><a class="btn btn-primary" href="#features">{esc(h["cta1"])}</a><a class="btn btn-secondary" href="#app-store">{esc(h["cta2"])}</a></div>'
           f'<div class="trust">{"".join(f"<span>{esc(x)}</span>" for x in h["trust"])}</div></div>'
-          f'<div class="hero-art"><img src="../images/{folder}/marketing-wide.webp" alt="{attr(ga["wide_alt"])}" width="1536" height="1024"></div></div></section>'
-        f'<section class="section" id="features"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(fe["eyebrow"])}</div><h2>{esc(fe["h2"])}</h2><p>{esc(fe["p"])}</p></div><div class="features">{cards}</div></div></section>'
+          # Three floating phones: this language's Plan, Flight and Journal screens (feature cards 0, 1 and 3).
+          + '<div class="devices">' + "".join(
+              f'<div class="phone p{i}"><img src="../images/{folder}/panel-{im}.webp" alt="{attr(fe["cards"][c][2])}" width="596" height="1260"></div>'
+              for i, (im, c) in enumerate([("plan", 0), ("flight", 1), ("journal", 3)], 1)) + '</div></div></section>'
+        + f'<section class="section" id="features"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(fe["eyebrow"])}</div><h2>{esc(fe["h2"])}</h2><p>{esc(fe["p"])}</p></div><div class="features">{cards}</div></div></section>'
         f'<section class="section band" id="for-everyone"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(au["eyebrow"])}</div><h2>{esc(au["h2"])}</h2><p>{esc(au["p"])}</p></div>'
           f'<div class="support-grid">{audience}</div><p style="text-align:center;margin-top:28px"><a class="btn btn-primary" href="../{USER_GUIDE}">{esc(au["button"])}</a></p></div></section>'
         f'<section class="section" id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(ga["eyebrow"])}</div><h2>{esc(ga["h2"])}</h2><p>{esc(ga["p"])}</p></div>'

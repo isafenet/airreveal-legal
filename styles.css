@@ -3,6 +3,17 @@
 .features-4{grid-template-columns:repeat(4,1fr)}
 @media(max-width:900px){.features-4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.features-4{grid-template-columns:1fr}.feature p{min-height:0}}
+/* Hero: three floating phones (matches isafenet.app's AirReveal page) */
+.devices{position:relative;height:560px;width:100%;max-width:560px;margin:0 auto}
+.devices .phone{position:absolute;width:41%;border-radius:40px;padding:9px;background:linear-gradient(160deg,#2a3b52,#0b1624);box-shadow:0 30px 70px rgba(4,14,30,.45),inset 0 0 0 1px rgba(255,255,255,.08)}
+.devices .phone img{display:block;width:100%;height:auto;border-radius:32px}
+.devices .p1{left:0;top:60px;transform:rotate(-7deg);animation:ar-float 7s ease-in-out infinite}
+.devices .p2{left:28%;top:0;z-index:2;width:45%;animation:ar-float 7s ease-in-out -2.3s infinite}
+.devices .p3{right:0;top:80px;transform:rotate(7deg);animation:ar-float 7s ease-in-out -4.6s infinite}
+@keyframes ar-float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+@media(prefers-reduced-motion:reduce){.devices .phone{animation:none}}
+@media(max-width:900px){.devices{height:470px;max-width:520px}}
+@media(max-width:520px){.devices{height:380px}.devices .phone{border-radius:30px;padding:7px}.devices .phone img{border-radius:24px}}
 
 /* i18n:language-switcher */
 .lang{position:relative;margin-left:12px}
