@@ -21,6 +21,8 @@ import json
 import re
 from pathlib import Path
 
+from guide_extras import EXTRAS, sections_html
+
 from site_i18n import LANGS, T
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -29,7 +31,7 @@ GUIDE = "what-am-i-flying-over.html"
 LOCALIZED_PAGES = ["index.html", GUIDE, "support.html"]
 USER_GUIDE = "user-guide.html"
 ENGLISH_ONLY = ["privacy.html", "terms.html", USER_GUIDE]
-LASTMOD = "2026-09-20"
+LASTMOD = "2026-09-29"
 MARK_OPEN, MARK_CLOSE = "<!--i18n-->", "<!--/i18n-->"
 
 
@@ -177,7 +179,8 @@ def render_guide(folder: str) -> str:
     t = T[folder]; g = t["guide"]; lang_code, og_locale, _ = LANGS[folder]
     n = t["nav"]
     bullets = "".join(f"<li><strong>{esc(b)}</strong> {esc(r)}</li>" for b, r in g["bullets"])
-    faq = "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in g["faq"])
+    faqs = [*g["faq"], *EXTRAS[folder]["faq"]]
+    faq = "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in faqs)
     sec = lambda sid, pair, extra="": f'<section class="clause" id="{sid}"><h2 class="clause-title">{esc(pair[0])}</h2><p>{esc(pair[1])}</p>{extra}</section>'
     body = (
         header(folder, t, [("index.html#features", n["features"]), ("index.html#faq", n["faq"]), ("support.html", n["support"]), ("../privacy.html", n["privacy"])], GUIDE)
@@ -185,12 +188,13 @@ def render_guide(folder: str) -> str:
           f'<header class="doc-head"><p class="eyebrow">{esc(g["eyebrow"])}</p><h1 class="doc-title">{esc(g["h1"])}</h1><p class="doc-meta">{esc(g["meta"])}</p><div class="lede">{g["lede"]}</div></header>'
         + sec("seatback", g["opt1"]) + sec("route", g["opt2"])
         + f'<section class="clause" id="gps"><h2 class="clause-title">{esc(g["opt3"][0])}</h2><p>{g["opt3"][1]}</p><ul>{bullets}</ul></section>'
+        + sections_html(folder, esc)
         + f'<section class="clause" id="faq"><h2 class="clause-title">{esc(g["faq_h"])}</h2>{faq}<p>{esc(g["disclaimer"])}</p></section>'
         + f'<section class="clause"><p><a class="btn btn-primary" href="index.html#app-store">{esc(g["cta"])}</a></p></section></div>'
         + footer(t)
     )
     return (head(lang_code, g["title"], g["desc"], url(folder, GUIDE), GUIDE, g["og_title"], g["og_desc"], og_locale, "article")
-            + jsonld(faq_ld(g["faq"])) + "</head><body>\n" + body + "</body></html>\n")
+            + jsonld(faq_ld(faqs)) + "</head><body>\n" + body + "</body></html>\n")
 
 
 # ------------------------------------------------------------------- support
@@ -267,6 +271,27 @@ def write_sitemap() -> None:
     (ROOT / "sitemap.xml").write_text(xml, encoding="utf-8")
 
 
+def patch_english_guide() -> None:
+    """Write the example routes, steps and extra FAQs into the hand-written English guide, and rebuild its FAQ data
+    from the visible questions. Idempotent: the inserted parts sit between GUIDE-EXTRAS markers."""
+    path = ROOT / GUIDE
+    page = path.read_text(encoding="utf-8")
+    page = re.sub(r"\n?<!-- GUIDE-EXTRAS -->.*?<!-- /GUIDE-EXTRAS -->", "", page, flags=re.S)
+    page = re.sub(r"<!-- GUIDE-FAQ-EXTRAS -->.*?<!-- /GUIDE-FAQ-EXTRAS -->", "", page, flags=re.S)
+    e = EXTRAS["en"]
+    gps_end = page.index("</section>", page.index('id="gps"')) + len("</section>")
+    page = page[:gps_end] + "\n<!-- GUIDE-EXTRAS -->" + sections_html("en", esc) + "<!-- /GUIDE-EXTRAS -->" + page[gps_end:]
+    faq_start = page.index('id="faq"')
+    disclaimer = page.index("<p>AirReveal is a personal flight companion", faq_start)
+    extra = "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in e["faq"])
+    page = page[:disclaimer] + "<!-- GUIDE-FAQ-EXTRAS -->" + extra + "<!-- /GUIDE-FAQ-EXTRAS -->\n    " + page[disclaimer:]
+    faq_html = page[faq_start:page.index("</section>", faq_start)]
+    pairs = [(html.unescape(q), html.unescape(re.sub(r"<[^>]+>", "", a))) for q, a in re.findall(r"<h3>(.*?)</h3><p>(.*?)</p>", faq_html, re.S)]
+    page = re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "FAQPage".*?</script>',
+                  lambda m: '<script type="application/ld+json">' + json.dumps(faq_ld(pairs), ensure_ascii=False) + "</script>", page, count=1, flags=re.S)
+    path.write_text(page, encoding="utf-8")
+
+
 def main() -> None:
     for folder in LANGS:
         out = ROOT / folder
@@ -276,6 +301,7 @@ def main() -> None:
         (out / "support.html").write_text(render_support(folder), encoding="utf-8")
     for page in [*LOCALIZED_PAGES, *ENGLISH_ONLY]:
         patch_english(page)
+    patch_english_guide()
     write_css()
     write_sitemap()
     print(f"built {len(LANGS)} languages x {len(LOCALIZED_PAGES)} pages; patched {len(LOCALIZED_PAGES) + len(ENGLISH_ONLY)} English pages")
