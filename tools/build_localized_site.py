@@ -32,7 +32,7 @@ GUIDE = "what-am-i-flying-over.html"
 LOCALIZED_PAGES = ["index.html", GUIDE, "support.html"]
 USER_GUIDE = "user-guide.html"
 ENGLISH_ONLY = ["privacy.html", "terms.html", USER_GUIDE]
-LASTMOD = "2026-09-29"
+LASTMOD = "2026-09-30"
 MARK_OPEN, MARK_CLOSE = "<!--i18n-->", "<!--/i18n-->"
 
 
@@ -148,6 +148,14 @@ def footer(t: dict, extra_links: str = "") -> str:
 
 
 # ---------------------------------------------------------------------- home
+def new16_section(t: dict) -> str:
+    """What's new in 1.6, straight after the hero (the same six cards as the English page)."""
+    nw = t["new16"]
+    cards = "".join(f'<article class="feature"><h3>{esc(a)}</h3><p>{esc(b)}</p></article>' for a, b in nw["cards"])
+    return (f'<section class="section band" id="new"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(nw["eyebrow"])}</div>'
+            f'<h2>{esc(nw["h2"])}</h2><p>{esc(nw["p"])}</p></div><div class="features">{cards}</div></div></section>')
+
+
 def render_home(folder: str) -> str:
     t = T[folder]; lang_code, og_locale, _ = LANGS[folder]
     n, h, fe, ga, fl, fq, pr, st, au = t["nav"], t["hero"], t["features"], t["gallery"], t["flying"], t["faq"], t["pricing"], t["store"], t["audience"]
@@ -173,6 +181,7 @@ def render_home(folder: str) -> str:
           + '<div class="devices">' + "".join(
               f'<div class="phone p{i}"><img src="../images/{folder}/panel-{im}.webp" alt="{attr(fe["cards"][c][2])}" width="596" height="1260"></div>'
               for i, (im, c) in enumerate([("plan", 0), ("flight", 1), ("journal", 3)], 1)) + '</div></div></section>'
+        + new16_section(t)
         + f'<section class="section" id="features"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(fe["eyebrow"])}</div><h2>{esc(fe["h2"])}</h2><p>{esc(fe["p"])}</p></div><div class="features">{cards}</div></div></section>'
         f'<section class="section band" id="for-everyone"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(au["eyebrow"])}</div><h2>{esc(au["h2"])}</h2><p>{esc(au["p"])}</p></div>'
           f'<div class="support-grid">{audience}</div><p style="text-align:center;margin-top:28px"><a class="btn btn-primary" href="../{USER_GUIDE}">{esc(au["button"])}</a></p></div></section>'

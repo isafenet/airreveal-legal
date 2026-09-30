@@ -502,3 +502,47 @@ T["pt-br"] = dict(
             ('Ideias e sugestões', 'Compartilhe ideias para o AirReveal e vote nas que você mais quer no nosso <a href="https://isafenet.app/feedback.html?app=airreveal">quadro de ideias</a> (em inglês). Lemos todas as ideias.'),
         ]),
 )
+
+
+# ---------------------------------------------------------------- New in 1.6 (home page, after the hero)
+# From the approved 1.6 What's New (AirReveal Marketing/App-Store-Submission.md), in the app's own feature names.
+T['es']["new16"] = dict(eyebrow='Novedades de AirReveal 1.6', h2='Mira por la ventanilla. AirReveal te dice qué ves.', p='La mayor actualización hasta ahora: lugares señalados en la cámara, el mejor lado para sentarte, un HUD de vuelo y mapas sin conexión de confianza.', cards=[
+    ('Vista desde la ventanilla', 'Acerca el teléfono a la ventanilla y verás los lugares de fuera señalados sobre la imagen de la cámara, desde cumbres hasta ciudades y lagos. Toca una etiqueta para conocer su historia. Ábrela con el botón de la cámara en el mapa En directo; funciona sin conexión.'),
+    ('El mejor lado', 'Al añadir un vuelo, AirReveal te dice qué ventanilla reservar, izquierda o derecha, qué lugares verás desde ella y si verás el amanecer o el atardecer. Se calcula en tu teléfono, así que funciona incluso antes de reservar.'),
+    ('HUD de vuelo', 'Altitud, velocidad y rumbo en el mapa, con lo que sobrevuelas y hacia qué lado mirar, en un panel de cristal o en cintas de cabina. Ahora también en la pantalla de bloqueo y en la Dynamic Island desde que empieza un vuelo en directo, y junto al panel del vuelo en el iPad en horizontal.'),
+    ('Mapas sin conexión de confianza', 'Un vuelo solo aparece como «Disponible sin conexión» cuando su mapa ha terminado de descargarse, con su tamaño. Una descarga interrumpida continúa donde se quedó, y una que falla se puede reintentar.'),
+    ('Descargar mapas con Wi-Fi', 'Actívalo en Perfil › Datos de viajes y los mapas y lugares de un vuelo nuevo se descargarán solos cuando tengas Wi-Fi.'),
+    ('Elige tus unidades', 'Automático, Aviación, Métrico o Imperial (Perfil › HUD de vuelo › Unidades).'),
+])
+T['fr']["new16"] = dict(eyebrow="Nouveautés d'AirReveal 1.6", h2='Regardez par le hublot. AirReveal vous dit ce que vous voyez.', p="La plus grande mise à jour à ce jour : les sites affichés sur la caméra, le meilleur côté où s'asseoir, un HUD de vol et des cartes hors connexion fiables.", cards=[
+    ('Vue hublot', "Approchez votre téléphone du hublot et les sites visibles dehors s'affichent sur l'image de l'appareil photo, des sommets aux villes et aux lacs. Touchez une étiquette pour découvrir son histoire. Ouvrez-la avec le bouton appareil photo de la carte En direct\u202f; elle fonctionne hors connexion."),
+    ('Le meilleur côté', 'Quand vous ajoutez un vol, AirReveal vous indique quel hublot réserver, à gauche ou à droite, les sites que vous verrez de ce côté et si vous verrez le lever ou le coucher du soleil. Calculé sur votre téléphone, avant même de réserver.'),
+    ('HUD de vol', "Altitude, vitesse et cap sur la carte, avec ce que vous survolez et de quel côté regarder, dans un panneau en verre ou des bandes de cockpit. Désormais aussi sur l'écran verrouillé et dans la Dynamic Island dès le début d'un vol en direct, et à côté du panneau du vol sur iPad en paysage."),
+    ('Des cartes hors connexion fiables', "Un vol n'apparaît «\xa0Disponible hors connexion\xa0» qu'une fois sa carte entièrement téléchargée, avec sa taille. Un téléchargement interrompu reprend là où il s'était arrêté, et un téléchargement qui échoue peut être relancé."),
+    ('Télécharger les cartes en Wi-Fi', "Activez l'option dans Profil › Données de voyage et les cartes et les sites d'un nouveau vol se téléchargent tout seuls quand vous êtes en Wi-Fi."),
+    ('Choisissez vos unités', 'Automatique, Aviation, Métrique ou Impérial (Profil › HUD de vol › Unités).'),
+])
+T['de']["new16"] = dict(eyebrow='Neu in AirReveal 1.6', h2='Schau aus dem Fenster. AirReveal sagt dir, was du siehst.', p='Das bisher größte Update: Sehenswürdigkeiten im Kamerabild, die beste Fensterseite, ein Flug-HUD und Offline-Karten, auf die du dich verlassen kannst.', cards=[
+    ('Fensterblick', 'Halte dein iPhone ans Flugzeugfenster, und die Sehenswürdigkeiten draußen werden im Kamerabild beschriftet – von Berggipfeln bis zu Städten und Seen. Tippe auf eine Beschriftung für ihre Geschichte. Du öffnest ihn mit der Kamerataste auf der Live-Karte; er funktioniert offline.'),
+    ('Die beste Fensterseite', 'Wenn du einen Flug hinzufügst, sagt dir AirReveal, welche Seite du buchen solltest, links oder rechts, welche Sehenswürdigkeiten du von dort siehst und ob du Sonnenauf- oder -untergang erlebst. Berechnet auf deinem iPhone, also schon vor der Buchung.'),
+    ('Flug-HUD', 'Höhe, Geschwindigkeit und Kurs auf der Karte, dazu, was du überfliegst und auf welcher Seite du hinausschauen solltest – als Glas-Panel oder Cockpit-Skalen. Jetzt auch auf dem Sperrbildschirm, in der Dynamic Island, sobald ein Live-Flug startet, und auf dem iPad im Querformat neben dem Flug-Panel.'),
+    ('Offline-Karten, auf die du dich verlassen kannst', 'Ein Flug gilt erst dann als „Offline verfügbar“, wenn seine Karte vollständig geladen ist, mit Angabe der Größe. Ein unterbrochener Download macht dort weiter, wo er aufgehört hat, und ein fehlgeschlagener lässt sich erneut starten.'),
+    ('Karten über WLAN laden', 'Schalte es unter Profil › Reisedaten ein, dann werden Karten und Sehenswürdigkeiten eines neuen Flugs automatisch geladen, solange du im WLAN bist.'),
+    ('Wähle deine Einheiten', 'Automatisch, Luftfahrt, Metrisch oder Imperial (Profil › Flug-HUD › Einheiten).'),
+])
+T['it']["new16"] = dict(eyebrow='Novità di AirReveal 1.6', h2='Guarda dal finestrino. AirReveal ti dice cosa vedi.', p="L'aggiornamento più grande finora: luoghi indicati sulla fotocamera, il lato migliore dove sedersi, un HUD di volo e mappe offline affidabili.", cards=[
+    ('Vista dal finestrino', "Avvicina il telefono al finestrino dell'aereo e i luoghi là fuori vengono indicati sull'immagine della fotocamera, dalle cime dei monti alle città e ai laghi. Tocca un'etichetta per scoprirne la storia. Aprila con il pulsante della fotocamera sulla mappa Live; funziona offline."),
+    ('Il lato migliore', "Quando aggiungi un volo, AirReveal ti dice quale finestrino prenotare, a sinistra o a destra, quali luoghi vedrai e se vedrai l'alba o il tramonto. Il calcolo avviene sul telefono, quindi funziona anche prima di prenotare."),
+    ('HUD di volo', 'Altitudine, velocità e prua sulla mappa, con ciò che stai sorvolando e da che lato guardare, in un pannello di vetro o con scale da cockpit. Ora anche sulla schermata di blocco, nella Dynamic Island appena inizia un volo live, e accanto al pannello del volo su iPad in orizzontale.'),
+    ('Mappe offline affidabili', 'Un volo risulta «Disponibile offline» solo quando la sua mappa ha finito di scaricarsi, con la dimensione indicata. Un download interrotto riprende da dove si era fermato, e uno non riuscito si può riprovare.'),
+    ('Scarica le mappe con il Wi-Fi', "Attiva l'opzione in Profilo › Dati dei viaggi e mappe e luoghi di un nuovo volo si scaricheranno da soli quando hai il Wi-Fi."),
+    ('Scegli le unità', 'Automatico, Aviazione, Metrico o Imperiale (Profilo › HUD di volo › Unità).'),
+])
+T['pt-br']["new16"] = dict(eyebrow='Novidades do AirReveal 1.6', h2='Olhe pela janela. O AirReveal diz o que você está vendo.', p='A maior atualização até agora: lugares identificados na câmera, o melhor lado para sentar, um HUD de voo e mapas offline em que você pode confiar.', cards=[
+    ('Vista da janela', 'Aproxime o celular da janela do avião e os lugares lá fora aparecem identificados na imagem da câmera, dos picos das montanhas a cidades e lagos. Toque em um rótulo para conhecer a história do lugar. Abra pelo botão da câmera no mapa Ao vivo; funciona offline.'),
+    ('O melhor lado', 'Ao adicionar um voo, o AirReveal diz qual janela reservar, esquerda ou direita, quais lugares você vai ver e se vai pegar o nascer ou o pôr do sol. O cálculo é feito no celular, então funciona antes mesmo de você comprar a passagem.'),
+    ('HUD de voo', 'Altitude, velocidade e rumo no mapa, com o que você está sobrevoando e para que lado olhar, em um painel de vidro ou em fitas de cockpit. Agora também na tela bloqueada, na Dynamic Island assim que um voo ao vivo começa, e ao lado do painel do voo no iPad na horizontal.'),
+    ('Mapas offline em que você pode confiar', 'Um voo só aparece como "Disponível offline" quando o mapa termina de baixar, com o tamanho indicado. Um download interrompido continua de onde parou, e um que falha pode ser tentado de novo.'),
+    ('Baixar mapas no Wi-Fi', 'Ative em Perfil › Dados de viagens e os mapas e os lugares de um voo novo são baixados sozinhos enquanto você está no Wi-Fi.'),
+    ('Escolha suas unidades', 'Automático, Aviação, Métrico ou Imperial (Perfil › HUD de voo › Unidades).'),
+])
