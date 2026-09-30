@@ -68,16 +68,16 @@ FOOTER = dict(erase=(686, 908, 994, 1018), x=689, cy=1006, w=214)
 # Panel captions and footer tagline per language (the headings and subtitles
 # are the same strings as the site's feature cards).
 TEXT = {
-    "es": dict(captions=["PRIMERO SIN CONEXIÓN", "LUGARES REALES\nHISTORIAS REALES", "DE VUELOS\nA RECUERDOS", "+5.000\nLUGARES", "LOGROS\nY MÁS"],
-               tagline="Más que volar. Un mundo más luminoso."),
-    "fr": dict(captions=["HORS CONNEXION D'ABORD", "LIEUX RÉELS\nHISTOIRES RÉELLES", "DES VOLS\nAUX SOUVENIRS", "5 000+\nSITES", "SUCCÈS\nET PLUS"],
-               tagline="Plus qu'un vol. Un monde plus lumineux."),
-    "de": dict(captions=["ERST OFFLINE", "ECHTE ORTE\nECHTE GESCHICHTEN", "AUS FLÜGEN\nWERDEN ERINNERUNGEN", "5.000+\nSEHENSWÜRDIGKEITEN", "ERFOLGE\nUND MEHR"],
-               tagline="Mehr als ein Flug. Eine hellere Welt."),
-    "it": dict(captions=["PRIMA DI TUTTO OFFLINE", "LUOGHI REALI\nSTORIE REALI", "DAI VOLI\nAI RICORDI", "5.000+\nLUOGHI", "TRAGUARDI\nE ALTRO"],
-               tagline="Più di un volo. Un mondo più luminoso."),
-    "pt-BR": dict(captions=["OFFLINE EM PRIMEIRO LUGAR", "LUGARES REAIS\nHISTÓRIAS REAIS", "DE VOOS\nA MEMÓRIAS", "5.000+\nPONTOS TURÍSTICOS", "CONQUISTAS\nE MAIS"],
-                  tagline="Mais que voar. Um mundo mais luminoso."),
+    "es": dict(captions=["FUNCIONA SIN\nCONEXIÓN", "LUGARES REALES\nHISTORIAS REALES", "DE VUELOS\nA RECUERDOS", "+5.000\nLUGARES", "LOGROS\nY MÁS"],
+               tagline="Más que volar. El mundo con otros ojos."),
+    "fr": dict(captions=["MÊME HORS\nCONNEXION", "LIEUX RÉELS\nHISTOIRES RÉELLES", "DES VOLS\nAUX SOUVENIRS", "5 000+\nSITES", "SUCCÈS\nET PLUS"],
+               tagline="Plus qu'un vol. Le monde sous un nouveau jour."),
+    "de": dict(captions=["AUCH\nOFFLINE", "ECHTE ORTE\nECHTE GESCHICHTEN", "AUS FLÜGEN\nWERDEN ERINNERUNGEN", "5.000+\nSEHENSWÜRDIGKEITEN", "ERFOLGE\nUND MEHR"],
+               tagline="Mehr als ein Flug. Die Welt in neuem Licht."),
+    "it": dict(captions=["ANCHE\nOFFLINE", "LUOGHI REALI\nSTORIE REALI", "DAI VOLI\nAI RICORDI", "5.000+\nLUOGHI", "TRAGUARDI\nE ALTRO"],
+               tagline="Più di un volo. Il mondo con occhi nuovi."),
+    "pt-BR": dict(captions=["FUNCIONA\nOFFLINE", "LUGARES REAIS\nHISTÓRIAS REAIS", "DE VOOS\nA MEMÓRIAS", "5.000+\nPONTOS TURÍSTICOS", "CONQUISTAS\nE MAIS"],
+                  tagline="Mais que voar. O mundo com outros olhos."),
 }
 FOLDER = {"es": "es", "fr": "fr", "de": "de", "it": "it", "pt-BR": "pt-br"}
 SS = 4  # supersampling for text and masks
@@ -214,7 +214,7 @@ def rounded_mask(size, rect, radius):
 
 def localize(src: Image.Image, raw: Path, lang: str) -> Image.Image:
     t = TEXT[lang]
-    cards = T[FOLDER[lang]]["features"]["cards"]
+    cards = T[FOLDER[lang]]["features"]["cards"][1:]  # card 0 (Plan) has no panel in the artwork
     arr = np.array(src.convert("RGB"))
     # 1. erase English text
     for p in PANELS:

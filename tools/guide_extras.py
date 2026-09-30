@@ -39,7 +39,7 @@ EXTRAS = {
         ex_note="AirReveal sigue tu vuelo real con el GPS, así que nombra lo que de verdad hay debajo, vaya por donde vaya tu vuelo.",
         steps_h="Cómo ver lo que hay debajo con AirReveal",
         steps=[
-            "<strong>Añade tu vuelo.</strong> Crea un vuelo nuevo en AirReveal, elige el origen y el destino, e indica que es un viaje en vivo.",
+            "<strong>Añade tu vuelo.</strong> Crea un vuelo nuevo en AirReveal, elige el origen y el destino, e indica que es un viaje en directo.",
             "<strong>Descárgalo.</strong> En <strong>Mis vuelos</strong>, desliza tu vuelo hacia la derecha y toca <strong>Descargar</strong> mientras aún tengas wifi.",
             "<strong>Permite la ubicación.</strong> Cuando empiece el viaje, elige <strong>Siempre</strong> para que AirReveal siga el vuelo con el teléfono bloqueado.",
             "<strong>Mira por la ventanilla.</strong> Activa el modo avión cuando lo pida la tripulación; el GPS sigue funcionando. AirReveal nombra lo que hay debajo y delante, y hacia qué lado mirar.",
@@ -89,7 +89,7 @@ EXTRAS = {
         faq=[
             ("Wie weit sieht man aus einem Flugzeug?", "Aus einer üblichen Reiseflughöhe von etwa 11 km (35.000 Fuß) liegt der Horizont rund 370 km entfernt. In der Praxis begrenzen Dunst und Wolken meist deutlich, was man erkennt. Am leichtesten zu sehen sind Küsten, Gebirge und große Städte."),
             ("Warum findet mein Telefon im Flugzeug kein GPS?", "Der Rumpf schirmt einen Teil des Satellitensignals ab. Halte dein Telefon ein, zwei Minuten in die Nähe eines Fensters und prüfe, ob AirReveal deinen Standort verwenden darf."),
-            ("Welche Seite im Flugzeug sollte ich buchen?", "Sieh dir die Route vorher an. In AirReveal kannst du den Flug planen und abfahren, um zu sehen, was du überfliegst und auf welcher Seite es liegt. Planen ist immer kostenlos."),
+            ("Welche Seite im Flugzeug sollte ich buchen?", "Sieh dir die Route vorher an. In AirReveal kannst du den Flug planen und durchspielen, um zu sehen, was du überfliegst und auf welcher Seite es liegt. Planen ist immer kostenlos."),
         ],
     ),
     "it": dict(

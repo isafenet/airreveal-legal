@@ -36,6 +36,23 @@ LASTMOD = "2026-09-29"
 MARK_OPEN, MARK_CLOSE = "<!--i18n-->", "<!--/i18n-->"
 
 
+def french_spacing(value):
+    """French puts a no-break space before : and inside « », and a narrow one before ? ! ;
+    (as the app's strings do), so the mark never wraps onto a line of its own."""
+    if isinstance(value, str):
+        value = re.sub(r" ([?!;])", " \\1", value)
+        return value.replace(" :", " :").replace("« ", "« ").replace(" »", " »")
+    if isinstance(value, dict):
+        return {k: french_spacing(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return type(value)(french_spacing(v) for v in value)
+    return value
+
+
+T["fr"] = french_spacing(T["fr"])
+EXTRAS["fr"] = french_spacing(EXTRAS["fr"])
+
+
 def esc(text: str) -> str:
     return html.escape(text, quote=False)
 
