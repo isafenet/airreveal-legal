@@ -288,6 +288,18 @@ def write_css() -> None:
     p.write_text(s + CSS, encoding="utf-8")
 
 
+def stamp_stylesheet_links() -> None:
+    """Every page asks for styles.css?v=<first 8 of its hash>, so a changed stylesheet is fetched at once
+    rather than a browser keeping the old one for GitHub Pages' 10-minute cache."""
+    import hashlib
+    version = hashlib.sha256((ROOT / "styles.css").read_bytes()).hexdigest()[:8]
+    for page in sorted(ROOT.glob("*.html")) + sorted(ROOT.glob("*/*.html")):
+        text = page.read_text(encoding="utf-8")
+        stamped = re.sub(r'styles\.css(\?v=[0-9a-f]+)?"', f'styles.css?v={version}"', text)
+        if stamped != text:
+            page.write_text(stamped, encoding="utf-8")
+
+
 def write_sitemap() -> None:
     def entry(page: str, langs: bool) -> str:
         def one(folder):
@@ -336,6 +348,7 @@ def main() -> None:
         patch_english(page)
     patch_english_guide()
     write_css()
+    stamp_stylesheet_links()
     write_sitemap()
     print(f"built {len(LANGS)} languages x {len(LOCALIZED_PAGES)} pages; patched {len(LOCALIZED_PAGES) + len(ENGLISH_ONLY)} English pages")
 
