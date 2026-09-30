@@ -279,7 +279,7 @@ def patch_english_guide() -> None:
     path = ROOT / GUIDE
     page = path.read_text(encoding="utf-8")
     page = re.sub(r"\n?<!-- GUIDE-EXTRAS -->.*?<!-- /GUIDE-EXTRAS -->", "", page, flags=re.S)
-    page = re.sub(r"<!-- GUIDE-FAQ-EXTRAS -->.*?<!-- /GUIDE-FAQ-EXTRAS -->", "", page, flags=re.S)
+    page = re.sub(r"<!-- GUIDE-FAQ-EXTRAS -->.*?<!-- /GUIDE-FAQ-EXTRAS -->\n?[ \t]*", "", page, flags=re.S)
     e = EXTRAS["en"]
     gps_end = page.index("</section>", page.index('id="gps"')) + len("</section>")
     page = page[:gps_end] + "\n<!-- GUIDE-EXTRAS -->" + sections_html("en", esc) + "<!-- /GUIDE-EXTRAS -->" + page[gps_end:]
