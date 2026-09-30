@@ -153,7 +153,7 @@ def new16_section(t: dict) -> str:
     nw = t["new16"]
     cards = "".join(f'<article class="feature"><h3>{esc(a)}</h3><p>{esc(b)}</p></article>' for a, b in nw["cards"])
     return (f'<section class="section band" id="new"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(nw["eyebrow"])}</div>'
-            f'<h2>{esc(nw["h2"])}</h2><p>{esc(nw["p"])}</p></div><div class="features">{cards}</div></div></section>')
+            f'<h2>{esc(nw["h2"])}</h2><p>{esc(nw["p"])}</p></div><div class="features features-3">{cards}</div></div></section>')
 
 
 def render_home(folder: str) -> str:
@@ -272,6 +272,11 @@ CSS = f"""
 .legal-note{{margin-top:10px;font-size:13px;opacity:.75}}
 .price-note{{margin-top:18px;color:var(--muted);font-size:14px}}
 @media(min-width:901px){{.legal-links{{grid-template-columns:repeat(4,1fr)}}}}
+.band .feature{{color:var(--ink)}}
+.band .feature h3{{color:var(--ink)}}
+.features-3{{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){{.features-3{{grid-template-columns:repeat(2,1fr)}}}}
+@media(max-width:600px){{.features-3{{grid-template-columns:1fr}}}}
 """
 
 
