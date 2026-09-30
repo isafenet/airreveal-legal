@@ -27,6 +27,7 @@ from site_i18n import LANGS, T
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://airreveal.isafenet.app/"
+APP_STORE = "https://apps.apple.com/app/airreveal-flight-map-explorer/id6814283579"
 GUIDE = "what-am-i-flying-over.html"
 LOCALIZED_PAGES = ["index.html", GUIDE, "support.html"]
 USER_GUIDE = "user-guide.html"
@@ -104,6 +105,7 @@ def software_ld(t: dict, folder: str) -> dict:
             "operatingSystem": "iOS, iPadOS", "url": url(folder, "index.html"), "inLanguage": LANGS[folder][0],
             "image": BASE + "images/app-icon.png",
             "publisher": {"@type": "Organization", "@id": "https://isafenet.app/#organization", "name": "iSafeNet", "url": "https://isafenet.app/"},
+            "downloadUrl": APP_STORE,
             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}}
 
 
@@ -148,7 +150,7 @@ def render_home(folder: str) -> str:
     body = (
         header(folder, t, [("#features", n["features"]), ("#gallery", n["gallery"]), ("#pricing", n["pro"]), ("#faq", n["faq"]), ("support.html", n["support"]), ("../privacy.html", n["privacy"])])
         + f'<main><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">{esc(h["eyebrow"])}</div><h1>{esc(h["h1"])}</h1><p>{esc(h["p"])}</p>'
-          f'<div class="cta-row"><a class="btn btn-primary" href="#features">{esc(h["cta1"])}</a><a class="btn btn-secondary" href="#app-store">{esc(h["cta2"])}</a></div>'
+          f'<div class="cta-row"><a class="btn btn-primary" href="#features">{esc(h["cta1"])}</a><a class="btn btn-secondary" href="{APP_STORE}">{esc(h["cta2"])}</a></div>'
           f'<div class="trust">{"".join(f"<span>{esc(x)}</span>" for x in h["trust"])}</div></div>'
           # Three floating phones: this language's Plan, Flight and Journal screens (feature cards 0, 1 and 3).
           + '<div class="devices">' + "".join(
@@ -167,7 +169,7 @@ def render_home(folder: str) -> str:
         f'<section class="section" id="pricing"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(pr["eyebrow"])}</div><h2>{esc(pr["h2"])}</h2></div>'
           f'<div class="pricing"><div class="price-card"><h3>{esc(free_h)}</h3><p>{esc(free_p)}</p><ul>{li(free_li)}</ul></div>'
           f'<div class="price-card pro"><h3>{esc(pro_h)}</h3><p>{esc(pro_p)}</p><ul>{li(pro_li)}</ul></div></div><p class="price-note">{esc(pr["note"])}</p></div></section>'
-        f'<section class="section" id="app-store"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(st["eyebrow"])}</div><h2>{esc(st["h2"])}</h2><p>{esc(st["p"])}</p></div><div class="legal-links">{legal}</div></div></section></main>'
+        f'<section class="section" id="app-store"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(st["eyebrow"])}</div><h2>{esc(st["h2"])}</h2><p>{esc(st["p"])}</p><p style="margin-top:20px"><a class="btn btn-primary" href="{APP_STORE}">{esc(h["cta2"])}</a></p></div><div class="legal-links">{legal}</div></div></section></main>'
         + footer(t)
     )
     return (head(lang_code, t["home_title"], t["home_desc"], url(folder, "index.html"), "index.html", t["og_title"], t["home_desc"], og_locale, image=f"images/{folder}/marketing-wide.webp")
