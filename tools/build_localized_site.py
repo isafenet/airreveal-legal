@@ -24,6 +24,9 @@ from pathlib import Path
 from guide_extras import EXTRAS, sections_html
 
 from site_i18n import LANGS, T
+from site_v2 import CSS as V2_CSS
+from site_v2 import V2
+from site_v2 import render as render_v2
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://airreveal.isafenet.app/"
@@ -50,6 +53,7 @@ def french_spacing(value):
 
 
 T["fr"] = french_spacing(T["fr"])
+V2["fr"] = french_spacing(V2["fr"])
 EXTRAS["fr"] = french_spacing(EXTRAS["fr"])
 
 
@@ -174,14 +178,8 @@ def render_home(folder: str) -> str:
     audience = "".join(f'<section class="support-card"><h2>{esc(a)}</h2><p>{esc(b)}</p></section>' for a, b in au["cards"])
     body = (
         header(folder, t, [("#features", n["features"]), ("#gallery", n["gallery"]), ("#pricing", n["pro"]), ("#faq", n["faq"]), ("support.html", n["support"]), ("../privacy.html", n["privacy"])])
-        + f'<main><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">{esc(h["eyebrow"])}</div><h1>{esc(h["h1"])}</h1><p>{esc(h["p"])}</p>'
-          f'<div class="cta-row"><a class="btn btn-primary" href="#features">{esc(h["cta1"])}</a><a class="btn btn-secondary" href="{APP_STORE}">{esc(h["cta2"])}</a></div>'
-          f'<div class="trust">{"".join(f"<span>{esc(x)}</span>" for x in h["trust"])}</div></div>'
-          # Three floating phones: this language's Plan, Flight and Journal screens (feature cards 0, 1 and 3).
-          + '<div class="devices">' + "".join(
-              f'<div class="phone p{i}"><img src="../images/{folder}/panel-{im}.webp" alt="{attr(fe["cards"][c][2])}" width="596" height="1260"></div>'
-              for i, (im, c) in enumerate([("plan", 0), ("flight", 1), ("journal", 3)], 1)) + '</div></div></section>'
-        + new16_section(t)
+        # AirReveal 2: the tagline hero, Follow Me, Follow You, Watch/widgets, games and skins (site_v2.py).
+        + '<main>' + render_v2(folder, esc, APP_STORE, "../")
         + f'<section class="section" id="features"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(fe["eyebrow"])}</div><h2>{esc(fe["h2"])}</h2><p>{esc(fe["p"])}</p></div><div class="features">{cards}</div></div></section>'
         f'<section class="section band" id="for-everyone"><div class="wrap"><div class="section-head"><div class="eyebrow">{esc(au["eyebrow"])}</div><h2>{esc(au["h2"])}</h2><p>{esc(au["p"])}</p></div>'
           f'<div class="support-grid">{audience}</div><p style="text-align:center;margin-top:28px"><a class="btn btn-primary" href="../{USER_GUIDE}">{esc(au["button"])}</a></p></div></section>'
@@ -280,12 +278,27 @@ CSS = f"""
 """
 
 
+def patch_english_v2() -> None:
+    """Put the v2 hero and sections on the English home page, in place of the old hero and the New in 1.6
+    band the first time, and between the v2 markers after that."""
+    path = ROOT / "index.html"
+    page = path.read_text(encoding="utf-8")
+    block = "<!--v2-->" + render_v2("en", esc, APP_STORE, "") + "<!--/v2-->\n"
+    if "<!--v2-->" in page:
+        page = re.sub(r"<!--v2-->.*?<!--/v2-->\n?", lambda m: block, page, count=1, flags=re.S)
+    else:
+        start = page.index('<main><section class="hero">') + len("<main>")
+        end = page.index('<section class="section" id="features">')
+        page = page[:start] + block + page[end:]
+    path.write_text(page, encoding="utf-8")
+
+
 def write_css() -> None:
     p = ROOT / "styles.css"
     s = p.read_text(encoding="utf-8")
     if CSS_MARK in s:
         s = s[: s.index(CSS_MARK)].rstrip("\n") + "\n"
-    p.write_text(s + CSS, encoding="utf-8")
+    p.write_text(s + CSS + V2_CSS, encoding="utf-8")
 
 
 def stamp_stylesheet_links() -> None:
@@ -347,6 +360,7 @@ def main() -> None:
     for page in [*LOCALIZED_PAGES, *ENGLISH_ONLY]:
         patch_english(page)
     patch_english_guide()
+    patch_english_v2()
     write_css()
     stamp_stylesheet_links()
     write_sitemap()
