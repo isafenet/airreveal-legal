@@ -31,7 +31,7 @@ APP_STORE = "https://apps.apple.com/app/airreveal-flight-map-explorer/id68142835
 GUIDE = "what-am-i-flying-over.html"
 LOCALIZED_PAGES = ["index.html", GUIDE, "support.html"]
 USER_GUIDE = "user-guide.html"
-ENGLISH_ONLY = ["privacy.html", "terms.html", USER_GUIDE]
+ENGLISH_ONLY = ["privacy.html", "terms.html", USER_GUIDE, "credits.html"]
 LASTMOD = "2026-09-30"
 MARK_OPEN, MARK_CLOSE = "<!--i18n-->", "<!--/i18n-->"
 
