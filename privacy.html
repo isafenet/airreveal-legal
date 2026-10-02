@@ -53,14 +53,15 @@
       <li><a href="#security">16. Security</a></li>
       <li><a href="#changes">17. Changes to this policy</a></li>
       <li><a href="#launch-list">18. The AirReveal 2.0 launch list</a></li>
-      <li><a href="#contact">19. Contact</a></li>
+      <li><a href="#sky">19. The aircraft around you</a></li>
+      <li><a href="#contact">20. Contact</a></li>
     </ol>
   </nav>
 
   <section class="clause" id="overview">
     <h2 class="clause-title"><span class="num">1</span> Overview</h2>
     <p>AirReveal is a flight-planning, live-tracking, and landmark-discovery app. It is designed around a simple idea: your flight details and travel history should stay under your control, not ours.</p>
-    <p>This policy explains exactly what AirReveal records, where it lives, and what — if anything — ever leaves your device. There is no account to create and no AirReveal server to send data to, so most of this policy is a description of on-device behavior rather than a list of things we do with your information.</p>
+    <p>This policy explains exactly what AirReveal records, where it lives, and what — if anything — ever leaves your device. There is no account to create, and what you record stays on your device. The sky features (the aircraft around you, flight lookup and the notifications you can turn on) send small, specific requests to the services in section 19, a few of them through iSafeNet's own small server; none of them identifies you. So most of this policy is a description of on-device behavior rather than a list of things we do with your information.</p>
   </section>
 
   <section class="clause" id="data-you-enter">
@@ -79,6 +80,7 @@
   <section class="clause" id="location">
     <h2 class="clause-title"><span class="num">3</span> Location Services</h2>
     <p>AirReveal uses your device's GPS only while you're Live-tracking a real flight — a feature that plots your actual position against your planned route and detects nearby landmarks. AirReveal asks for location access when you start tracking, and then for "Always" access so tracking can continue in the background — while your device is locked or another app is open — for the whole flight. Its only use is to record your actual flown route and, on your device, to compare it with the route you planned.</p>
+    <p>The sky features (Above You Now, the sky map and the sky camera) also use your location, only while one of their screens is open and only with your permission, to find the aircraft around you. What that sends is in section 19.</p>
     <ul>
       <li>Location is never requested or used while you're only planning a flight — Plan mode is fully offline-capable and needs no GPS access.</li>
       <li>Your recorded route is stored locally on your device (see Section 7) and is included in an iCloud sync only if you explicitly choose to sync (Section 8).</li>
@@ -109,7 +111,7 @@
 
   <section class="clause" id="storage">
     <h2 class="clause-title"><span class="num">7</span> Where your data lives</h2>
-    <p>Everything you record is stored locally on your device in a private, sandboxed app database, shared only between the AirReveal app and its widgets/Live Activity so they can display consistent, up-to-date information. AirReveal does not operate any backend servers, and nothing you enter is uploaded anywhere by default.</p>
+    <p>Everything you record is stored locally on your device in a private, sandboxed app database, shared only between the AirReveal app and its widgets/Live Activity so they can display consistent, up-to-date information. Nothing you enter is uploaded anywhere by default. The only things iSafeNet's server keeps are the notification requests in section 19, and only while they're needed.</p>
   </section>
 
   <section class="clause" id="icloud">
@@ -146,7 +148,7 @@
 
   <section class="clause" id="sharing">
     <h2 class="clause-title"><span class="num">13</span> Sharing your data</h2>
-    <p>We don't share, sell, or rent your data to anyone — there is no data on our servers to share in the first place. The only parties who ever touch your information are:</p>
+    <p>We don't share, sell, or rent your data to anyone. The only parties who ever touch your information are:</p>
     <table class="datatable">
       <tr><th>Party</th><th>What they see</th><th>Why</th></tr>
       <tr><td>OpenFreeMap</td><td>The map area around your route</td><td>To download offline map tiles</td></tr>
@@ -154,6 +156,11 @@
       <tr><td>Apple (WeatherKit)</td><td>Coordinates &amp; time you request weather for</td><td>To show live weather along your route</td></tr>
       <tr><td>Apple (iCloud)</td><td>Your flight history &amp; journal, only if you tap Sync Now</td><td>To sync between your own devices</td></tr>
       <tr><td>Apple (App Store)</td><td>Payment &amp; subscription status</td><td>To process your purchase</td></tr>
+      <tr><td>ADSB.lol</td><td>A point near you (rounded to about a kilometre), an aircraft's address, or a flight's callsign</td><td>To show the aircraft around you, a plane you follow, and today's aircraft for your flight</td></tr>
+      <tr><td>adsbdb, Planespotters.net</td><td>An aircraft's address</td><td>For an aircraft's type, registration and photo</td></tr>
+      <tr><td>Wikipedia &amp; Wikimedia Commons</td><td>An aircraft type's name</td><td>For a photo of the type on the aircraft page</td></tr>
+      <tr><td>iSafeNet's server (Cloudflare) and SkyLink</td><td>A flight number</td><td>To look up a flight's route, and its status where available</td></tr>
+      <tr><td>iSafeNet's server (Cloudflare) and Apple (push notifications)</td><td>Only if you turn the notifications on: see section 19</td><td>To send emergency-aircraft alerts and landing notifications</td></tr>
     </table>
   </section>
 
@@ -169,7 +176,7 @@
 
   <section class="clause" id="security">
     <h2 class="clause-title"><span class="num">16</span> Security</h2>
-    <p>Your data benefits from iOS's standard app sandboxing and device-level encryption. If you use iCloud sync, data in transit and at rest is protected by Apple's iCloud security model. Because there is no AirReveal server or account, there is no central database of users' data that could be breached on our end.</p>
+    <p>Your data benefits from iOS's standard app sandboxing and device-level encryption. If you use iCloud sync, data in transit and at rest is protected by Apple's iCloud security model. There is no AirReveal account, so there is no central database of users' data that could be breached on our end; iSafeNet's server holds only the short-lived notification requests in section 19.</p>
   </section>
 
   <section class="clause" id="changes">
@@ -190,8 +197,22 @@
     <p>Our legal basis is your consent, which you can withdraw at any time.</p>
   </section>
 
+  <section class="clause" id="sky">
+    <h2 class="clause-title"><span class="num">19</span> The aircraft around you</h2>
+    <p>AirReveal's sky features show the planes flying over you and let you follow one. They use public flight-tracking data, and AirReveal asks only for what each one needs:</p>
+    <ul>
+      <li><strong>The aircraft around you.</strong> While a sky screen is open, AirReveal asks ADSB.lol, a community network of receivers, for the aircraft around a point near you, rounded to about a kilometre. Turn Live Monitoring off (Settings › Sky &amp; Aircraft) and nothing is asked for.</li>
+      <li><strong>A plane you tap or follow.</strong> Its details come from adsbdb, and a photo of it from Planespotters.net, asked for by the aircraft's own address. A plane you follow is asked for the same way, wherever it is.</li>
+      <li><strong>The aircraft page.</strong> A photo of the aircraft type comes from Wikipedia and Wikimedia Commons. On the day of your flight, AirReveal asks ADSB.lol which aircraft is flying it, by the flight's callsign.</li>
+      <li><strong>Looking up a flight.</strong> The flight number goes to iSafeNet's server, which answers from its own route data or asks SkyLink, a flight-data service. Answers are kept for a few minutes so the same flight isn't asked twice; nothing about you is kept.</li>
+      <li><strong>Emergency-aircraft alerts (off until you turn them on).</strong> iSafeNet's server keeps this phone's notification token, your location rounded to about a kilometre, the distance and services you chose and your units, so it can tell you when one comes near. It's deleted when you turn alerts off, or after 30 days without an update.</li>
+      <li><strong>Landing notifications (Tell Me When It Lands).</strong> While you follow a plane, iSafeNet's server keeps this phone's notification token, the plane's address and callsign and, when AirReveal knows it, the city it's flying to. It's deleted when the plane lands, when you stop following, or after 24 hours.</li>
+    </ul>
+    <p>Notifications are delivered by Apple's push notification service. iSafeNet's server runs on Cloudflare. None of these requests includes your name, an account or your location history, and none is used for tracking or advertising. Our legal basis is our legitimate interest in providing the features you open, and your consent for the notifications, which you can withdraw at any time in Settings › Sky &amp; Aircraft.</p>
+  </section>
+
   <section class="clause" id="contact">
-    <h2 class="clause-title"><span class="num">19</span> Contact</h2>
+    <h2 class="clause-title"><span class="num">20</span> Contact</h2>
     <p>Questions about this policy or your data can be sent to <a href="mailto:info@isafenet.app">info@isafenet.app</a>.</p>
   </section>
 </div>
