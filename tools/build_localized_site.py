@@ -27,6 +27,7 @@ from site_i18n import LANGS, T
 from site_v2 import CSS as V2_CSS
 from site_v2 import V2
 from site_v2 import render as render_v2
+from site_v2_home import render as render_v2_home
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://airreveal.isafenet.app/"
@@ -368,7 +369,14 @@ def main() -> None:
     for folder in LANGS:
         out = ROOT / folder
         out.mkdir(exist_ok=True)
-        (out / "index.html").write_text(render_home(folder), encoding="utf-8")
+        english_home = (ROOT / "index.html").read_text(encoding="utf-8")
+        if STANDALONE_MARK in english_home:
+            # The 2.0 home page: the English design, translated (site_v2_home.py).
+            home, missing = render_v2_home(folder, english_home, base=BASE, hreflang=hreflang_block("index.html"), spacing=french_spacing)
+            assert not missing, f"{folder}: no translation for {sorted(set(missing))}"
+        else:
+            home = render_home(folder)
+        (out / "index.html").write_text(home, encoding="utf-8")
         (out / GUIDE).write_text(render_guide(folder), encoding="utf-8")
         (out / "support.html").write_text(render_support(folder), encoding="utf-8")
     for page in [*LOCALIZED_PAGES, *ENGLISH_ONLY]:
