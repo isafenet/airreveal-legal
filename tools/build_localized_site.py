@@ -32,6 +32,8 @@ GUIDE = "what-am-i-flying-over.html"
 LOCALIZED_PAGES = ["index.html", GUIDE, "support.html"]
 USER_GUIDE = "user-guide.html"
 ENGLISH_ONLY = ["privacy.html", "terms.html", USER_GUIDE, "credits.html"]
+# English pages with a design of their own (no site nav or language switcher), listed in the sitemap only.
+STANDALONE = ["airreveal-2.html"]
 LASTMOD = "2026-09-30"
 MARK_OPEN, MARK_CLOSE = "<!--i18n-->", "<!--/i18n-->"
 
@@ -312,7 +314,8 @@ def write_sitemap() -> None:
         return "".join(one(f) for f in [None, *LANGS]) if langs else one(None)
 
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-           + "".join(entry(p, True) for p in LOCALIZED_PAGES) + "".join(entry(p, False) for p in ENGLISH_ONLY) + "</urlset>\n")
+           + "".join(entry(p, True) for p in LOCALIZED_PAGES) + "".join(entry(p, False) for p in ENGLISH_ONLY + STANDALONE)
+           + "</urlset>\n")
     (ROOT / "sitemap.xml").write_text(xml, encoding="utf-8")
 
 

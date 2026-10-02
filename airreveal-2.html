@@ -1,0 +1,360 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AirReveal 2.0: See the Planes Flying Over You, Live (Coming Soon)</title>
+<meta name="description" content="AirReveal 2.0 is coming: see every aircraft flying over you, follow any plane from your Apple Watch, and spot police and air ambulance helicopters in their own colours. A free update.">
+<link rel="canonical" href="https://airreveal.isafenet.app/airreveal-2.html">
+<meta name="theme-color" content="#060A13">
+<meta property="og:type" content="website"><meta property="og:site_name" content="AirReveal"><meta property="og:title" content="AirReveal 2.0: coming soon"><meta property="og:description" content="AirReveal 2.0 is coming: see every aircraft flying over you, follow any plane from your Apple Watch, and spot police and air ambulance helicopters in their own colours. A free update."><meta property="og:url" content="https://airreveal.isafenet.app/airreveal-2.html"><meta property="og:image" content="https://airreveal.isafenet.app/images/v2/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="AirReveal 2.0: coming soon"><meta name="twitter:description" content="AirReveal 2.0 is coming: see every aircraft flying over you, follow any plane from your Apple Watch, and spot police and air ambulance helicopters in their own colours. A free update."><meta name="twitter:image" content="https://airreveal.isafenet.app/images/v2/og.jpg">
+<meta name="apple-itunes-app" content="app-id=6814283579">
+<link rel="icon" href="images/app-icon.png"><link rel="apple-touch-icon" href="images/app-icon.png">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"AirReveal: Flight Map Explorer","operatingSystem":"iOS, iPadOS, watchOS","applicationCategory":"TravelApplication","url":"https://airreveal.isafenet.app/","downloadUrl":"https://apps.apple.com/app/airreveal-flight-map-explorer/id6814283579","softwareVersion":"2.0","image":"https://airreveal.isafenet.app/images/v2/og.jpg","publisher":{"@id":"https://isafenet.app/#organization"}}
+</script>
+<style>
+/* Layout: one deliberate dark world (night sky). Signature: an airport split-flap board whose "flights" are 2.0's features. */
+:root{
+  --night:#060A13; --panel:#0E1524; --panel-2:#141D30; --ink:#EDF2FA; --soft:#9AA7BD; --line:#22304A;
+  --amber:#FFB43D; --teal:#34C6B4; --flap:#111317; --flap-ink:#F5F1E6;
+  --display:"Big Shoulders Display", "Arial Narrow", Impact, system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --wrap:1160px; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--night);color:var(--ink);font:400 1.05rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+p{margin:0}
+a{color:var(--amber)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;font-family:var(--display);line-height:.96;text-wrap:balance;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:clamp(2.3rem,6vw,4.4rem);font-weight:900}
+h3{font-size:1.6rem;font-weight:700}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+.tag{font:700 .78rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.lede{color:var(--soft);font-size:1.15rem;max-width:56ch}
+section{padding-block:clamp(60px,10vw,120px)}
+
+.top{position:absolute;inset-inline:0;top:0;z-index:4;padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;gap:14px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:10px;font:900 1.4rem var(--display);text-transform:uppercase;color:#fff;text-decoration:none;letter-spacing:.04em}
+.brand img{width:36px;height:36px;border-radius:9px}
+.soon{margin-left:auto;font:700 .74rem var(--mono);letter-spacing:.12em;border:1px solid rgba(255,180,61,.6);color:var(--amber);border-radius:999px;padding:6px 12px}
+
+.hero{position:relative;overflow:hidden;padding-block:clamp(120px,16vw,180px) clamp(60px,9vw,100px)}
+.hero::before{content:"";position:absolute;inset:0;background:url(images/v2/hero.webp) center 40%/cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,10,19,.55),rgba(6,10,19,.35) 40%,var(--night) 98%)}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:22px}
+.title{display:flex;flex-wrap:wrap;gap:6px;font:700 clamp(1.9rem,7.4vw,5.2rem)/1 var(--mono)}
+.title .word{display:flex;gap:4px}
+.title .gap{width:clamp(10px,2vw,24px)}
+.flap{position:relative;display:grid;place-items:center;width:1.04ch;height:1.4em;padding-inline:.06em;background:linear-gradient(180deg,#1b1e24 0 49.4%,#0a0b0e 49.4% 50.6%,#16191f 50.6%);color:var(--flap-ink);border-radius:.12em;box-shadow:0 .08em .18em rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.05)}
+.flap.hl{color:var(--amber)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero .say{font:900 clamp(1.6rem,4.2vw,3rem)/1 var(--display);text-transform:uppercase;max-width:22ch}
+.hero .lede{color:#d6deeb}
+.cta{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-top:6px}
+.store{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:12px;padding:11px 18px 11px 14px;border:1px solid rgba(255,255,255,.3)}
+.store svg{width:24px;height:24px;fill:#fff}
+.store small{display:block;font-size:.66rem;line-height:1;opacity:.85}
+.store b{display:block;font:700 1.15rem/1.1 var(--body)}
+.cta span{color:var(--soft);font-size:.92rem}
+
+/* departures board */
+.board{background:var(--flap);border-radius:18px;padding:clamp(14px,3vw,28px);box-shadow:0 30px 70px -30px rgba(0,0,0,.8),inset 0 0 0 1px #262a33;overflow-x:auto}
+.board table{width:100%;border-collapse:separate;border-spacing:0 8px;font:700 clamp(.78rem,1.6vw,1.05rem)/1 var(--mono);min-width:560px}
+.board th{color:var(--amber);font-weight:700;text-align:left;font-size:.78em;letter-spacing:.14em;padding:0 10px 4px}
+.board td{background:#1a1d23;color:var(--flap-ink);padding:12px 10px;text-transform:uppercase;letter-spacing:.06em;border-top:1px solid #23272f;border-bottom:1px solid #0b0c0f}
+.board td:first-child{border-radius:8px 0 0 8px;color:var(--amber)}
+.board td:last-child{border-radius:0 8px 8px 0}
+.st{color:var(--teal)}
+.st.new{color:var(--amber)}
+.board-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.board-head .clock{font:700 1.6rem var(--mono);color:var(--amber)}
+
+/* halves */
+.halves{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.half{position:relative;border-radius:28px;overflow:hidden;background:var(--panel);min-height:560px;display:grid;align-content:end}
+.half .bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.55}
+.half .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,var(--panel) 75%)}
+.half .inner{position:relative;padding:28px;display:grid;gap:12px}
+.half .phones{display:flex;gap:12px;margin-bottom:10px}
+.half .phones img{width:min(170px,44%);border-radius:24px;border:6px solid #000;box-shadow:0 20px 40px -20px #000}
+.half .tag{color:var(--teal)}
+@media (max-width:860px){.halves{grid-template-columns:1fr}.half{min-height:auto}}
+
+/* services */
+.services{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);align-items:center}
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.badge{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:10px;justify-items:start}
+.disc{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--edge);box-shadow:inset 0 0 0 3px var(--body-c)}
+.disc svg{width:22px;height:22px;fill:var(--body-c)}
+.badge b{font:700 1.3rem var(--display);text-transform:uppercase;letter-spacing:.02em}
+.badge span{color:var(--soft);font-size:.86rem;line-height:1.35}
+.alert{background:var(--panel-2);border:1px solid var(--line);border-radius:20px;padding:16px 18px;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;max-width:440px;margin-top:22px}
+.alert .ico{width:44px;height:44px;border-radius:11px;background:url(images/app-icon.png) center/cover}
+.alert b{display:block;font-weight:600}
+.alert small{color:var(--soft)}
+@media (max-width:860px){.services{grid-template-columns:1fr}}
+
+/* follow */
+.follow{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,60px);align-items:center}
+.follow .pic{position:relative}
+.follow .pic img.ph{width:min(300px,76vw);border-radius:34px;border:9px solid #000;margin-inline:auto}
+.island{position:absolute;left:50%;top:5%;transform:translateX(-50%);background:#000;color:#fff;border-radius:999px;padding:8px 14px;display:flex;gap:10px;align-items:center;font:600 .82rem var(--mono);white-space:nowrap;box-shadow:0 10px 30px -10px #000}
+.island i{width:8px;height:8px;border-radius:50%;background:var(--amber);display:block}
+.feats{display:grid;gap:16px;margin-top:8px}
+.feats div{display:grid;gap:2px;border-left:2px solid var(--amber);padding-left:14px}
+.feats b{font-weight:600}
+.feats span{color:var(--soft)}
+@media (max-width:860px){.follow{grid-template-columns:1fr}}
+
+/* games + looks */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:grid;align-content:start}
+.card .pic{background:var(--panel-2);display:grid;place-items:center;padding:20px 20px 0;height:280px;overflow:hidden}
+.card .pic img{width:72%;border-radius:20px 20px 0 0;border:5px solid #000;border-bottom:0}
+.card .txt{padding:20px;display:grid;gap:8px}
+.card .txt p{color:var(--soft)}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:min(230px,60vw);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 18px;max-width:var(--wrap);margin-inline:auto}
+.strip img{border-radius:20px;scroll-snap-align:start}
+.head{display:grid;gap:12px;max-width:760px;margin-bottom:30px}
+
+/* final */
+.final{position:relative;border-radius:30px;overflow:hidden;padding:clamp(32px,7vw,80px);display:grid;gap:18px}
+.final::before{content:"";position:absolute;inset:0;background:url(images/v2/night.webp) center/cover}
+.final::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,10,19,.92),rgba(6,10,19,.4))}
+.final>*{position:relative;z-index:1}
+form.notify{display:flex;flex-wrap:wrap;gap:10px;max-width:520px}
+form.notify input{flex:1 1 220px;min-width:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:12px;padding:13px 14px;font:400 1rem var(--body)}
+form.notify button{background:var(--amber);color:#1b1203;border:0;border-radius:12px;padding:13px 20px;font:700 1rem var(--body);cursor:pointer}
+.thanks{color:var(--teal);font-weight:600}
+.consent{flex-basis:100%;color:var(--soft);font-size:.86rem}
+.error{flex-basis:100%;color:#FF8A7A;font-weight:600}
+form.notify button[disabled]{opacity:.6;cursor:progress}
+
+footer{padding-block:36px 64px;color:var(--soft);font-size:.88rem}
+footer .wrap{display:grid;gap:10px}
+</style>
+</head><body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="images/app-icon.png" alt="">AirReveal</a>
+    <span class="soon">2.0 · Coming soon</span>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="tag">Sneak peek · Version 2.0</p>
+    <h1 class="title" id="title">AirReveal 2.0</h1>
+    <p class="say">Discover what's above or below you.</p>
+    <p class="lede">The biggest AirReveal yet. Look up and see every aircraft flying over you, follow any plane from your wrist, and spot police and air ambulance helicopters in their own colours. Look down from your own seat and the world below has names.</p>
+    <div class="cta">
+      <a class="store" href="https://apps.apple.com/app/airreveal-flight-map-explorer/id6814283579"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.75.73 1.05 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.28-.88-2.3-3.48zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg><span><small>Get it now on the</small><b>App Store</b></span></a>
+      <span>2.0 arrives as a free update.</span>
+    </div>
+  </div>
+</header>
+
+<section style="padding-top:20px" aria-labelledby="dep">
+  <div class="wrap">
+    <div class="board-head">
+      <div class="head" style="margin:0"><p class="tag">Departures</p><h2 id="dep">Now boarding in 2.0</h2></div>
+      <span class="clock num" id="clock" aria-hidden="true">09:41</span>
+    </div>
+    <div class="board" role="region" aria-label="What's new in AirReveal 2.0" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Flight</th><th scope="col">Feature</th><th scope="col">Gate</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><td>AR200</td><td>Above you · every aircraft overhead</td><td>A1</td><td class="st">Boarding</td></tr>
+          <tr><td>AR201</td><td>Follow any plane on the map</td><td>A2</td><td class="st">On time</td></tr>
+          <tr><td>AR202</td><td>Emergency aircraft in their colours</td><td>B1</td><td class="st new">New</td></tr>
+          <tr><td>AR203</td><td>Apple Watch &amp; watch faces</td><td>B2</td><td class="st">On time</td></tr>
+          <tr><td>AR204</td><td>Live Activity &amp; widgets</td><td>C1</td><td class="st">On time</td></tr>
+          <tr><td>AR205</td><td>Spotter's Logbook &amp; Sky Bingo</td><td>C2</td><td class="st">Boarding</td></tr>
+          <tr><td>AR206</td><td>Split-flap &amp; Information Board looks</td><td>D1</td><td class="st">On time</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><p class="tag">Two halves, one app</p><h2>Look up. Look down.</h2></div>
+    <div class="halves">
+      <article class="half">
+        <div class="bg" style="background-image:url(images/v2/above.webp)"></div>
+        <div class="inner">
+          <div class="phones"><img src="images/v2/screen-04.webp" alt="Above You map with aircraft around London" loading="lazy"><img src="images/v2/screen-05.webp" alt="Sky camera naming aircraft overhead" loading="lazy"></div>
+          <p class="tag">Above you</p>
+          <h3>Who's flying over?</h3>
+          <p class="lede">A live radar of everything in the sky around you. Tap one to see its route, type and photo, or hold up your phone and the sky camera names each plane where it is.</p>
+        </div>
+      </article>
+      <article class="half">
+        <div class="bg" style="background-image:url(images/v2/follow.webp)"></div>
+        <div class="inner">
+          <div class="phones"><img src="images/v2/screen-02.webp" alt="Live flight map from your seat" loading="lazy"><img src="images/v2/screen-03.webp" alt="Explore what's below the plane" loading="lazy"></div>
+          <p class="tag">Below you</p>
+          <h3>The world beneath your wings.</h3>
+          <p class="lede">From your own seat: the landmarks below, which side to look from, and a journal of every flight. Works offline, at 38,000 feet.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap services">
+    <div>
+      <div class="head"><p class="tag">New in 2.0</p><h2>Blue lights, spotted.</h2>
+      <p class="lede">Police, air ambulance, coastguard, firefighting and military aircraft stand out in their own service's colours, like the UK's black-and-yellow police helicopters. Turn on alerts and AirReveal tells you when one comes near, even with the app closed.</p></div>
+      <div class="alert" aria-label="Example notification"><span class="ico" aria-hidden="true"></span><div><b>Air ambulance nearby</b><small>HLE80 (A169), 2 mi NE of you</small></div></div>
+    </div>
+    <div class="badges">
+      <div class="badge" style="--edge:#FFD600;--body-c:#141417"><span class="disc"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/></svg></span><b>Police</b><span>Black and yellow, as in the UK</span></div>
+      <div class="badge" style="--edge:#008C45;--body-c:#FFD600"><span class="disc"><svg viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg></span><b>Air ambulance</b><span>Yellow and green</span></div>
+      <div class="badge" style="--edge:#FFFFFF;--body-c:#DB141A"><span class="disc"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg></span><b>Coastguard</b><span>HM Coastguard red and white</span></div>
+      <div class="badge" style="--edge:#DB141A;--body-c:#FFD600"><span class="disc"><svg viewBox="0 0 24 24"><path d="M12 2s6 6 6 11a6 6 0 0 1-12 0c0-3 2-5 2-5s0 3 2 4c0-4 2-10 2-10z"/></svg></span><b>Firefighting</b><span>Yellow and red</span></div>
+      <div class="badge" style="--edge:#DBDECC;--body-c:#6B785C"><span class="disc"><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.6 1.6 7.1L12 17.6 5.7 21.3l1.6-7.1L2 9.6 9 9z"/></svg></span><b>Military</b><span>Olive drab</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap follow">
+    <div class="pic">
+      <img class="ph" src="images/v2/screen-06.webp" alt="Following a plane on the map with its recorded track" loading="lazy">
+      <div class="island" aria-hidden="true"><i></i>BAW507 · 3 mi E</div>
+    </div>
+    <div>
+      <div class="head"><p class="tag">Follow you</p><h2>Pick a plane. Keep it close.</h2>
+      <p class="lede">Follow any aircraft on the map with its real track, and it stays with you after you lock your phone.</p></div>
+      <div class="feats">
+        <div><b>Live Activity</b><span>On the Lock Screen and in the Dynamic Island.</span></div>
+        <div><b>Apple Watch</b><span>A radar you zoom with the Digital Crown, and an arrow that points to the plane as you turn.</span></div>
+        <div><b>Watch faces and widgets</b><span>The nearest aircraft on your watch face and Home Screen.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><p class="tag">Play as you go</p><h2>Every plane counts.</h2></div>
+    <div class="cards">
+      <div class="card"><div class="pic"><img src="images/v2/screen-08.webp" alt="Spotter's Logbook" loading="lazy"></div><div class="txt"><h3>Spotter's Logbook</h3><p>Every aircraft you reveal, rated common, rare or legendary, plus Sky Bingo and three challenges a day.</p></div></div>
+      <div class="card"><div class="pic"><img src="images/v2/screen-07.webp" alt="Flight journal" loading="lazy"></div><div class="txt"><h3>Your flight journal</h3><p>Every trip you take, kept with its route and the places you flew over.</p></div></div>
+      <div class="card"><div class="pic"><img src="images/v2/screen-09.webp" alt="Split-flap look" loading="lazy"></div><div class="txt"><h3>Three looks</h3><p>Classic, Split-Flap or Information Board, on every screen.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0" aria-labelledby="tour">
+  <div class="wrap head"><p class="tag">First look</p><h2 id="tour">Nine screens from 2.0</h2></div>
+  <div class="strip" tabindex="0" aria-label="AirReveal 2.0 screenshots, scroll sideways">
+    <img src="images/v2/panel-01.webp" alt="Discover what's above or below you" loading="lazy">
+    <img src="images/v2/panel-02.webp" alt="See where you are" loading="lazy">
+    <img src="images/v2/panel-03.webp" alt="Discover what's below" loading="lazy">
+    <img src="images/v2/panel-04.webp" alt="Planes above you" loading="lazy">
+    <img src="images/v2/panel-05.webp" alt="Point at the sky" loading="lazy">
+    <img src="images/v2/panel-06.webp" alt="Follow any plane" loading="lazy">
+    <img src="images/v2/panel-07.webp" alt="Journal and logbook" loading="lazy">
+    <img src="images/v2/panel-08.webp" alt="Play as you go" loading="lazy">
+    <img src="images/v2/panel-09.webp" alt="Make it yours" loading="lazy">
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="final">
+      <p class="tag">Final call</p>
+      <h2>Be first to board 2.0.</h2>
+      <p class="lede" style="color:#d6deeb">Get AirReveal today and 2.0 arrives as a free update. Or leave your email and we'll tell you the moment it lands.</p>
+      <form class="notify" id="notify" novalidate>
+        <label for="email" class="tag" style="flex-basis:100%">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+        <input class="vh" id="website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" id="send">Tell me</button>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAFDmH6KTeIIm11HZ" data-theme="dark" data-size="flexible" style="flex-basis:100%"></div>
+        <p class="consent">We'll email you once, when AirReveal 2.0 is out, then delete your address. It's used for nothing else. <a href="privacy.html#launch-list">Privacy policy</a>.</p>
+        <p class="error" id="error" role="alert" hidden></p>
+      </form>
+      <p class="thanks" id="thanks" role="status" hidden>You're on the list. We'll email you when 2.0 lands.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 iSafeNet. Aircraft data from ADSB.lol (ODbL) and plane-alert-db (ODbL).</p>
+    <p>Photos on Unsplash: Zac Ong, Ben Klewais, Patrick Fore, Nicolas Houdayer.</p>
+    <p><a href="index.html">AirReveal today</a> · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="https://isafenet.app/feedback.html">Feedback board</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var title = document.getElementById("title");
+  var words = ["AIRREVEAL", "2.0"];
+  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.";
+  var cells = [];
+  title.textContent = "";
+  var plain = document.createElement("span"); plain.className = "vh"; plain.textContent = "AirReveal 2.0"; title.appendChild(plain);
+  words.forEach(function(w, wi){
+    var word = document.createElement("span"); word.className = "word"; word.setAttribute("aria-hidden", "true");
+    w.split("").forEach(function(ch){
+      var c = document.createElement("span"); c.className = "flap" + (wi === 1 ? " hl" : ""); c.textContent = ch;
+      word.appendChild(c); cells.push({el:c, target:ch});
+    });
+    title.appendChild(word);
+    if (wi === 0) { var g = document.createElement("span"); g.className = "gap"; title.appendChild(g); }
+  });
+  if (!reduce) {
+    cells.forEach(function(cell, i){
+      var flips = 6 + i * 2, n = 0;
+      setTimeout(function tick(){
+        if (n++ < flips) { cell.el.textContent = chars[Math.floor(Math.random() * chars.length)]; setTimeout(tick, 55); }
+        else cell.el.textContent = cell.target;
+      }, 300);
+    });
+  }
+  var clock = document.getElementById("clock");
+  function time(){ var d = new Date(); clock.textContent = String(d.getHours()).padStart(2,"0") + ":" + String(d.getMinutes()).padStart(2,"0"); }
+  time(); setInterval(time, 20000);
+  var form = document.getElementById("notify"), error = document.getElementById("error"), send = document.getElementById("send");
+  function problem(message){ error.textContent = message; error.hidden = false; }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    error.hidden = true;
+    var input = document.getElementById("email");
+    if (!input.value || !input.checkValidity()) { input.focus(); input.setAttribute("aria-invalid", "true"); problem("Please check your email address."); return; }
+    input.removeAttribute("aria-invalid");
+    var token = window.turnstile ? window.turnstile.getResponse() : "";
+    if (!token) { problem("Please wait a moment for the quick check that you're a person, then try again."); return; }
+    send.disabled = true;
+    fetch("https://isafenet-feedback.isafenet-feedback.workers.dev/api/launch-list", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({app: "airreveal", email: input.value, website: document.getElementById("website").value, turnstile: token})
+    }).then(function(r){ return r.json().then(function(d){ return {ok: r.ok, d: d}; }); })
+      .then(function(res){
+        if (res.ok) { form.hidden = true; document.getElementById("thanks").hidden = false; return; }
+        problem(res.d.error || "That didn't go through. Please try again.");
+        if (window.turnstile) window.turnstile.reset();
+      })
+      .catch(function(){ problem("We couldn't reach the list just now. Please try again."); })
+      .then(function(){ send.disabled = false; });
+  });
+})();
+</script>
+</body></html>
