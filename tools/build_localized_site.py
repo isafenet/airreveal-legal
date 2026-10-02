@@ -36,7 +36,7 @@ LOCALIZED_PAGES = ["index.html", GUIDE, "support.html"]
 USER_GUIDE = "user-guide.html"
 ENGLISH_ONLY = ["privacy.html", "terms.html", USER_GUIDE, "credits.html"]
 # English pages with a design of their own (no site nav or language switcher), listed in the sitemap only.
-STANDALONE = ["airreveal-2.html"]
+STANDALONE = []  # airreveal-2.html, the sneak peek, sends visitors home since 2.0 shipped
 LASTMOD = "2026-09-30"
 MARK_OPEN, MARK_CLOSE = "<!--i18n-->", "<!--/i18n-->"
 
@@ -242,6 +242,10 @@ def render_support(folder: str) -> str:
 
 
 # ------------------------------------------------------------- English pages
+# Marks an English page built with its own design (no site nav or shared sections to patch).
+STANDALONE_MARK = "<!--standalone-->"
+
+
 def patch_english(page: str) -> None:
     """Idempotently add hreflang alternates and the switcher to an English page."""
     path = ROOT / page
@@ -251,6 +255,11 @@ def patch_english(page: str) -> None:
     if alt:
         assert "</head>" in s, page
         s = s.replace("</head>", f"{MARK_OPEN}{alt}{MARK_CLOSE}</head>", 1)
+    if STANDALONE_MARK in s:
+        # A page with a design of its own (the AirReveal 2.0 home page): its alternates only; it links the
+        # other languages itself.
+        path.write_text(s, encoding="utf-8")
+        return
     sw = switcher(None, page, "Language", "")
     m = re.search(r'<nav class="site-nav">.*?</nav>', s, flags=re.S)
     assert m, f"no site-nav in {page}"
@@ -285,6 +294,8 @@ def patch_english_v2() -> None:
     band the first time, and between the v2 markers after that."""
     path = ROOT / "index.html"
     page = path.read_text(encoding="utf-8")
+    if STANDALONE_MARK in page:
+        return  # the new 2.0 design carries its own sections
     block = "<!--v2-->" + render_v2("en", esc, APP_STORE, "") + "<!--/v2-->\n"
     if "<!--v2-->" in page:
         page = re.sub(r"<!--v2-->.*?<!--/v2-->\n?", lambda m: block, page, count=1, flags=re.S)
