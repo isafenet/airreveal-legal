@@ -98,7 +98,7 @@ def render(folder: str, english: str, *, base: str, hreflang: str, spacing) -> t
     # ---- head: language, title, descriptions, addresses, alternates and the structured data
     title = strings["AirReveal: What Am I Flying Over? Flight Map & Sky Radar"]
     desc = strings[next(k for k in strings if k.startswith("See what you're flying over"))]
-    og_title = "AirReveal 2.0: " + strings["Discover what's above or below you"]
+    og_title = "AirReveal 2.0: " + strings["Discover what's above and below"]
     head = head.replace('<html lang="en">', f'<html lang="{lang_code}">', 1)
     head = re.sub(r"<title>.*?</title>", lambda m: f"<title>{html.escape(title, quote=False)}</title>", head, count=1)
     head = re.sub(r'(<meta (?:name|property)="(?:description|og:description|twitter:description)" content=")[^"]*"', lambda m: m.group(1) + html.escape(desc) + '"', head)

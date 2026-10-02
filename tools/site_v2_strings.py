@@ -6,6 +6,7 @@ site: du (de), tú (es), vous (fr), tu (it), você (pt-BR). Distances are in kil
 
 STRINGS = {
 "de": {
+ "Discover what's above and below.": "Entdecke, was darüber und darunter ist.", "Discover what's above and below": "Entdecke, was darüber und darunter ist",
  "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal: Was überfliege ich? Flugkarte & Himmelsradar",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
    "Sieh auf deinem eigenen Flug, was du überfliegst, auch im Flugmodus, und am Boden jedes Flugzeug, das über dich fliegt. Offline-Flugkarte und Live-Himmelsradar für iPhone, iPad und Apple Watch.",
@@ -91,6 +92,7 @@ STRINGS = {
  "Also in": "Auch auf",
 },
 "es": {
+ "Discover what's above and below.": "Descubre lo que hay arriba y abajo.", "Discover what's above and below": "Descubre lo que hay arriba y abajo",
  "Choose your way to fly": "Elige cómo volar", "Following a plane": "Siguiendo un avión", "Plan freely. Go Pro when you want more.": "Planifica gratis. Pásate a Pro cuando quieras más.",
  "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal: ¿Qué estoy sobrevolando? Mapa de vuelo y radar del cielo",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
@@ -174,6 +176,7 @@ STRINGS = {
  "Journal and logbook": "Diario y cuaderno", "Play as you go": "Juega mientras viajas", "Also in": "También en",
 },
 "fr": {
+ "Discover what's above and below.": "Découvrez ce qui est au-dessus et en dessous.", "Discover what's above and below": "Découvrez ce qui est au-dessus et en dessous",
  "Choose your way to fly": "Choisissez votre façon de voler", "Following a plane": "Suivre un avion", "Plan freely. Go Pro when you want more.": "Planifiez gratuitement. Passez à Pro quand vous voulez plus.",
  "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal : qu'est-ce que je survole ? Carte de vol et radar du ciel",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
@@ -257,6 +260,7 @@ STRINGS = {
  "Journal and logbook": "Journal et carnet", "Play as you go": "Jouez en route", "Also in": "Aussi en",
 },
 "it": {
+ "Discover what's above and below.": "Scopri cosa c'è sopra e sotto.", "Discover what's above and below": "Scopri cosa c'è sopra e sotto",
  "Choose your way to fly": "Scegli come volare", "Following a plane": "Seguire un aereo", "Plan freely. Go Pro when you want more.": "Pianifica gratis. Passa a Pro quando vuoi di più.",
  "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal: cosa sto sorvolando? Mappa di volo e radar del cielo",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
@@ -340,6 +344,7 @@ STRINGS = {
  "Journal and logbook": "Diario e registro", "Play as you go": "Gioca mentre viaggi", "Also in": "Anche in",
 },
 "pt-br": {
+ "Discover what's above and below.": "Descubra o que há acima e abaixo.", "Discover what's above and below": "Descubra o que há acima e abaixo",
  "Choose your way to fly": "Escolha como voar", "Following a plane": "Seguindo um avião", "Plan freely. Go Pro when you want more.": "Planeje grátis. Assine o Pro quando quiser mais.",
  "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal: o que estou sobrevoando? Mapa de voo e radar do céu",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
