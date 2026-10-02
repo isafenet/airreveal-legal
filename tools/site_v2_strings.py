@@ -41,7 +41,7 @@ STRINGS = {
  "Day and night maps": "Karten für Tag und Nacht", "Choose the map type; after sunset, Night Lights shows the streets lit below.": "Wähle den Kartentyp; nach Sonnenuntergang zeigt Nachtlichter die beleuchteten Straßen darunter.",
  "Look up with the camera": "Mit der Kamera nach oben schauen", "Point at the sky and each plane is marked where it is.": "Richte die Kamera auf den Himmel, und jedes Flugzeug wird dort markiert, wo es ist.",
  "Aircraft cards": "Flugzeugkarten", "A photo of that very aircraft, its route, height, speed and type.": "Ein Foto genau dieses Flugzeugs, seine Route, Höhe, Geschwindigkeit und sein Typ.",
- "Follow it": "Folge ihm", "Keep a plane on the map up to 500 miles away, along the track it really flew.": "Behalte ein Flugzeug bis zu 800 km entfernt auf der Karte, entlang der Strecke, die es wirklich geflogen ist.",
+ "Follow it": "Folge ihm", "Keep a plane on the map for its whole flight, along the track it really flew, and hear when it lands.": "Behalte ein Flugzeug den ganzen Flug über auf der Karte, entlang seiner tatsächlichen Flugspur, und erfahre, wenn es landet.",
  "Helicopters too": "Auch Hubschrauber", "Shown with their own icon, so you know what you're hearing.": "Mit eigenem Symbol, damit du weißt, was du hörst.",
  "Blue lights, spotted.": "Blaulicht am Himmel.",
  "Police, air ambulance, coastguard, firefighting and military aircraft stand out in their own service's colours. Turn on alerts and AirReveal tells you when one comes near, even with the app closed.":
@@ -128,7 +128,7 @@ STRINGS = {
  "Day and night maps": "Mapas de día y de noche", "Choose the map type; after sunset, Night Lights shows the streets lit below.": "Elige el tipo de mapa; tras la puesta de sol, Luces nocturnas muestra las calles iluminadas.",
  "Look up with the camera": "Mira hacia arriba con la cámara", "Point at the sky and each plane is marked where it is.": "Apunta al cielo y cada avión aparece marcado donde está.",
  "Aircraft cards": "Fichas de aviones", "A photo of that very aircraft, its route, height, speed and type.": "Una foto de ese mismo avión, su ruta, altura, velocidad y tipo.",
- "Follow it": "Síguelo", "Keep a plane on the map up to 500 miles away, along the track it really flew.": "Mantén un avión en el mapa hasta a 800 km, por la ruta que de verdad voló.",
+ "Follow it": "Síguelo", "Keep a plane on the map for its whole flight, along the track it really flew, and hear when it lands.": "Mantén un avión en el mapa durante todo su vuelo, por la ruta que de verdad voló, y entérate cuando aterrice.",
  "Helicopters too": "También helicópteros", "Shown with their own icon, so you know what you're hearing.": "Con su propio icono, para que sepas qué estás oyendo.",
  "Blue lights, spotted.": "Luces azules, a la vista.",
  "Police, air ambulance, coastguard, firefighting and military aircraft stand out in their own service's colours. Turn on alerts and AirReveal tells you when one comes near, even with the app closed.":
@@ -212,7 +212,7 @@ STRINGS = {
  "Day and night maps": "Cartes de jour et de nuit", "Choose the map type; after sunset, Night Lights shows the streets lit below.": "Choisissez le type de carte ; après le coucher du soleil, Lumières nocturnes montre les rues éclairées.",
  "Look up with the camera": "Levez les yeux avec la caméra", "Point at the sky and each plane is marked where it is.": "Pointez le ciel et chaque avion est indiqué là où il se trouve.",
  "Aircraft cards": "Fiches avion", "A photo of that very aircraft, its route, height, speed and type.": "Une photo de cet avion précis, son itinéraire, son altitude, sa vitesse et son type.",
- "Follow it": "Suivez-le", "Keep a plane on the map up to 500 miles away, along the track it really flew.": "Gardez un avion sur la carte jusqu'à 800 km, le long de la trajectoire qu'il a vraiment suivie.",
+ "Follow it": "Suivez-le", "Keep a plane on the map for its whole flight, along the track it really flew, and hear when it lands.": "Gardez un avion sur la carte pendant tout son vol, le long de la trajectoire qu'il a vraiment suivie, et soyez prévenu à l'atterrissage.",
  "Helicopters too": "Les hélicoptères aussi", "Shown with their own icon, so you know what you're hearing.": "Avec leur propre icône, pour savoir ce que vous entendez.",
  "Blue lights, spotted.": "Gyrophares en vue.",
  "Police, air ambulance, coastguard, firefighting and military aircraft stand out in their own service's colours. Turn on alerts and AirReveal tells you when one comes near, even with the app closed.":
@@ -296,7 +296,7 @@ STRINGS = {
  "Day and night maps": "Mappe di giorno e di notte", "Choose the map type; after sunset, Night Lights shows the streets lit below.": "Scegli il tipo di mappa; dopo il tramonto, Luci notturne mostra le strade illuminate.",
  "Look up with the camera": "Guarda in alto con la fotocamera", "Point at the sky and each plane is marked where it is.": "Inquadra il cielo e ogni aereo viene segnato dov'è.",
  "Aircraft cards": "Schede degli aerei", "A photo of that very aircraft, its route, height, speed and type.": "Una foto proprio di quell'aereo, la rotta, la quota, la velocità e il tipo.",
- "Follow it": "Seguilo", "Keep a plane on the map up to 500 miles away, along the track it really flew.": "Tieni un aereo sulla mappa fino a 800 km di distanza, lungo la traccia che ha davvero percorso.",
+ "Follow it": "Seguilo", "Keep a plane on the map for its whole flight, along the track it really flew, and hear when it lands.": "Tieni un aereo sulla mappa per tutto il volo, lungo la traccia che ha davvero percorso, e sappi quando atterra.",
  "Helicopters too": "Anche elicotteri", "Shown with their own icon, so you know what you're hearing.": "Con la loro icona, così sai cosa stai sentendo.",
  "Blue lights, spotted.": "Lampeggianti avvistati.",
  "Police, air ambulance, coastguard, firefighting and military aircraft stand out in their own service's colours. Turn on alerts and AirReveal tells you when one comes near, even with the app closed.":
@@ -380,7 +380,7 @@ STRINGS = {
  "Day and night maps": "Mapas de dia e de noite", "Choose the map type; after sunset, Night Lights shows the streets lit below.": "Escolha o tipo de mapa; depois do pôr do sol, Luzes noturnas mostra as ruas iluminadas.",
  "Look up with the camera": "Olhe para cima com a câmera", "Point at the sky and each plane is marked where it is.": "Aponte para o céu e cada avião aparece marcado onde está.",
  "Aircraft cards": "Fichas dos aviões", "A photo of that very aircraft, its route, height, speed and type.": "Uma foto daquele mesmo avião, sua rota, altitude, velocidade e tipo.",
- "Follow it": "Siga-o", "Keep a plane on the map up to 500 miles away, along the track it really flew.": "Mantenha um avião no mapa a até 800 km, pela rota que ele realmente voou.",
+ "Follow it": "Siga-o", "Keep a plane on the map for its whole flight, along the track it really flew, and hear when it lands.": "Mantenha um avião no mapa durante todo o voo, pela rota que ele realmente voou, e saiba quando ele pousar.",
  "Helicopters too": "Helicópteros também", "Shown with their own icon, so you know what you're hearing.": "Com um ícone próprio, para você saber o que está ouvindo.",
  "Blue lights, spotted.": "Giroflex à vista.",
  "Police, air ambulance, coastguard, firefighting and military aircraft stand out in their own service's colours. Turn on alerts and AirReveal tells you when one comes near, even with the app closed.":
