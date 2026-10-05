@@ -9,7 +9,7 @@ STRINGS = {
  "Discover what's above and below.": "Entdecke, was darüber und darunter ist.", "Discover what's above and below": "Entdecke, was darüber und darunter ist",
  "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal: Was überfliege ich? Flugkarte & Himmelsradar",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
-   "Sieh auf deinem eigenen Flug, was du überfliegst, auch im Flugmodus, und am Boden jedes Flugzeug, das über dich fliegt. Offline-Flugkarte und Live-Himmelsradar für iPhone, iPad und Apple Watch.",
+   "Sieh im Flug, was du überfliegst, auch im Flugmodus, und am Boden jedes Flugzeug über dir. Offline-Flugkarte und Himmelsradar für iPhone und Apple Watch.",
  "Below you": "Unter dir", "Above you": "Über dir", "Games": "Spiele", "Pricing": "Preise", "FAQ": "FAQ", "Get the app": "App laden",
  "Flight map & sky radar · iPhone, iPad & Apple Watch": "Flugkarte & Himmelsradar · iPhone, iPad & Apple Watch",
  "Discover what's above or below you.": "Entdecke, was über oder unter dir ist.",
@@ -94,9 +94,9 @@ STRINGS = {
 "es": {
  "Discover what's above and below.": "Descubre lo que hay arriba y abajo.", "Discover what's above and below": "Descubre lo que hay arriba y abajo",
  "Choose your way to fly": "Elige cómo volar", "Following a plane": "Siguiendo un avión", "Plan freely. Go Pro when you want more.": "Planifica gratis. Pásate a Pro cuando quieras más.",
- "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal: ¿Qué estoy sobrevolando? Mapa de vuelo y radar del cielo",
+ "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal: ¿Qué sobrevuelo? Mapa de vuelo y radar del cielo",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
-   "Mira lo que sobrevuelas en tu propio vuelo, incluso en modo avión, y en tierra cada avión que pasa por encima de ti. Un mapa de vuelo sin conexión y un radar del cielo en directo para iPhone, iPad y Apple Watch.",
+   "Mira lo que sobrevuelas, incluso en modo avión, y en tierra cada avión que pasa sobre ti. Mapa de vuelo sin conexión y radar del cielo para iPhone y Apple Watch.",
  "Below you": "Debajo de ti", "Above you": "Encima de ti", "Games": "Juegos", "Pricing": "Precios", "FAQ": "Preguntas", "Get the app": "Descargar",
  "Flight map & sky radar · iPhone, iPad & Apple Watch": "Mapa de vuelo y radar del cielo · iPhone, iPad y Apple Watch",
  "Discover what's above or below you.": "Descubre lo que hay encima o debajo de ti.",
@@ -178,9 +178,9 @@ STRINGS = {
 "fr": {
  "Discover what's above and below.": "Découvrez ce qui est au-dessus et en dessous.", "Discover what's above and below": "Découvrez ce qui est au-dessus et en dessous",
  "Choose your way to fly": "Choisissez votre façon de voler", "Following a plane": "Suivre un avion", "Plan freely. Go Pro when you want more.": "Planifiez gratuitement. Passez à Pro quand vous voulez plus.",
- "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal : qu'est-ce que je survole ? Carte de vol et radar du ciel",
+ "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal : ce que je survole, carte de vol et radar du ciel",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
-   "Voyez ce que vous survolez pendant votre vol, même en mode avion, et au sol chaque avion qui passe au-dessus de vous. Une carte de vol hors ligne et un radar du ciel en direct pour iPhone, iPad et Apple Watch.",
+   "Voyez ce que vous survolez, même en mode avion, et au sol chaque avion au-dessus de vous. Carte de vol hors ligne et radar du ciel pour iPhone et Apple Watch.",
  "Below you": "En dessous", "Above you": "Au-dessus", "Games": "Jeux", "Pricing": "Tarifs", "FAQ": "FAQ", "Get the app": "Obtenir l'app",
  "Flight map & sky radar · iPhone, iPad & Apple Watch": "Carte de vol et radar du ciel · iPhone, iPad et Apple Watch",
  "Discover what's above or below you.": "Découvrez ce qui est au-dessus ou en dessous de vous.",
@@ -264,7 +264,7 @@ STRINGS = {
  "Choose your way to fly": "Scegli come volare", "Following a plane": "Seguire un aereo", "Plan freely. Go Pro when you want more.": "Pianifica gratis. Passa a Pro quando vuoi di più.",
  "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal: cosa sto sorvolando? Mappa di volo e radar del cielo",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
-   "Guarda cosa sorvoli durante il tuo volo, anche in modalità aereo, e a terra ogni aereo che ti passa sopra. Una mappa di volo offline e un radar del cielo in diretta per iPhone, iPad e Apple Watch.",
+   "Guarda cosa sorvoli, anche in modalità aereo, e a terra ogni aereo che ti passa sopra. Mappa di volo offline e radar del cielo per iPhone e Apple Watch.",
  "Below you": "Sotto di te", "Above you": "Sopra di te", "Games": "Giochi", "Pricing": "Prezzi", "FAQ": "FAQ", "Get the app": "Scarica l'app",
  "Flight map & sky radar · iPhone, iPad & Apple Watch": "Mappa di volo e radar del cielo · iPhone, iPad e Apple Watch",
  "Discover what's above or below you.": "Scopri cosa c'è sopra o sotto di te.",
@@ -348,7 +348,7 @@ STRINGS = {
  "Choose your way to fly": "Escolha como voar", "Following a plane": "Seguindo um avião", "Plan freely. Go Pro when you want more.": "Planeje grátis. Assine o Pro quando quiser mais.",
  "AirReveal: What Am I Flying Over? Flight Map & Sky Radar": "AirReveal: o que estou sobrevoando? Mapa de voo e radar do céu",
  "See what you're flying over on your own flight, even in airplane mode, and every plane flying over you on the ground. An offline flight map and live sky radar for iPhone, iPad and Apple Watch.":
-   "Veja o que você está sobrevoando no seu voo, mesmo no modo avião, e em terra cada avião que passa acima de você. Um mapa de voo offline e um radar do céu ao vivo para iPhone, iPad e Apple Watch.",
+   "Veja o que você sobrevoa, mesmo no modo avião, e em terra cada avião que passa acima de você. Mapa de voo offline e radar do céu para iPhone e Apple Watch.",
  "Below you": "Abaixo de você", "Above you": "Acima de você", "Games": "Jogos", "Pricing": "Preços", "FAQ": "Perguntas", "Get the app": "Baixar o app",
  "Flight map & sky radar · iPhone, iPad & Apple Watch": "Mapa de voo e radar do céu · iPhone, iPad e Apple Watch",
  "Discover what's above or below you.": "Descubra o que está acima ou abaixo de você.",

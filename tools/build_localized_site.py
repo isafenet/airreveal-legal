@@ -237,9 +237,26 @@ def render_support(folder: str) -> str:
           f'<div class="support-grid">{cards}</div></main>'
         + footer(t)
     )
-    title = f'AirReveal — {s["title"]}'
+    # A title long enough to say what the page helps with (search results show about 60 characters).
+    title = SUPPORT_TITLES.get(folder, f'AirReveal — {s["title"]}')
+    ld = jsonld({"@context": "https://schema.org", "@type": "ContactPage", "name": title, "url": url(folder, "support.html"),
+                 "inLanguage": lang_code, "description": s["desc"],
+                 "isPartOf": {"@type": "WebSite", "name": "AirReveal", "url": BASE},
+                 "publisher": {"@type": "Organization", "@id": "https://isafenet.app/#organization", "name": "iSafeNet", "url": "https://isafenet.app/"}}) \
+        + jsonld({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "AirReveal", "item": url(folder, "index.html")},
+            {"@type": "ListItem", "position": 2, "name": s["title"], "item": url(folder, "support.html")}]})
     return (head(lang_code, title, s["desc"], url(folder, "support.html"), "support.html", title, s["desc"], og_locale)
-            + "</head><body>\n" + body + "</body></html>\n")
+            + ld + "</head><body>\n" + body + "</body></html>\n")
+
+
+SUPPORT_TITLES = {
+    "es": "Soporte de AirReveal: ayuda con vuelos, mapas y suscripciones",
+    "fr": "Assistance AirReveal : aide pour les vols, cartes et abonnements",
+    "de": "AirReveal-Support: Hilfe zu Flügen, Karten und Abos",
+    "it": "Supporto AirReveal: aiuto con voli, mappe e abbonamenti",
+    "pt-br": "Suporte do AirReveal: ajuda com voos, mapas e assinaturas",
+}
 
 
 # ------------------------------------------------------------- English pages
