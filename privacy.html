@@ -26,7 +26,7 @@
   <header class="doc-head">
     <p class="eyebrow">Privacy Policy</p>
     <h1 class="doc-title">How AirReveal handles your data</h1>
-    <p class="doc-meta">Effective October 2, 2026</p>
+    <p class="doc-meta">Effective with AirReveal 2.1</p>
     <div class="lede">
       <strong>In short:</strong> AirReveal keeps your flight data on your device, and only syncs it to your own iCloud when you explicitly ask it to. There are no AirReveal servers, no accounts, no analytics, and no advertising in this app — full stop.
     </div>
@@ -54,7 +54,8 @@
       <li><a href="#changes">17. Changes to this policy</a></li>
       <li><a href="#launch-list">18. The AirReveal 2.0 launch list</a></li>
       <li><a href="#sky">19. The aircraft around you</a></li>
-      <li><a href="#contact">20. Contact</a></li>
+      <li><a href="#calendar">20. Your calendar (only when you ask)</a></li>
+      <li><a href="#contact">21. Contact</a></li>
     </ol>
   </nav>
 
@@ -106,7 +107,7 @@
 
   <section class="clause" id="photos">
     <h2 class="clause-title"><span class="num">6</span> Photos</h2>
-    <p>AirReveal lets you capture or pick a photo and compose it with a flight-info overlay (landmark name, country, altitude, route, timestamp — all generated locally). Photos are selected or captured through Apple's native picker and camera, and the finished composite is saved back to your own Photos library. AirReveal never uploads a photo anywhere.</p>
+    <p>AirReveal lets you capture or pick a photo and compose it with a flight-info overlay (landmark name, country, altitude, route, timestamp — all generated locally). Photos are selected or captured through Apple's native picker and camera, and the finished composite is saved back to your own Photos library. In Look Up and Window View you can also take a photo, a video or a timelapse of what the camera sees, with AirReveal's labels and a caption on it; it's made on your iPhone, with no sound, and saved to your Photos library. The camera records nothing unless you press the shutter or record. AirReveal never uploads a photo or video anywhere.</p>
   </section>
 
   <section class="clause" id="storage">
@@ -139,6 +140,7 @@
   <section class="clause" id="export">
     <h2 class="clause-title"><span class="num">11</span> Exporting &amp; importing your data</h2>
     <p>AirReveal lets you export a single flight, or all of your trip data, as a JSON file at any time from My Flights or the Profile page, and import a previously exported file back in. Both actions happen entirely on your device and hand the file to iOS's native share sheet or file picker — no network request is made and no copy is sent to us. Where you send an exported file afterward (email, Files, AirDrop, another device) is entirely up to you.</p>
+    <p><strong>Import Past Flights.</strong> You can also bring in the flights you've already flown from a file another app exports (Flighty, myFlightradar24, OpenFlights, or a spreadsheet). The file is read on your iPhone: the date, the airports, and the flight number, airline and aircraft when the file has them become flights in My Flights. Nothing from the file is sent anywhere.</p>
   </section>
 
   <section class="clause" id="no-tracking">
@@ -160,7 +162,7 @@
       <tr><td>adsbdb, Planespotters.net</td><td>An aircraft's address</td><td>For an aircraft's type, registration and photo</td></tr>
       <tr><td>Wikipedia &amp; Wikimedia Commons</td><td>An aircraft type's name</td><td>For a photo of the type on the aircraft page</td></tr>
       <tr><td>iSafeNet's server (Cloudflare) and SkyLink</td><td>A flight number</td><td>To look up a flight's route, and its status where available</td></tr>
-      <tr><td>iSafeNet's server (Cloudflare) and Apple (push notifications)</td><td>Only if you turn the notifications on: see section 19</td><td>To send emergency-aircraft alerts and landing notifications</td></tr>
+      <tr><td>iSafeNet's server (Cloudflare) and Apple (push notifications)</td><td>Only if you turn the notifications on: see section 19</td><td>To send emergency-aircraft alerts, spotter alerts and landing notifications</td></tr>
     </table>
   </section>
 
@@ -206,13 +208,20 @@
       <li><strong>The aircraft page.</strong> A photo of the aircraft type comes from Wikipedia and Wikimedia Commons. On the day of your flight, AirReveal asks ADSB.lol which aircraft is flying it, by the flight's callsign.</li>
       <li><strong>Looking up a flight.</strong> The flight number goes to iSafeNet's server, which answers from its own route data or asks SkyLink, a flight-data service. Answers are kept for a few minutes so the same flight isn't asked twice; nothing about you is kept.</li>
       <li><strong>Emergency-aircraft alerts (off until you turn them on).</strong> iSafeNet's server keeps this phone's notification token, your location rounded to about a kilometre, the distance and services you chose and your units, so it can tell you when one comes near. It's deleted when you turn alerts off, or after 30 days without an update.</li>
+      <li><strong>Spotter alerts (off until you turn them on).</strong> To tell you when an aircraft type you're watching for (an A380, say) comes near, iSafeNet's server keeps this phone's notification token, your location rounded to about a kilometre, the distance and aircraft types you chose and your units. Every two minutes it asks ADSB.lol where aircraft of those types are. It's deleted when you turn spotter alerts off, or after 30 days without an update.</li>
+      <li><strong>Siri and Shortcuts.</strong> "What's below me" and "How long left on my flight" are answered on your iPhone. "What's flying above me" asks ADSB.lol for the aircraft around a point near you, rounded to about a kilometre, as the sky screens do.</li>
       <li><strong>Landing notifications (Tell Me When It Lands).</strong> While you follow a plane, iSafeNet's server keeps this phone's notification token, the plane's address and callsign and, when AirReveal knows it, the city it's flying to. It's deleted when the plane lands, when you stop following, or after 24 hours.</li>
     </ul>
     <p>Notifications are delivered by Apple's push notification service. iSafeNet's server runs on Cloudflare. None of these requests includes your name, an account or your location history, and none is used for tracking or advertising. Our legal basis is our legitimate interest in providing the features you open, and your consent for the notifications, which you can withdraw at any time in Settings › Sky &amp; Aircraft.</p>
   </section>
 
+  <section class="clause" id="calendar">
+    <h2 class="clause-title"><span class="num">20</span> Your calendar (only when you ask)</h2>
+    <p>If you tap <strong>Add From Calendar</strong> in My Flights, AirReveal asks iOS for access to your calendar and looks through your events from two years ago to a year ahead for ones that name two airports or a flight number. This happens on your iPhone. Only the flights you choose to add are saved, in My Flights; nothing else from your calendar is kept, and nothing from it is sent anywhere. A flight's route is worked out from route data that comes with the app. You can turn calendar access off at any time in your iPhone's Settings › Apps › AirReveal.</p>
+  </section>
+
   <section class="clause" id="contact">
-    <h2 class="clause-title"><span class="num">20</span> Contact</h2>
+    <h2 class="clause-title"><span class="num">21</span> Contact</h2>
     <p>Questions about this policy or your data can be sent to <a href="mailto:info@isafenet.app">info@isafenet.app</a>.</p>
   </section>
 </div>
