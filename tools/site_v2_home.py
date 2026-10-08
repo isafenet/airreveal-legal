@@ -17,11 +17,20 @@ from site_v2_strings import NEW_FAQ, STRINGS
 BEST = ' class="best"'
 KEEP = {"AirReveal", "App Store", "Apple Watch", "Watch"}  # names, the same in every language
 LOCAL_PAGES = {"what-am-i-flying-over.html", "support.html"}
+# Apple's App Store badge, in each language (Apple's artwork, from its marketing tools), and the words for later links.
+BADGES = {"de": "de-de", "es": "es-es", "fr": "fr-fr", "it": "it-it", "pt-br": "pt-br"}
+BADGE_WORDS = {
+    "de": {"Download on the App Store": "Laden im App Store", "Get it on the App Store": "Im App Store laden"},
+    "es": {"Download on the App Store": "Descárgalo en el App Store", "Get it on the App Store": "Descárgala en el App Store"},
+    "fr": {"Download on the App Store": "Télécharger dans l'App Store", "Get it on the App Store": "Télécharger dans l'App Store"},
+    "it": {"Download on the App Store": "Scarica su App Store", "Get it on the App Store": "Scarica su App Store"},
+    "pt-br": {"Download on the App Store": "Baixar na App Store", "Get it on the App Store": "Baixar na App Store"},
+}
 
 
 def render(folder: str, english: str, *, base: str, hreflang: str, spacing) -> tuple[str, list[str]]:
     """Return the page for `folder` and the English text nodes that had no translation."""
-    strings = STRINGS[folder]
+    strings = {**STRINGS[folder], **BADGE_WORDS[folder]}
     new_faq = NEW_FAQ[folder]
     t = T[folder]
     if folder == "fr":
@@ -127,6 +136,7 @@ def render(folder: str, english: str, *, base: str, hreflang: str, spacing) -> t
 
     # ---- paths: shared files live one level up; the localized screenshots in images/v2/<folder>/
     page = re.sub(r'(src|href)="images/v2/(panel|screen)-(\d\d)\.webp"', rf'\1="../images/v2/{folder}/\2-\3.webp"', page)
+    page = page.replace('src="images/app-store-badge-en-gb.svg"', f'src="images/app-store-badge-{BADGES[folder]}.svg"')
     page = re.sub(r'(src|href)="(images/|fonts/)', r'\1="../\2', page)
     page = re.sub(r"url\((images/|fonts/)", r"url(../\1", page)
 
