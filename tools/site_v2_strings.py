@@ -442,3 +442,54 @@ NEW_FAQ = {
  "pt-br": [("Quais aviões estão voando sobre a minha casa?", "Acima de você agora mostra cada avião ao seu redor num radar e num mapa ao vivo, com dados de voo livres da comunidade. Toque em um para ver a rota, o tipo, a altitude e uma foto daquele mesmo avião."),
         ("O AirReveal pode me avisar quando um helicóptero da polícia ou de ambulância aérea estiver por perto?", "Sim. Aeronaves de polícia, ambulância aérea, guarda costeira, combate a incêndios e militares aparecem com suas próprias cores, e você pode ativar alertas para as que escolher, dentro da distância que definir. Os alertas ficam desligados até você ativá-los.")],
 }
+
+# AirReveal 2.1 (10 October 2026): the version on the board, Pilot View, the forecast cloud, the rebuilt tracking and the opening.
+MORE_2_1 = {
+"de": {
+ "New in 2.1": "Neu in 2.1", "Free to start · 2.1 is here": "Kostenlos starten · 2.1 ist da", "What's new in AirReveal 2.1": "Neu in AirReveal 2.1",
+ "AirReveal 2.1, screen by screen": "AirReveal 2.1, Bildschirm für Bildschirm",
+ "Pilot View · the way ahead": "Pilotensicht · der Weg voraus", "Forecast cloud along your route": "Wolkenvorhersage entlang deiner Route",
+ "Live tracking rebuilt": "Live-Tracking neu gebaut", "An opening in the clouds": "Ein Intro in den Wolken",
+ "Pilot View": "Pilotensicht",
+ "The way ahead as if from the flight deck: your map below, glass tapes for speed, height and heading, and the forecast cloud.":
+   "Der Weg voraus wie aus dem Cockpit: deine Karte darunter, Glas-Anzeigen für Geschwindigkeit, Höhe und Kurs und die Wolkenvorhersage.",
+},
+"es": {
+ "New in 2.1": "Novedades de la 2.1", "Free to start · 2.1 is here": "Gratis para empezar · Ya está aquí la 2.1", "What's new in AirReveal 2.1": "Novedades de AirReveal 2.1",
+ "AirReveal 2.1, screen by screen": "AirReveal 2.1, pantalla a pantalla",
+ "Pilot View · the way ahead": "Vista de piloto · el camino por delante", "Forecast cloud along your route": "Previsión de nubes a lo largo de tu ruta",
+ "Live tracking rebuilt": "Seguimiento en directo rehecho", "An opening in the clouds": "Una apertura entre las nubes",
+ "Pilot View": "Vista de piloto",
+ "The way ahead as if from the flight deck: your map below, glass tapes for speed, height and heading, and the forecast cloud.":
+   "El camino por delante como desde la cabina: tu mapa debajo, indicadores de cristal de velocidad, altura y rumbo, y la previsión de nubes.",
+},
+"fr": {
+ "New in 2.1": "Nouveautés de la 2.1", "Free to start · 2.1 is here": "Gratuit pour commencer · La 2.1 est là", "What's new in AirReveal 2.1": "Nouveautés d'AirReveal 2.1",
+ "AirReveal 2.1, screen by screen": "AirReveal 2.1, écran par écran",
+ "Pilot View · the way ahead": "Vue pilote · la route devant vous", "Forecast cloud along your route": "Nuages prévus le long de votre route",
+ "Live tracking rebuilt": "Suivi en direct refait", "An opening in the clouds": "Une ouverture dans les nuages",
+ "Pilot View": "Vue pilote",
+ "The way ahead as if from the flight deck: your map below, glass tapes for speed, height and heading, and the forecast cloud.":
+   "La route devant vous comme depuis le poste de pilotage : votre carte en dessous, des bandes en verre pour la vitesse, l'altitude et le cap, et les nuages prévus.",
+},
+"it": {
+ "New in 2.1": "Novità della 2.1", "Free to start · 2.1 is here": "Gratis per iniziare · La 2.1 è qui", "What's new in AirReveal 2.1": "Novità di AirReveal 2.1",
+ "AirReveal 2.1, screen by screen": "AirReveal 2.1, schermata per schermata",
+ "Pilot View · the way ahead": "Vista pilota · la rotta davanti", "Forecast cloud along your route": "Nuvole previste lungo la rotta",
+ "Live tracking rebuilt": "Tracciamento live rifatto", "An opening in the clouds": "Un'apertura tra le nuvole",
+ "Pilot View": "Vista pilota",
+ "The way ahead as if from the flight deck: your map below, glass tapes for speed, height and heading, and the forecast cloud.":
+   "La rotta davanti a te come dalla cabina di pilotaggio: la tua mappa sotto, nastri in vetro per velocità, quota e prua, e le nuvole previste.",
+},
+"pt-br": {
+ "New in 2.1": "Novidades da 2.1", "Free to start · 2.1 is here": "Grátis para começar · A 2.1 chegou", "What's new in AirReveal 2.1": "Novidades do AirReveal 2.1",
+ "AirReveal 2.1, screen by screen": "AirReveal 2.1, tela por tela",
+ "Pilot View · the way ahead": "Visão do piloto · o caminho à frente", "Forecast cloud along your route": "Previsão de nuvens ao longo da rota",
+ "Live tracking rebuilt": "Rastreamento ao vivo refeito", "An opening in the clouds": "Uma abertura nas nuvens",
+ "Pilot View": "Visão do piloto",
+ "The way ahead as if from the flight deck: your map below, glass tapes for speed, height and heading, and the forecast cloud.":
+   "O caminho à frente como da cabine: seu mapa abaixo, fitas de vidro para velocidade, altura e rumo, e a previsão de nuvens.",
+},
+}
+for _lang, _more in MORE_2_1.items():
+    STRINGS[_lang].update(_more)
