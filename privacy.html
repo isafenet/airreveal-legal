@@ -26,7 +26,7 @@
   <header class="doc-head">
     <p class="eyebrow">Privacy Policy</p>
     <h1 class="doc-title">How AirReveal handles your data</h1>
-    <p class="doc-meta">Effective 12 October 2026 (AirReveal 2.1)</p>
+    <p class="doc-meta">Effective with AirReveal 2.2</p>
     <div class="lede">
       <strong>In short:</strong> AirReveal keeps your flight data on your device, and only syncs it to your own iCloud when you explicitly ask it to. There are no AirReveal servers, no accounts, no analytics, and no advertising in this app — full stop.
     </div>
@@ -91,13 +91,14 @@
 
   <section class="clause" id="offline-content">
     <h2 class="clause-title"><span class="num">4</span> Offline maps &amp; landmark content</h2>
-    <p>When you choose to download offline content for a flight, AirReveal contacts two free, keyless public services on your behalf:</p>
+    <p>When you choose to download offline content for a flight, AirReveal contacts three free, keyless public services on your behalf:</p>
     <table class="datatable">
       <tr><th>Service</th><th>What's sent</th><th>What it's for</th></tr>
       <tr><td>OpenFreeMap (via MapLibre)</td><td>The geographic area around your route — no personal identifier</td><td>Downloading map tiles for offline viewing</td></tr>
       <tr><td>Wikipedia</td><td>A landmark's name, plus a generic app identifier in the request</td><td>Fetching an article summary for a landmark near your route</td></tr>
+      <tr><td>OpenStreetMap (Overpass API)</td><td>The area around your departure and arrival airports, plus a generic app identifier in the request</td><td>The terminals, hangars, tower and taxiways that Runway View draws</td></tr>
     </table>
-    <p>Neither service receives your name, location history, or any other identifying information — only the specific map area or landmark title needed to fulfil that one request. These requests only happen when you tap to download offline content; nothing is fetched automatically in the background.</p>
+    <p>None of these services receives your name, location history, or any other identifying information — only the specific map area, airport area or landmark title needed to fulfil that one request. These requests only happen when you download offline content for a flight, or open Runway View at an airport whose layout isn't saved yet; an airport's layout is then kept on your iPhone for 90 days.</p>
   </section>
 
   <section class="clause" id="weather">
@@ -155,6 +156,7 @@
       <tr><th>Party</th><th>What they see</th><th>Why</th></tr>
       <tr><td>OpenFreeMap</td><td>The map area around your route</td><td>To download offline map tiles</td></tr>
       <tr><td>Wikipedia</td><td>A landmark's name</td><td>To fetch an article summary for offline reading</td></tr>
+      <tr><td>OpenStreetMap (Overpass API)</td><td>The area around an airport on your flight</td><td>To draw the airport's buildings and taxiways in Runway View</td></tr>
       <tr><td>Apple (WeatherKit)</td><td>Coordinates &amp; time you request weather for</td><td>To show live weather along your route</td></tr>
       <tr><td>Apple (iCloud)</td><td>Your flight history &amp; journal, only if you tap Sync Now</td><td>To sync between your own devices</td></tr>
       <tr><td>Apple (App Store)</td><td>Payment &amp; subscription status</td><td>To process your purchase</td></tr>
