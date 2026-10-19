@@ -493,3 +493,50 @@ MORE_2_1 = {
 }
 for _lang, _more in MORE_2_1.items():
     STRINGS[_lang].update(_more)
+
+# AirReveal 2.2 (19 October 2026): Runway View, Pilot View's runways and banked turns, real-looking clouds.
+# Runway View uses the app's own names (Pistenansicht, Vista de pista, Vue piste, Vista pista, Vista da pista).
+MORE_2_2 = {
+"de": {
+ "New in 2.2": "Neu in 2.2", "What's new in AirReveal 2.2": "Neu in AirReveal 2.2", "AirReveal 2.2, screen by screen": "AirReveal 2.2, Bildschirm für Bildschirm",
+ "Emergency aircraft": "Einsatzflugzeuge", "Runway View · your airport in 3D": "Pistenansicht · dein Flughafen in 3D",
+ "Runways ahead in Pilot View": "Pisten voraus in der Pilotensicht", "Banked turns &amp; real-looking clouds": "Kurven mit Schräglage & echt wirkende Wolken",
+ "Banked turns & real-looking clouds": "Kurven mit Schräglage & echt wirkende Wolken", "Runway View": "Pistenansicht",
+ "Your plane at the airport in 3D as it taxis, takes off and lands, on the real runways. Watch from the spotters' fence, behind the plane or the tower.":
+   "Dein Flugzeug am Flughafen in 3D, während es rollt, startet und landet, auf den echten Pisten. Schau vom Zaun der Spotter zu, von hinter dem Flugzeug oder vom Tower.",
+},
+"es": {
+ "New in 2.2": "Novedades de la 2.2", "What's new in AirReveal 2.2": "Novedades de AirReveal 2.2", "AirReveal 2.2, screen by screen": "AirReveal 2.2, pantalla a pantalla",
+ "Emergency aircraft": "Aeronaves de emergencia", "Runway View · your airport in 3D": "Vista de pista · tu aeropuerto en 3D",
+ "Runways ahead in Pilot View": "Pistas por delante en la vista de piloto", "Banked turns &amp; real-looking clouds": "Virajes inclinados y nubes que parecen reales",
+ "Banked turns & real-looking clouds": "Virajes inclinados y nubes que parecen reales", "Runway View": "Vista de pista",
+ "Your plane at the airport in 3D as it taxis, takes off and lands, on the real runways. Watch from the spotters' fence, behind the plane or the tower.":
+   "Tu avión en el aeropuerto en 3D mientras rueda, despega y aterriza, sobre las pistas reales. Míralo desde la valla de los spotters, desde detrás del avión o desde la torre.",
+},
+"fr": {
+ "New in 2.2": "Nouveautés de la 2.2", "What's new in AirReveal 2.2": "Nouveautés d'AirReveal 2.2", "AirReveal 2.2, screen by screen": "AirReveal 2.2, écran par écran",
+ "Emergency aircraft": "Appareils de secours", "Runway View · your airport in 3D": "Vue piste · votre aéroport en 3D",
+ "Runways ahead in Pilot View": "Les pistes devant vous en vue pilote", "Banked turns &amp; real-looking clouds": "Virages inclinés et nuages réalistes",
+ "Banked turns & real-looking clouds": "Virages inclinés et nuages réalistes", "Runway View": "Vue piste",
+ "Your plane at the airport in 3D as it taxis, takes off and lands, on the real runways. Watch from the spotters' fence, behind the plane or the tower.":
+   "Votre avion à l'aéroport en 3D pendant qu'il roule, décolle et atterrit, sur les vraies pistes. Regardez depuis la clôture des spotters, depuis l'arrière de l'avion ou depuis la tour.",
+},
+"it": {
+ "New in 2.2": "Novità della 2.2", "What's new in AirReveal 2.2": "Novità di AirReveal 2.2", "AirReveal 2.2, screen by screen": "AirReveal 2.2, schermata per schermata",
+ "Emergency aircraft": "Velivoli di soccorso", "Runway View · your airport in 3D": "Vista pista · il tuo aeroporto in 3D",
+ "Runways ahead in Pilot View": "Le piste davanti nella vista pilota", "Banked turns &amp; real-looking clouds": "Virate inclinate e nuvole realistiche",
+ "Banked turns & real-looking clouds": "Virate inclinate e nuvole realistiche", "Runway View": "Vista pista",
+ "Your plane at the airport in 3D as it taxis, takes off and lands, on the real runways. Watch from the spotters' fence, behind the plane or the tower.":
+   "Il tuo aereo all'aeroporto in 3D mentre rulla, decolla e atterra, sulle piste vere. Guardalo dalla recinzione degli spotter, da dietro l'aereo o dalla torre.",
+},
+"pt-br": {
+ "New in 2.2": "Novidades da 2.2", "What's new in AirReveal 2.2": "Novidades do AirReveal 2.2", "AirReveal 2.2, screen by screen": "AirReveal 2.2, tela por tela",
+ "Emergency aircraft": "Aeronaves de emergência", "Runway View · your airport in 3D": "Vista da pista · seu aeroporto em 3D",
+ "Runways ahead in Pilot View": "Pistas à frente na visão do piloto", "Banked turns &amp; real-looking clouds": "Curvas inclinadas e nuvens que parecem reais",
+ "Banked turns & real-looking clouds": "Curvas inclinadas e nuvens que parecem reais", "Runway View": "Vista da pista",
+ "Your plane at the airport in 3D as it taxis, takes off and lands, on the real runways. Watch from the spotters' fence, behind the plane or the tower.":
+   "Seu avião no aeroporto em 3D enquanto taxia, decola e pousa, nas pistas reais. Assista da cerca dos spotters, de trás do avião ou da torre.",
+},
+}
+for _lang, _more in MORE_2_2.items():
+    STRINGS[_lang].update(_more)
