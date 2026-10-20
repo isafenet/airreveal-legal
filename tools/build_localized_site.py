@@ -38,7 +38,7 @@ USER_GUIDE = "user-guide.html"
 ENGLISH_ONLY = ["privacy.html", "terms.html", USER_GUIDE, "credits.html"]
 # English pages with a design of their own (no site nav or language switcher), listed in the sitemap only.
 STANDALONE = []  # airreveal-2.html, the sneak peek, sends visitors home since 2.0 shipped
-LASTMOD = "2026-10-12"
+LASTMOD = "2026-10-20"
 MARK_OPEN, MARK_CLOSE = "<!--i18n-->", "<!--/i18n-->"
 
 
