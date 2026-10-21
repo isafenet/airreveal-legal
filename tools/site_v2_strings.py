@@ -540,3 +540,177 @@ MORE_2_2 = {
 }
 for _lang, _more in MORE_2_2.items():
     STRINGS[_lang].update(_more)
+
+# AirReveal 3.0 (21 October 2026): the one map, every airport, planes by kind, the cockpits, Watch It Fly,
+# Look Around, landmark photos, iPad and iPhone Duo. Names follow the app (Ins Cockpit setzen, Siéntate en su cabina,
+# Prendre place dans son cockpit, Siediti nella sua cabina, Sente-se na cabine; Hier umsehen, Explorar aquí,
+# Regarder autour, Guarda qui intorno, Explorar aqui) and the 3.0 App Store panels.
+MORE_3_0 = {
+"de": {
+ "New in 3.0": "Neu in 3.0", "What's new in AirReveal 3.0": "Neu in AirReveal 3.0", "AirReveal 3.0, screen by screen": "AirReveal 3.0, Bildschirm für Bildschirm",
+ "Free to start · 3.0 is here": "Kostenlos starten · 3.0 ist da",
+ "AirReveal's map: the planes in the sky around you, the airports and the landmarks below": "Die Karte von AirReveal: die Flugzeuge am Himmel um dich herum, die Flughäfen und die Sehenswürdigkeiten unter dir",
+ "One map · above and below": "Eine Karte · darüber und darunter", "Every airport in the world": "Jeder Flughafen der Welt",
+ "Planes drawn as what they are": "Flugzeuge so gezeichnet, wie sie sind", "Sit in its cockpit": "Ins Cockpit setzen",
+ "Watch It Fly in 3D": "Beim Fliegen zusehen in 3D", "Look Around any airport": "An jedem Flughafen umsehen",
+ "Landmark photos & stories": "Fotos & Geschichten der Sehenswürdigkeiten", "Made for iPad & iPhone Duo": "Gemacht für iPad & iPhone Duo",
+ "Live: your flight on the map, and what's below": "Live: dein Flug auf der Karte und was unter dir liegt",
+ "A landmark's photo and story": "Foto und Geschichte einer Sehenswürdigkeit", "A plane's card on the map": "Die Karte eines Flugzeugs auf der Karte",
+ "Looking around another airport": "Umsehen an einem anderen Flughafen",
+ "AirReveal opens on one map: the planes in the sky around you, from community flight data. Tap one to reveal it.":
+   "AirReveal öffnet sich mit einer Karte: die Flugzeuge am Himmel um dich herum, aus Community-Flugdaten. Tippe eines an, um es zu enthüllen.",
+ "Every airport": "Jeder Flughafen",
+ "Every airport in the world on the map. Quiet sky where you are? Tap a busy airport and Look Around Here.":
+   "Jeder Flughafen der Welt auf der Karte. Ruhiger Himmel bei dir? Tippe auf einen belebten Flughafen und dann auf Hier umsehen.",
+ "Planes as they are": "Flugzeuge, wie sie sind",
+ "Airliners, turboprops, business jets, light aircraft, fast jets and helicopters, each drawn as what it is.":
+   "Verkehrsflugzeuge, Turboprops, Businessjets, Kleinflugzeuge, Kampfjets und Hubschrauber, jedes so gezeichnet, wie es ist.",
+ "Point at the sky and each plane is marked where it is, and the landmarks on the horizon too.":
+   "Richte die Kamera auf den Himmel, und jedes Flugzeug wird dort markiert, wo es ist, ebenso die Sehenswürdigkeiten am Horizont.",
+ "Tap a plane for its card, and pull it up for a photo of that very aircraft, its route and type.":
+   "Tippe auf ein Flugzeug für seine Karte und zieh sie hoch für ein Foto genau dieses Flugzeugs, seine Route und seinen Typ.",
+ "Take the captain's seat of a plane above you: its flight deck, its route ahead and its own instruments.":
+   "Nimm den Platz des Kapitäns in einem Flugzeug über dir ein: sein Cockpit, seine Route voraus und seine eigenen Instrumente.",
+ "Watch It Fly": "Beim Fliegen zusehen", "The plane you tapped in 3D, in its shape and its airline's colours.": "Das Flugzeug, das du angetippt hast, in 3D, in seiner Form und den Farben seiner Airline.",
+ "Watch It Fly: the plane you tapped, in 3D": "Beim Fliegen zusehen: das angetippte Flugzeug in 3D",
+ "Above you, below you": "Über dir, unter dir", "Tap any plane": "Tippe auf jedes Flugzeug", "Quiet sky? Look around": "Ruhiger Himmel? Sieh dich um",
+ "Your flights glow gold": "Deine Flüge leuchten golden", "Watch it fly in 3D": "Sieh es in 3D fliegen", "With you all the way": "Bei dir bis zur Landung",
+ "Every trip, kept": "Jede Reise, gespeichert", "Every flight, one map": "Alle Flüge, eine Karte",
+},
+"es": {
+ "New in 3.0": "Novedades de la 3.0", "What's new in AirReveal 3.0": "Novedades de AirReveal 3.0", "AirReveal 3.0, screen by screen": "AirReveal 3.0, pantalla a pantalla",
+ "Free to start · 3.0 is here": "Gratis para empezar · ya está aquí la 3.0",
+ "AirReveal's map: the planes in the sky around you, the airports and the landmarks below": "El mapa de AirReveal: los aviones en el cielo a tu alrededor, los aeropuertos y los lugares de abajo",
+ "One map · above and below": "Un solo mapa · arriba y abajo", "Every airport in the world": "Todos los aeropuertos del mundo",
+ "Planes drawn as what they are": "Cada avión dibujado como lo que es", "Sit in its cockpit": "Siéntate en su cabina",
+ "Watch It Fly in 3D": "Míralo volar en 3D", "Look Around any airport": "Explora cualquier aeropuerto",
+ "Landmark photos & stories": "Fotos e historias de los lugares", "Made for iPad & iPhone Duo": "Hecha para iPad y iPhone Duo",
+ "Live: your flight on the map, and what's below": "En directo: tu vuelo en el mapa y lo que hay debajo",
+ "A landmark's photo and story": "La foto y la historia de un lugar", "A plane's card on the map": "La tarjeta de un avión en el mapa",
+ "Looking around another airport": "Explorando otro aeropuerto",
+ "AirReveal opens on one map: the planes in the sky around you, from community flight data. Tap one to reveal it.":
+   "AirReveal se abre en un solo mapa: los aviones en el cielo a tu alrededor, con datos de vuelo de la comunidad. Toca uno para descubrirlo.",
+ "Every airport": "Todos los aeropuertos",
+ "Every airport in the world on the map. Quiet sky where you are? Tap a busy airport and Look Around Here.":
+   "Todos los aeropuertos del mundo en el mapa. ¿Cielo tranquilo donde estás? Toca un aeropuerto con mucho tráfico y luego Explorar aquí.",
+ "Planes as they are": "Aviones tal como son",
+ "Airliners, turboprops, business jets, light aircraft, fast jets and helicopters, each drawn as what it is.":
+   "Aviones de línea, turbohélices, jets ejecutivos, avionetas, cazas y helicópteros, cada uno dibujado como lo que es.",
+ "Point at the sky and each plane is marked where it is, and the landmarks on the horizon too.":
+   "Apunta al cielo y cada avión aparece marcado donde está, y también los lugares en el horizonte.",
+ "Tap a plane for its card, and pull it up for a photo of that very aircraft, its route and type.":
+   "Toca un avión para ver su tarjeta y deslízala hacia arriba para ver una foto de ese mismo avión, su ruta y su tipo.",
+ "Take the captain's seat of a plane above you: its flight deck, its route ahead and its own instruments.":
+   "Ocupa el asiento del comandante de un avión sobre ti: su cabina, su ruta por delante y sus propios instrumentos.",
+ "Watch It Fly": "Míralo volar", "The plane you tapped in 3D, in its shape and its airline's colours.": "El avión que tocaste en 3D, con su forma y los colores de su aerolínea.",
+ "Watch It Fly: the plane you tapped, in 3D": "Míralo volar: el avión que tocaste, en 3D",
+ "Above you, below you": "Encima de ti, debajo de ti", "Tap any plane": "Toca cualquier avión", "Quiet sky? Look around": "¿Cielo tranquilo? Explora",
+ "Your flights glow gold": "Tus vuelos brillan en dorado", "Watch it fly in 3D": "Míralo volar en 3D", "With you all the way": "Contigo todo el viaje",
+ "Every trip, kept": "Cada viaje, guardado", "Every flight, one map": "Todos tus vuelos, un mapa",
+},
+"fr": {
+ "New in 3.0": "Nouveautés de la 3.0", "What's new in AirReveal 3.0": "Nouveautés d'AirReveal 3.0", "AirReveal 3.0, screen by screen": "AirReveal 3.0, écran par écran",
+ "Free to start · 3.0 is here": "Gratuit pour commencer · la 3.0 est là",
+ "AirReveal's map: the planes in the sky around you, the airports and the landmarks below": "La carte d'AirReveal : les avions dans le ciel autour de vous, les aéroports et les sites en dessous",
+ "One map · above and below": "Une seule carte · au-dessus et en dessous", "Every airport in the world": "Tous les aéroports du monde",
+ "Planes drawn as what they are": "Chaque avion dessiné tel qu'il est", "Sit in its cockpit": "Prenez place dans son cockpit",
+ "Watch It Fly in 3D": "Regardez-le voler en 3D", "Look Around any airport": "Regardez autour de n'importe quel aéroport",
+ "Landmark photos & stories": "Photos et histoires des sites", "Made for iPad & iPhone Duo": "Pensé pour iPad et iPhone Duo",
+ "Live: your flight on the map, and what's below": "En direct : votre vol sur la carte, et ce qu'il y a en dessous",
+ "A landmark's photo and story": "La photo et l'histoire d'un site", "A plane's card on the map": "La fiche d'un avion sur la carte",
+ "Looking around another airport": "Regarder autour d'un autre aéroport",
+ "AirReveal opens on one map: the planes in the sky around you, from community flight data. Tap one to reveal it.":
+   "AirReveal s'ouvre sur une seule carte : les avions dans le ciel autour de vous, grâce à des données de vol communautaires. Touchez-en un pour le révéler.",
+ "Every airport": "Tous les aéroports",
+ "Every airport in the world on the map. Quiet sky where you are? Tap a busy airport and Look Around Here.":
+   "Tous les aéroports du monde sur la carte. Ciel calme chez vous ? Touchez un aéroport animé, puis Regarder autour.",
+ "Planes as they are": "Des avions tels qu'ils sont",
+ "Airliners, turboprops, business jets, light aircraft, fast jets and helicopters, each drawn as what it is.":
+   "Avions de ligne, turbopropulseurs, jets d'affaires, avions légers, avions de chasse et hélicoptères, chacun dessiné tel qu'il est.",
+ "Point at the sky and each plane is marked where it is, and the landmarks on the horizon too.":
+   "Pointez vers le ciel et chaque avion est indiqué là où il est, ainsi que les sites à l'horizon.",
+ "Tap a plane for its card, and pull it up for a photo of that very aircraft, its route and type.":
+   "Touchez un avion pour sa fiche, et faites-la glisser vers le haut pour une photo de cet avion précis, sa route et son type.",
+ "Take the captain's seat of a plane above you: its flight deck, its route ahead and its own instruments.":
+   "Prenez le siège du commandant d'un avion au-dessus de vous : son cockpit, sa route devant et ses propres instruments.",
+ "Watch It Fly": "Le regarder voler", "The plane you tapped in 3D, in its shape and its airline's colours.": "L'avion que vous avez touché, en 3D, avec sa forme et les couleurs de sa compagnie.",
+ "Watch It Fly: the plane you tapped, in 3D": "Le regarder voler : l'avion que vous avez touché, en 3D",
+ "Above you, below you": "Au-dessus, en dessous", "Tap any plane": "Touchez n'importe quel avion", "Quiet sky? Look around": "Ciel calme ? Regardez autour",
+ "Your flights glow gold": "Vos vols brillent en doré", "Watch it fly in 3D": "Regardez-le voler en 3D", "With you all the way": "Avec vous tout le vol",
+ "Every trip, kept": "Chaque voyage, conservé", "Every flight, one map": "Tous vos vols, une carte",
+},
+"it": {
+ "New in 3.0": "Novità della 3.0", "What's new in AirReveal 3.0": "Novità di AirReveal 3.0", "AirReveal 3.0, screen by screen": "AirReveal 3.0, schermata per schermata",
+ "Free to start · 3.0 is here": "Gratis per iniziare · è arrivata la 3.0",
+ "AirReveal's map: the planes in the sky around you, the airports and the landmarks below": "La mappa di AirReveal: gli aerei nel cielo intorno a te, gli aeroporti e i luoghi sotto di te",
+ "One map · above and below": "Un'unica mappa · sopra e sotto", "Every airport in the world": "Tutti gli aeroporti del mondo",
+ "Planes drawn as what they are": "Ogni aereo disegnato per quello che è", "Sit in its cockpit": "Siediti nella sua cabina",
+ "Watch It Fly in 3D": "Guardalo volare in 3D", "Look Around any airport": "Guardati intorno in ogni aeroporto",
+ "Landmark photos & stories": "Foto e storie dei luoghi", "Made for iPad & iPhone Duo": "Fatta per iPad e iPhone Duo",
+ "Live: your flight on the map, and what's below": "In diretta: il tuo volo sulla mappa e cosa c'è sotto",
+ "A landmark's photo and story": "La foto e la storia di un luogo", "A plane's card on the map": "La scheda di un aereo sulla mappa",
+ "Looking around another airport": "Guardarsi intorno in un altro aeroporto",
+ "AirReveal opens on one map: the planes in the sky around you, from community flight data. Tap one to reveal it.":
+   "AirReveal si apre su un'unica mappa: gli aerei nel cielo intorno a te, con dati di volo della community. Toccane uno per scoprirlo.",
+ "Every airport": "Tutti gli aeroporti",
+ "Every airport in the world on the map. Quiet sky where you are? Tap a busy airport and Look Around Here.":
+   "Tutti gli aeroporti del mondo sulla mappa. Cielo tranquillo dove sei? Tocca un aeroporto trafficato e poi Guarda qui intorno.",
+ "Planes as they are": "Aerei come sono davvero",
+ "Airliners, turboprops, business jets, light aircraft, fast jets and helicopters, each drawn as what it is.":
+   "Aerei di linea, turboelica, business jet, aerei leggeri, caccia ed elicotteri, ognuno disegnato per quello che è.",
+ "Point at the sky and each plane is marked where it is, and the landmarks on the horizon too.":
+   "Punta verso il cielo e ogni aereo viene segnato dove si trova, e anche i luoghi all'orizzonte.",
+ "Tap a plane for its card, and pull it up for a photo of that very aircraft, its route and type.":
+   "Tocca un aereo per la sua scheda e trascinala in alto per una foto proprio di quell'aereo, la sua rotta e il tipo.",
+ "Take the captain's seat of a plane above you: its flight deck, its route ahead and its own instruments.":
+   "Prendi il posto del comandante di un aereo sopra di te: la sua cabina, la sua rotta davanti e i suoi strumenti.",
+ "Watch It Fly": "Guardalo volare", "The plane you tapped in 3D, in its shape and its airline's colours.": "L'aereo che hai toccato in 3D, con la sua forma e i colori della sua compagnia.",
+ "Watch It Fly: the plane you tapped, in 3D": "Guardalo volare: l'aereo che hai toccato, in 3D",
+ "Above you, below you": "Sopra di te, sotto di te", "Tap any plane": "Tocca qualsiasi aereo", "Quiet sky? Look around": "Cielo tranquillo? Guardati intorno",
+ "Your flights glow gold": "I tuoi voli brillano d'oro", "Watch it fly in 3D": "Guardalo volare in 3D", "With you all the way": "Con te per tutto il volo",
+ "Every trip, kept": "Ogni viaggio, conservato", "Every flight, one map": "Tutti i voli, una mappa",
+},
+"pt-br": {
+ "New in 3.0": "Novidades da 3.0", "What's new in AirReveal 3.0": "Novidades do AirReveal 3.0", "AirReveal 3.0, screen by screen": "AirReveal 3.0, tela por tela",
+ "Free to start · 3.0 is here": "Grátis para começar · a 3.0 chegou",
+ "AirReveal's map: the planes in the sky around you, the airports and the landmarks below": "O mapa do AirReveal: os aviões no céu ao seu redor, os aeroportos e os lugares lá embaixo",
+ "One map · above and below": "Um só mapa · acima e abaixo", "Every airport in the world": "Todos os aeroportos do mundo",
+ "Planes drawn as what they are": "Cada avião desenhado como ele é", "Sit in its cockpit": "Sente-se na cabine",
+ "Watch It Fly in 3D": "Veja-o voar em 3D", "Look Around any airport": "Explore qualquer aeroporto",
+ "Landmark photos & stories": "Fotos e histórias dos lugares", "Made for iPad & iPhone Duo": "Feito para iPad e iPhone Duo",
+ "Live: your flight on the map, and what's below": "Ao vivo: seu voo no mapa e o que há lá embaixo",
+ "A landmark's photo and story": "A foto e a história de um lugar", "A plane's card on the map": "O cartão de um avião no mapa",
+ "Looking around another airport": "Explorando outro aeroporto",
+ "AirReveal opens on one map: the planes in the sky around you, from community flight data. Tap one to reveal it.":
+   "O AirReveal abre num só mapa: os aviões no céu ao seu redor, com dados de voo da comunidade. Toque em um para revelá-lo.",
+ "Every airport": "Todos os aeroportos",
+ "Every airport in the world on the map. Quiet sky where you are? Tap a busy airport and Look Around Here.":
+   "Todos os aeroportos do mundo no mapa. Céu calmo onde você está? Toque num aeroporto movimentado e depois em Explorar aqui.",
+ "Planes as they are": "Aviões como eles são",
+ "Airliners, turboprops, business jets, light aircraft, fast jets and helicopters, each drawn as what it is.":
+   "Aviões comerciais, turboélices, jatos executivos, aviões leves, caças e helicópteros, cada um desenhado como é.",
+ "Point at the sky and each plane is marked where it is, and the landmarks on the horizon too.":
+   "Aponte para o céu e cada avião é marcado onde está, e os lugares no horizonte também.",
+ "Tap a plane for its card, and pull it up for a photo of that very aircraft, its route and type.":
+   "Toque num avião para ver o cartão e puxe-o para cima para ver uma foto daquele mesmo avião, a rota e o tipo.",
+ "Take the captain's seat of a plane above you: its flight deck, its route ahead and its own instruments.":
+   "Ocupe o lugar do comandante de um avião acima de você: a cabine, a rota à frente e os próprios instrumentos.",
+ "Watch It Fly": "Veja-o voar", "The plane you tapped in 3D, in its shape and its airline's colours.": "O avião que você tocou, em 3D, no formato e nas cores da companhia.",
+ "Watch It Fly: the plane you tapped, in 3D": "Veja-o voar: o avião que você tocou, em 3D",
+ "Above you, below you": "Acima de você, abaixo de você", "Tap any plane": "Toque em qualquer avião", "Quiet sky? Look around": "Céu calmo? Explore",
+ "Your flights glow gold": "Seus voos brilham em dourado", "Watch it fly in 3D": "Veja-o voar em 3D", "With you all the way": "Com você a viagem toda",
+ "Every trip, kept": "Cada viagem, guardada", "Every flight, one map": "Todos os voos, um mapa",
+},
+}
+for _lang, _more in MORE_3_0.items():
+    STRINGS[_lang].update(_more)
+
+# 3.0: the planes above you are on the one map (Above You Now is gone).
+for _lang, _answer in {
+    "de": "Öffne AirReveal, und die Karte zeigt die Flugzeuge am Himmel um dich herum, aus Community-Flugdaten. Tippe eines an, um seine Route, seinen Typ, seine Höhe und ein Foto genau dieses Flugzeugs zu sehen.",
+    "es": "Abre AirReveal y el mapa muestra los aviones en el cielo a tu alrededor, con datos de vuelo de la comunidad. Toca uno para ver su ruta, su tipo, su altura y una foto de ese mismo avión.",
+    "fr": "Ouvrez AirReveal et la carte montre les avions dans le ciel autour de vous, grâce à des données de vol communautaires. Touchez-en un pour voir son itinéraire, son type, son altitude et une photo de cet avion précis.",
+    "it": "Apri AirReveal e la mappa mostra gli aerei nel cielo intorno a te, con dati di volo della community. Toccane uno per vederne la rotta, il tipo, la quota e una foto proprio di quell'aereo.",
+    "pt-br": "Abra o AirReveal e o mapa mostra os aviões no céu ao seu redor, com dados de voo da comunidade. Toque em um para ver a rota, o tipo, a altitude e uma foto daquele mesmo avião.",
+}.items():
+    NEW_FAQ[_lang][0] = (NEW_FAQ[_lang][0][0], _answer)
