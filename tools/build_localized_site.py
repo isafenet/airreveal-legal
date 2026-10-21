@@ -37,8 +37,8 @@ LOCALIZED_PAGES = ["index.html", GUIDE, "support.html"]
 USER_GUIDE = "user-guide.html"
 ENGLISH_ONLY = ["privacy.html", "terms.html", USER_GUIDE, "credits.html"]
 # English pages with a design of their own (no site nav or language switcher), listed in the sitemap only.
-STANDALONE = []  # airreveal-2.html, the sneak peek, sends visitors home since 2.0 shipped
-LASTMOD = "2026-10-20"
+STANDALONE = ["video.html"]  # English-only pages the builder leaves alone but lists in the sitemap (airreveal-2.html, the sneak peek, redirects home since 2.0 shipped)
+LASTMOD = "2026-10-21"
 MARK_OPEN, MARK_CLOSE = "<!--i18n-->", "<!--/i18n-->"
 
 
