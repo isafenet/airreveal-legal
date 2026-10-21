@@ -76,3 +76,4 @@
 .v2-classic-chip{display:inline-block;padding:8px 14px;border-radius:999px;background:#00000040;font-weight:700}
 @media(max-width:900px){.v2-halves{grid-template-columns:1fr}.v2-grid,.v2-grid-4,.v2-grid-3{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.v2-grid,.v2-grid-4,.v2-grid-3{grid-template-columns:1fr}.v2-hero{padding-top:48px}}
+.guide-shot{margin:14px auto 18px;text-align:center}.guide-shot img{width:240px;max-width:70%;height:auto;border-radius:22px;border:1px solid var(--line);box-shadow:0 12px 30px #10203322}.guide-shot figcaption{color:var(--muted);font-size:14px;margin-top:8px}
