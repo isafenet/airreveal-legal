@@ -26,7 +26,7 @@
   <header class="doc-head">
     <p class="eyebrow">Privacy Policy</p>
     <h1 class="doc-title">How AirReveal handles your data</h1>
-    <p class="doc-meta">Effective 20 October 2026 (AirReveal 2.2)</p>
+    <p class="doc-meta">Effective [3.0 RELEASE DATE] (AirReveal 3.0)</p>
     <div class="lede">
       <strong>In short:</strong> AirReveal keeps your flight data on your device, and only syncs it to your own iCloud when you explicitly ask it to. There are no AirReveal servers, no accounts, no analytics, and no advertising in this app — full stop.
     </div>
@@ -96,6 +96,7 @@
       <tr><th>Service</th><th>What's sent</th><th>What it's for</th></tr>
       <tr><td>OpenFreeMap (via MapLibre)</td><td>The geographic area around your route — no personal identifier</td><td>Downloading map tiles for offline viewing</td></tr>
       <tr><td>Wikipedia</td><td>A landmark's name, plus a generic app identifier in the request</td><td>Fetching an article summary for a landmark near your route</td></tr>
+      <tr><td>Wikipedia &amp; Wikimedia Commons</td><td>A landmark's name and its own position (never yours), plus a generic app identifier in the request</td><td>Finding a photo of a landmark, and its article when the name alone doesn't find it</td></tr>
       <tr><td>OpenStreetMap (Overpass API)</td><td>The area around your departure and arrival airports, plus a generic app identifier in the request</td><td>The terminals, hangars, tower and taxiways that Runway View draws</td></tr>
     </table>
     <p>None of these services receives your name, location history, or any other identifying information — only the specific map area, airport area or landmark title needed to fulfil that one request. These requests only happen when you download offline content for a flight, or open Runway View at an airport whose layout isn't saved yet; an airport's layout is then kept on your iPhone for 90 days.</p>
@@ -156,11 +157,12 @@
       <tr><th>Party</th><th>What they see</th><th>Why</th></tr>
       <tr><td>OpenFreeMap</td><td>The map area around your route</td><td>To download offline map tiles</td></tr>
       <tr><td>Wikipedia</td><td>A landmark's name</td><td>To fetch an article summary for offline reading</td></tr>
+      <tr><td>Wikipedia &amp; Wikimedia Commons</td><td>A landmark's name and its own position</td><td>For a photo of the landmark on the map, in the camera and on its page</td></tr>
       <tr><td>OpenStreetMap (Overpass API)</td><td>The area around an airport on your flight</td><td>To draw the airport's buildings and taxiways in Runway View</td></tr>
       <tr><td>Apple (WeatherKit)</td><td>Coordinates &amp; time you request weather for</td><td>To show live weather along your route</td></tr>
       <tr><td>Apple (iCloud)</td><td>Your flight history &amp; journal, only if you tap Sync Now</td><td>To sync between your own devices</td></tr>
       <tr><td>Apple (App Store)</td><td>Payment &amp; subscription status</td><td>To process your purchase</td></tr>
-      <tr><td>ADSB.lol</td><td>A point near you (rounded to about a kilometre), an aircraft's address, or a flight's callsign</td><td>To show the aircraft around you, a plane you follow, and today's aircraft for your flight</td></tr>
+      <tr><td>ADSB.lol</td><td>A point near you (rounded to about a kilometre), an airport you choose to look around, an aircraft's address, or a flight's callsign</td><td>To show the aircraft around you or that airport, a plane you follow, and today's aircraft for your flight</td></tr>
       <tr><td>adsbdb</td><td>An aircraft's address and flight number</td><td>For an aircraft's type, registration and route</td></tr>
       <tr><td>Planespotters.net</td><td>An aircraft's address</td><td>For a photo of the aircraft</td></tr>
       <tr><td>Wikipedia &amp; Wikimedia Commons</td><td>An aircraft type's name</td><td>For a photo of the type on the aircraft page</td></tr>
@@ -206,7 +208,7 @@
     <h2 class="clause-title"><span class="num">19</span> The aircraft around you</h2>
     <p>AirReveal's sky features show the planes flying over you and let you follow one. They use public flight-tracking data, and AirReveal asks only for what each one needs:</p>
     <ul>
-      <li><strong>The aircraft around you.</strong> While a sky screen is open, AirReveal asks ADSB.lol, a community network of receivers, for the aircraft around a point near you, rounded to about a kilometre. Turn Live Monitoring off (Settings › Sky &amp; Aircraft) and nothing is asked for.</li>
+      <li><strong>The aircraft around you.</strong> While a sky screen is open, AirReveal asks ADSB.lol, a community network of receivers, for the aircraft around a point near you, rounded to about a kilometre, or around an airport you choose to look around (its position, not yours). Turn Live Monitoring off (Profile › Settings › The Map › Planes Above You) and nothing is asked for.</li>
       <li><strong>A plane you tap or follow.</strong> Its details come from adsbdb, asked for by the aircraft's own address and its flight number (for the route), and a photo of it from Planespotters.net, asked for by the address. A plane you follow is asked for the same way, wherever it is.</li>
       <li><strong>The aircraft page.</strong> A photo of the aircraft type comes from Wikipedia and Wikimedia Commons. On the day of your flight, AirReveal asks ADSB.lol which aircraft is flying it, by the flight's callsign.</li>
       <li><strong>Looking up a flight.</strong> The flight number goes to iSafeNet's server, which answers from its own route data or asks SkyLink, a flight-data service. Answers are kept for a few minutes so the same flight isn't asked twice; nothing about you is kept.</li>
