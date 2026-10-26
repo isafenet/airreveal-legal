@@ -28,7 +28,7 @@
     <h1 class="doc-title">How AirReveal handles your data</h1>
     <p class="doc-meta">Effective 21 October 2026 (AirReveal 3.0)</p>
     <div class="lede">
-      <strong>In short:</strong> AirReveal keeps your flight data on your device, and only syncs it to your own iCloud when you explicitly ask it to. There are no AirReveal servers, no accounts, no analytics, and no advertising in this app — full stop.
+      <strong>In short:</strong> AirReveal keeps your flight data on your device, and only syncs it to your own iCloud when you explicitly ask it to. There is no account, no analytics, and no advertising in this app. A few optional sky features, such as notifications, use iSafeNet's own small server, and section 19 says exactly what they send and keep.
     </div>
   </header>
 
@@ -62,7 +62,7 @@
   <section class="clause" id="overview">
     <h2 class="clause-title"><span class="num">1</span> Overview</h2>
     <p>AirReveal is a flight-planning, live-tracking, and landmark-discovery app. It is designed around a simple idea: your flight details and travel history should stay under your control, not ours.</p>
-    <p>This policy explains exactly what AirReveal records, where it lives, and what — if anything — ever leaves your device. There is no account to create, and what you record stays on your device. The sky features (the aircraft around you, flight lookup and the notifications you can turn on) send small, specific requests to the services in section 19, a few of them through iSafeNet's own small server; none of them identifies you. So most of this policy is a description of on-device behavior rather than a list of things we do with your information.</p>
+    <p>This policy explains exactly what AirReveal records, where it lives, and what — if anything — ever leaves your device. There is no account to create, and what you record stays on your device. The sky features (the aircraft around you, flight lookup and the notifications you can turn on) send small, specific requests to the services in section 19, a few of them through iSafeNet's own small server. Most of these are requests about aircraft, not about you. The optional notifications are different: they involve an identifier for your phone and a rounded location, so they are not anonymous, even though no name or account is needed. Section 19 separates the two. So most of this policy is a description of on-device behavior rather than a list of things we do with your information.</p>
   </section>
 
   <section class="clause" id="data-you-enter">
@@ -99,7 +99,7 @@
       <tr><td>Wikipedia &amp; Wikimedia Commons</td><td>A landmark's name and its own position (never yours), plus a generic app identifier in the request</td><td>Finding a photo of a landmark, and its article when the name alone doesn't find it</td></tr>
       <tr><td>OpenStreetMap (Overpass API)</td><td>The area around your departure and arrival airports, plus a generic app identifier in the request</td><td>The terminals, hangars, tower and taxiways that Runway View draws</td></tr>
     </table>
-    <p>None of these services receives your name, location history, or any other identifying information — only the specific map area, airport area or landmark title needed to fulfil that one request. These requests only happen when you download offline content for a flight, or open Runway View at an airport whose layout isn't saved yet; an airport's layout is then kept on your iPhone for 90 days.</p>
+    <p>None of these services receives your name or location history — only the specific map area, airport area or landmark title needed to fulfil that one request. Like any service you connect to over the internet, each can see your device's IP address. These requests only happen when you download offline content for a flight, or open Runway View at an airport whose layout isn't saved yet; an airport's layout is then kept on your iPhone for 90 days.</p>
   </section>
 
   <section class="clause" id="weather">
@@ -114,7 +114,7 @@
 
   <section class="clause" id="storage">
     <h2 class="clause-title"><span class="num">7</span> Where your data lives</h2>
-    <p>Everything you record is stored locally on your device in a private, sandboxed app database, shared only between the AirReveal app and its widgets/Live Activity so they can display consistent, up-to-date information. Nothing you enter is uploaded anywhere by default. The only things iSafeNet's server keeps are the notification requests in section 19, and only while they're needed.</p>
+    <p>Everything you record is stored locally on your device in a private, sandboxed app database, shared only between the AirReveal app and its widgets/Live Activity so they can display consistent, up-to-date information. Nothing you enter is uploaded anywhere by default. The only things iSafeNet's server keeps that relate to you or your phone are the optional notification requests in section 19 and, in TestFlight and Xcode test builds only, the daily lookup-limit code described there, and only for the periods stated.</p>
   </section>
 
   <section class="clause" id="icloud">
@@ -147,7 +147,7 @@
 
   <section class="clause" id="no-tracking">
     <h2 class="clause-title"><span class="num">12</span> No analytics, ads, or tracking</h2>
-    <p>AirReveal contains no analytics SDKs, no advertising networks, and no third-party trackers of any kind. We do not know how often you open the app, which screens you visit, or anything else about your usage. There is nothing to opt out of, because nothing is being collected.</p>
+    <p>AirReveal contains no analytics SDKs, no advertising networks, and no third-party trackers of any kind. We do not know how often you open the app, which screens you visit, or anything else about your usage. The information about you or your phone that reaches us is limited to what section 19 describes: the optional notification data you choose to turn on, and, in TestFlight and Xcode test builds only, a daily lookup-limit code made from your connection's IP address. Like any server, ours and the public data services' can see the IP address a request comes from.</p>
   </section>
 
   <section class="clause" id="sharing">
@@ -166,7 +166,8 @@
       <tr><td>adsbdb</td><td>An aircraft's address and flight number</td><td>For an aircraft's type, registration and route</td></tr>
       <tr><td>Planespotters.net</td><td>An aircraft's address</td><td>For a photo of the aircraft</td></tr>
       <tr><td>Wikipedia &amp; Wikimedia Commons</td><td>An aircraft type's name</td><td>For a photo of the type on the aircraft page</td></tr>
-      <tr><td>iSafeNet's server (Cloudflare) and SkyLink</td><td>A flight number</td><td>To look up a flight's route, and its status where available</td></tr>
+      <tr><td>iSafeNet's server (Cloudflare)</td><td>Only a date: how recent the route data on your phone is</td><td>To fetch flight routes that have changed since then, about once a day while the sky features are in use</td></tr>
+      <tr><td>iSafeNet's server (Cloudflare) and SkyLink</td><td>A flight number, in TestFlight and Xcode test builds only</td><td>To look up a flight's route, and its status where available (not used in the App Store version)</td></tr>
       <tr><td>iSafeNet's server (Cloudflare) and Apple (push notifications)</td><td>Only if you turn the notifications on: see section 19</td><td>To send emergency-aircraft alerts, spotter alerts and landing notifications</td></tr>
     </table>
   </section>
@@ -174,16 +175,17 @@
   <section class="clause" id="retention">
     <h2 class="clause-title"><span class="num">14</span> Retention &amp; deletion</h2>
     <p>You control retention directly: delete any flight, journal entry, or photo inside the app at any time, or use Profile's "Remove All Trip Data" to erase everything at once. Deleting the AirReveal app removes its entire local database from your device. If you've used iCloud sync, you can also remove that data via <strong>Settings → [your name] → iCloud → Manage Storage</strong> on your device.</p>
+    <p>Notification data held on iSafeNet's server (section 19) is separate from what is on your device. Turning an alert off in AirReveal asks the server to delete that alert's record. AirReveal makes that request once and does not retry it, so if you are offline when you turn an alert off, or the request fails, the record stays until it expires: for emergency-aircraft and spotter alerts, a daily clean-up deletes records that have had no update for 30 days; a landing notification is meant to expire 24 hours after you start following the plane. The server checks that expiry every minute, but only after it has fetched aircraft data from ADSB.lol, so if that service is unavailable, or the server's own check fails, cleanup can be delayed until it next succeeds. Deleting the app does not contact the server either, so turn alerts off first. Records of which aircraft have already been alerted are cleared in a daily clean-up once they are more than a day old. Deleted records may remain recoverable in Cloudflare D1's rolling backup history for up to seven days after deletion from the live database. Separately, requests to iSafeNet's server pass through Cloudflare, which may record request logs that include connecting IP addresses; the server's own error messages contain no push tokens or locations. Those logs are kept for a maximum of seven days.</p>
   </section>
 
   <section class="clause" id="children">
     <h2 class="clause-title"><span class="num">15</span> Children's privacy</h2>
-    <p>AirReveal is not directed at children. We do not knowingly collect information from children under 13 (or the relevant minimum age in your region). Since AirReveal keeps data on-device with no account system, we have no practical way to identify a user's age — if you believe a child has used AirReveal to store personal information, the data can be removed by deleting the app.</p>
+    <p>AirReveal is not directed at children. We do not knowingly collect information from children under 13 (or the relevant minimum age in your region). Since AirReveal keeps data on-device with no account system, we have no practical way to identify a user's age — if you believe a child has used AirReveal to store personal information, the data on the device can be removed by deleting the app, after turning off any notifications (otherwise their records expire as described in section 14).</p>
   </section>
 
   <section class="clause" id="security">
     <h2 class="clause-title"><span class="num">16</span> Security</h2>
-    <p>Your data benefits from iOS's standard app sandboxing and device-level encryption. If you use iCloud sync, data in transit and at rest is protected by Apple's iCloud security model. There is no AirReveal account, so there is no central database of users' data that could be breached on our end; iSafeNet's server holds only the short-lived notification requests in section 19.</p>
+    <p>Your data benefits from iOS's standard app sandboxing and device-level encryption. If you use iCloud sync, data in transit and at rest is protected by Apple's iCloud security model. There is no AirReveal account, so there is no central database of users' flight history, journals or photos. iSafeNet's server does hold the optional notification records in section 19, for the periods stated there.</p>
   </section>
 
   <section class="clause" id="changes">
@@ -199,18 +201,18 @@
 
   <section class="clause" id="sky">
     <h2 class="clause-title"><span class="num">19</span> The aircraft around you</h2>
-    <p>AirReveal's sky features show the planes flying over you and let you follow one. They use public flight-tracking data, and AirReveal asks only for what each one needs:</p>
+    <p>AirReveal's sky features show the planes flying over you and let you follow one. They use public flight-tracking data, and AirReveal asks only for what each one needs. Two kinds of data appear below. Public aircraft data (an aircraft's position, address, callsign, registration, type and route) comes from public flight-tracking sources and is about aircraft, not about you. Information about you or your phone (its push-notification token, your location rounded to about a kilometre, your alert settings, and the aircraft you follow) is sent to iSafeNet's server only when you turn on one of the notifications below. Not needing an account or a name does not make that information anonymous: the push token identifies this installation of AirReveal on your phone to Apple's notification service and to us. Public aircraft data being public doesn't make a request for it anonymous either: each service that answers a request, including the public ones below, can see the IP address it came from, and some requests include a point near you.</p>
     <ul>
       <li><strong>The aircraft around you.</strong> While a sky screen is open, AirReveal asks ADSB.lol, a community network of receivers, for the aircraft around a point near you, rounded to about a kilometre, or around an airport you choose to look around (its position, not yours). Turn Live Monitoring off (Profile › Settings › The Map › Planes Above You) and nothing is asked for.</li>
       <li><strong>A plane you tap or follow.</strong> Its details come from adsbdb, asked for by the aircraft's own address and its flight number (for the route), and a photo of it from Planespotters.net, asked for by the address. A plane you follow is asked for the same way, wherever it is.</li>
       <li><strong>The aircraft page.</strong> A photo of the aircraft type comes from Wikipedia and Wikimedia Commons. On the day of your flight, AirReveal asks ADSB.lol which aircraft is flying it, by the flight's callsign.</li>
-      <li><strong>Looking up a flight.</strong> The flight number goes to iSafeNet's server, which answers from its own route data or asks SkyLink, a flight-data service. Answers are kept for a few minutes so the same flight isn't asked twice; nothing about you is kept.</li>
-      <li><strong>Emergency-aircraft alerts (off until you turn them on).</strong> iSafeNet's server keeps this phone's notification token, your location rounded to about a kilometre, the distance and services you chose and your units, so it can tell you when one comes near. It's deleted when you turn alerts off, or after 30 days without an update.</li>
-      <li><strong>Spotter alerts (off until you turn them on).</strong> To tell you when an aircraft type you're watching for (an A380, say) comes near, iSafeNet's server keeps this phone's notification token, your location rounded to about a kilometre, the distance and aircraft types you chose and your units. Every two minutes it asks ADSB.lol where aircraft of those types are. It's deleted when you turn spotter alerts off, or after 30 days without an update.</li>
+      <li><strong>Looking up a flight.</strong> In the App Store version a flight number is looked up on your phone, in route data built into AirReveal; SkyLink is not used. Routes change, so about once a day, while the sky features are in use, AirReveal asks iSafeNet's server for the routes changed since the date of the copy on your phone. That request carries only that date. In TestFlight and Xcode test builds only, a flight the built-in data doesn't have is also sent to iSafeNet's server, which answers from its own route data or asks SkyLink, a flight-data service, and the same applies to a flight's status. For those test-build lookups the answers (flight data, not information about you) are kept so the same flight isn't asked twice: a flight's status for about five minutes, and a route that was found for up to 14 days (one day if none was found). To limit how many of these lookups one person can make in a day, the server keeps a scrambled code made from the connection's IP address and the date, not the address itself, which is cleared each day.</li>
+      <li><strong>Emergency-aircraft alerts (off until you turn them on).</strong> iSafeNet's server keeps this phone's notification token, your location rounded to about a kilometre, the distance and services you chose and your units, so it can tell you when one comes near. It also notes which aircraft it has alerted this phone about, for about a day, to avoid repeats. Turning alerts off asks the server to delete the subscription; if that request doesn't get through, a daily clean-up deletes it once 30 days have passed without an update (section 14).</li>
+      <li><strong>Spotter alerts (off until you turn them on).</strong> To tell you when an aircraft type you're watching for (an A380, say) comes near, iSafeNet's server keeps this phone's notification token, your location rounded to about a kilometre, the distance and aircraft types you chose and your units. Every two minutes it asks ADSB.lol where aircraft of those types are. It also notes which aircraft it has alerted this phone about, for about a day, to avoid repeats. Turning spotter alerts off asks the server to delete the subscription; if that request doesn't get through, a daily clean-up deletes it once 30 days have passed without an update (section 14).</li>
       <li><strong>Siri and Shortcuts.</strong> "What's below me" and "How long left on my flight" are answered on your iPhone. "What's flying above me" asks ADSB.lol for the aircraft around a point near you, rounded to about a kilometre, as the sky screens do.</li>
-      <li><strong>Landing notifications (Tell Me When It Lands).</strong> While you follow a plane, iSafeNet's server keeps this phone's notification token, the plane's address and callsign and, when AirReveal knows it, the city it's flying to. It's deleted when the plane lands, when you stop following, or after 24 hours.</li>
+      <li><strong>Landing notifications (Tell Me When It Lands).</strong> While you follow a plane, iSafeNet's server keeps this phone's notification token, the plane's address and callsign (or registration) and, when AirReveal knows it, the city it's flying to, plus the plane's last height and climb rate so it can tell a landing from losing the signal. The plane's details are public aircraft data, but together with your push token they show which plane you are following. It's deleted when the plane lands, when you stop following (a request AirReveal makes once; if it doesn't get through the record still expires), when Apple reports the token is no longer valid, or, as intended, 24 hours after you started following. That expiry is checked every minute once the server has fetched aircraft data from ADSB.lol, so a failure there can delay it (section 14).</li>
     </ul>
-    <p>Notifications are delivered by Apple's push notification service. iSafeNet's server runs on Cloudflare. None of these requests includes your name, an account or your location history, and none is used for tracking or advertising. Our legal basis is our legitimate interest in providing the features you open, and your consent for the notifications, which you can withdraw at any time in Settings › Sky &amp; Aircraft.</p>
+    <p>Notifications are delivered by Apple's push notification service. iSafeNet's server runs on Cloudflare. These requests don't include your name, an account or your location history, and we don't use them for tracking or advertising. The notification requests do include the identifiers and rounded location described above. Our legal basis is our legitimate interest in providing the features you open, and your consent for the notifications, which you can withdraw at any time in Settings › Sky &amp; Aircraft.</p>
   </section>
 
   <section class="clause" id="calendar">
